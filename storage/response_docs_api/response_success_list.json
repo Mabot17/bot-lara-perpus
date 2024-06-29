@@ -1,0 +1,18 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Data Berhasil Ditampilkan."
+    },
+    "data": [],
+    "paging": {
+        "page": 1,
+        "total_pages": 1,
+        "records_per_page": 10,
+        "total_records": 8
+    },
+    "request": {
+        "start": 0,
+        "limit": 10,
+        "param_lain" : "xxx"
+    }
+}

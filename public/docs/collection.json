@@ -1,0 +1,1130 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost:8000"
+        }
+    ],
+    "info": {
+        "name": "API DOCS BOT|POS",
+        "_postman_id": "e7b940df-d7ce-42ad-9d86-b359298aed14",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "description": "",
+            "item": [
+                {
+                    "name": "Register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\":\"1462200195\",\"email\":\"1462200195@gmail.com\",\"password\":\"12345678\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {\n        \"users\": {\n            \"id\": 6,\n            \"id_mahasiswa\": 1,\n            \"id_dosen\": 0,\n            \"username\": \"1462200195\",\n            \"email\": \"1462200195@gmail.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-04-20T04:58:25.000000Z\",\n            \"updated_at\": \"2024-04-20T04:58:25.000000Z\"\n        },\n        \"token\": \"19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6\",\n        \"mahasiswa\": {\n            \"mhs_id\": 1,\n            \"mhs_email\": \"0\",\n            \"mhs_prodi_id\": 1,\n            \"mhs_nbi\": \"1462200195\",\n            \"mhs_foto_path\": null,\n            \"mhs_nama\": \"Abdul Rohman Masrifan\",\n            \"mhs_alamat\": \"Jombang\",\n            \"mhs_no_hp\": null,\n            \"mhs_jenis_kelamin\": \"L\",\n            \"mhs_tgl_lahir\": \"2021-10-13\",\n            \"mhs_pembimbing_id\": 1,\n            \"created_at\": null,\n            \"created_by\": null,\n            \"updated_at\": \"2024-03-28T12:37:13.000000Z\",\n            \"updated_by\": null,\n            \"deleted_at\": \"2024-03-28 12:37:13\",\n            \"deleted_by\": null\n        }\n    },\n    \"params\": {\n        \"attributes\": {},\n        \"request\": {},\n        \"query\": {},\n        \"server\": {},\n        \"files\": {},\n        \"cookies\": {},\n        \"headers\": {}\n    },\n    \"request\": {\n        \"username\": \"1462200195\",\n        \"password\": \"12345678\"\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Username atau Password yang anda masukkan salah.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"username\": \"1462200195\",\n        \"password\": \"112345678\"\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"status\": {\n        \"code\": 500,\n        \"message\": \"Request Tidak Valid, Silahkan hubungi Administrator.\"\n    },\n    \"data\": {},\n    \"error\": \"string\",\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\":\"1462200195\",\"password\":\"12345678\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {\n        \"users\": {\n            \"id\": 6,\n            \"id_mahasiswa\": 1,\n            \"id_dosen\": 0,\n            \"username\": \"1462200195\",\n            \"email\": \"1462200195@gmail.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-04-20T04:58:25.000000Z\",\n            \"updated_at\": \"2024-04-20T04:58:25.000000Z\"\n        },\n        \"token\": \"19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6\",\n        \"mahasiswa\": {\n            \"mhs_id\": 1,\n            \"mhs_email\": \"0\",\n            \"mhs_prodi_id\": 1,\n            \"mhs_nbi\": \"1462200195\",\n            \"mhs_foto_path\": null,\n            \"mhs_nama\": \"Abdul Rohman Masrifan\",\n            \"mhs_alamat\": \"Jombang\",\n            \"mhs_no_hp\": null,\n            \"mhs_jenis_kelamin\": \"L\",\n            \"mhs_tgl_lahir\": \"2021-10-13\",\n            \"mhs_pembimbing_id\": 1,\n            \"created_at\": null,\n            \"created_by\": null,\n            \"updated_at\": \"2024-03-28T12:37:13.000000Z\",\n            \"updated_by\": null,\n            \"deleted_at\": \"2024-03-28 12:37:13\",\n            \"deleted_by\": null\n        }\n    },\n    \"params\": {\n        \"attributes\": {},\n        \"request\": {},\n        \"query\": {},\n        \"server\": {},\n        \"files\": {},\n        \"cookies\": {},\n        \"headers\": {}\n    },\n    \"request\": {\n        \"username\": \"1462200195\",\n        \"password\": \"12345678\"\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Username atau Password yang anda masukkan salah.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"username\": \"1462200195\",\n        \"password\": \"112345678\"\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 500,
+                            "body": "{\n    \"status\": {\n        \"code\": 500,\n        \"message\": \"Request Tidak Valid, Silahkan hubungi Administrator.\"\n    },\n    \"data\": {},\n    \"error\": \"string\",\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/dashboard\/grafik-bar-netsales",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/dashboard\/grafik-bar-netsales",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/dashboard\/grafik-bar-netsales"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Penjualan",
+            "description": "",
+            "item": [
+                {
+                    "name": "Penjualan List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/penjualan\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/penjualan\/list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"start\":0,\"limit\":10,\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n      \"code\": 200,\n      \"message\": \"Data Berhasil Ditampilkan.\"\n    },\n    \"data\": [\n      {\n        \"penjualan_id\": 1,\n        \"penjualan_no\": \"PJ\/2406-0001\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-27\",\n        \"penjualan_total\": 20000,\n        \"penjualan_total_bayar\": 20000,\n        \"penjualan_total_kembalian\": 0,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 09:53:54\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 17:46:12\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 2,\n        \"penjualan_no\": \"PJ\/2406-0002\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-24\",\n        \"penjualan_total\": 15000,\n        \"penjualan_total_bayar\": 15000,\n        \"penjualan_total_kembalian\": 0,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 09:54:11\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 17:46:39\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 3,\n        \"penjualan_no\": \"PJ\/2406-0003\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-22\",\n        \"penjualan_total\": 35000,\n        \"penjualan_total_bayar\": 40000,\n        \"penjualan_total_kembalian\": 5000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 12:21:16\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 15:27:03\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 4,\n        \"penjualan_no\": \"PJ\/2406-0004\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-25\",\n        \"penjualan_total\": 20000,\n        \"penjualan_total_bayar\": 20000,\n        \"penjualan_total_kembalian\": 0,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 12:45:26\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 15:27:24\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 5,\n        \"penjualan_no\": \"PJ\/2406-0005\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum ubah\",\n        \"penjualan_tanggal\": \"2024-06-28\",\n        \"penjualan_total\": 820000,\n        \"penjualan_total_bayar\": 1000000,\n        \"penjualan_total_kembalian\": 180000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 13:01:40\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 16:44:44\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 6,\n        \"penjualan_no\": \"PJ\/2406-0006\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-28\",\n        \"penjualan_total\": 15000,\n        \"penjualan_total_bayar\": 20000,\n        \"penjualan_total_kembalian\": 5000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 13:08:57\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 13:08:57\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 7,\n        \"penjualan_no\": \"PJ\/2406-0007\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-22\",\n        \"penjualan_total\": 8999,\n        \"penjualan_total_bayar\": 10000,\n        \"penjualan_total_kembalian\": 1001,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 13:58:44\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 13:58:44\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 8,\n        \"penjualan_no\": \"PJ\/2406-0008\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-25\",\n        \"penjualan_total\": 7000,\n        \"penjualan_total_bayar\": 10000,\n        \"penjualan_total_kembalian\": 3000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 14:00:25\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 14:00:25\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 9,\n        \"penjualan_no\": \"PJ\/2406-0009\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-22\",\n        \"penjualan_total\": 7000,\n        \"penjualan_total_bayar\": 10000,\n        \"penjualan_total_kembalian\": 3000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 14:07:26\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 14:07:26\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 10,\n        \"penjualan_no\": \"PJ\/2406-0010\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-21\",\n        \"penjualan_total\": 120000,\n        \"penjualan_total_bayar\": 130000,\n        \"penjualan_total_kembalian\": 10000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 14:10:45\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 14:10:45\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      }\n    ],\n    \"paging\": {\n      \"page\": 1,\n      \"total_pages\": 2,\n      \"records_per_page\": 10,\n      \"total_records\": 15\n    },\n    \"request\": {\n      \"start\": 0,\n      \"limit\": 10,\n      \"filter\": null\n    }\n  }\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Penjualan Detail",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/penjualan\/detail\/:penjualan_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/penjualan\/detail\/:penjualan_id",
+                            "variable": [
+                                {
+                                    "id": "penjualan_id",
+                                    "key": "penjualan_id",
+                                    "value": "2",
+                                    "description": "penjualan_id data dari api\/penjualan list."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Penjualan Create",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/penjualan\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/penjualan\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"penjualan_pelanggan\":null,\"penjualan_tanggal\":\"2024-06-14\",\"penjualan_total\":10000,\"penjualan_total_bayar\":10000,\"penjualan_cara_bayar\":\"Tunai\",\"penjualan_total_kembalian\":10000,\"produk_list\":[{\"pjual_detail_id\":0,\"pjual_detail_produk_id\":1,\"pjual_detail_qty\":1,\"pjual_detail_harga\":1000,\"pjual_detail_diskon\":1,\"pjual_detail_diskon_rp\":1000,\"pjual_diskon_subtotal\":1000}]}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Penjualan Update",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/penjualan\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/penjualan\/update"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"penjualan_ida\":2,\"penjualan_id\":1,\"penjualan_pelanggan\":null,\"penjualan_tanggal\":\"2024-06-14\",\"penjualan_total\":10000,\"penjualan_total_bayar\":10000,\"penjualan_cara_bayar\":\"Tunai\",\"penjualan_total_kembalian\":10000,\"produk_list\":[{\"pjual_detail_id\":0,\"pjual_detail_produk_id\":1,\"pjual_detail_qty\":1,\"pjual_detail_harga\":1000,\"pjual_detail_diskon\":1,\"pjual_detail_diskon_rp\":1000,\"pjual_diskon_subtotal\":1000}]}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Penjualan Delete",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/penjualan\/delete\/:penjualan_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/penjualan\/delete\/:penjualan_id",
+                            "variable": [
+                                {
+                                    "id": "penjualan_id",
+                                    "key": "penjualan_id",
+                                    "value": "2",
+                                    "description": "penjualan_id data dari api\/penjualan list."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/penjualan\/cetak-list-pdf",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/penjualan\/cetak-list-pdf",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/penjualan\/cetak-list-pdf"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/penjualan\/cetak-list-xls",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/penjualan\/cetak-list-xls",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/penjualan\/cetak-list-xls"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Penjualan Cetak Faktur",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/penjualan\/cetak-faktur-pdf\/:penjualan_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/penjualan\/cetak-faktur-pdf\/:penjualan_id",
+                            "variable": [
+                                {
+                                    "id": "penjualan_id",
+                                    "key": "penjualan_id",
+                                    "value": "2",
+                                    "description": "penjualan_id data dari api\/penjualan list."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Produk",
+            "description": "",
+            "item": [
+                {
+                    "name": "Produk List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produk\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produk\/list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"start\":0,\"limit\":10,\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Produk Detail",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produk\/detail\/:prodi_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produk\/detail\/:prodi_id",
+                            "variable": [
+                                {
+                                    "id": "prodi_id",
+                                    "key": "prodi_id",
+                                    "value": "inventore",
+                                    "description": "The ID of the prodi."
+                                },
+                                {
+                                    "id": "kategori_id",
+                                    "key": "kategori_id",
+                                    "value": "2",
+                                    "description": "kategori_id data dari api\/event list."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Produk Create",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produk\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produk\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"produk_sku\":null,\"produk_nama\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Produk Update",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produk\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produk\/update"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"kategori_id\":\"1\",\"produk_sku\":null,\"produk_nama\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api\/produk\/delete\/{produk_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produk\/delete\/:produk_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produk\/delete\/:produk_id",
+                            "variable": [
+                                {
+                                    "id": "produk_id",
+                                    "key": "produk_id",
+                                    "value": "et",
+                                    "description": "The ID of the produk."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/produk\/cetak-list-pdf",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produk\/cetak-list-pdf",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produk\/cetak-list-pdf"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/produk\/cetak-list-xls",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produk\/cetak-list-xls",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produk\/cetak-list-xls"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Produk Kategori",
+            "description": "",
+            "item": [
+                {
+                    "name": "Produk Kategori List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produkKategori\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produkKategori\/list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"start\":0,\"limit\":10,\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Produk Kategori Detail",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produkKategori\/detail\/:kategori_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produkKategori\/detail\/:kategori_id",
+                            "variable": [
+                                {
+                                    "id": "kategori_id",
+                                    "key": "kategori_id",
+                                    "value": "2",
+                                    "description": "kategori_id data dari api\/produk_kategori list."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Produk Kategori Create",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produkKategori\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produkKategori\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"ProdukKategori_kode\":null,\"ProdukKategori_nama\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Produk Kategori Update",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produkKategori\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produkKategori\/update"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"kategori_id\":\"1\",\"ProdukKategori_kode\":null,\"ProdukKategori_nama\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api\/produkKategori\/delete\/{kategori_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produkKategori\/delete\/:kategori_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produkKategori\/delete\/:kategori_id",
+                            "variable": [
+                                {
+                                    "id": "kategori_id",
+                                    "key": "kategori_id",
+                                    "value": "eveniet",
+                                    "description": "The ID of the kategori."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Produk Kategori Cetak PDF List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produkKategori\/cetak-list-pdf",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produkKategori\/cetak-list-pdf"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Produk Kategori Cetak Excel List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/produkKategori\/cetak-list-xls",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/produkKategori\/cetak-list-xls"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "key",
+                "type": "string"
+            }
+        ]
+    }
+}

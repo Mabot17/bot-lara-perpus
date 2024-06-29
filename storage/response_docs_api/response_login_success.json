@@ -1,0 +1,51 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Request Berhasil."
+    },
+    "data": {
+        "users": {
+            "id": 6,
+            "id_mahasiswa": 1,
+            "id_dosen": 0,
+            "username": "1462200195",
+            "email": "1462200195@gmail.com",
+            "email_verified_at": null,
+            "created_at": "2024-04-20T04:58:25.000000Z",
+            "updated_at": "2024-04-20T04:58:25.000000Z"
+        },
+        "token": "19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6",
+        "mahasiswa": {
+            "mhs_id": 1,
+            "mhs_email": "0",
+            "mhs_prodi_id": 1,
+            "mhs_nbi": "1462200195",
+            "mhs_foto_path": null,
+            "mhs_nama": "Abdul Rohman Masrifan",
+            "mhs_alamat": "Jombang",
+            "mhs_no_hp": null,
+            "mhs_jenis_kelamin": "L",
+            "mhs_tgl_lahir": "2021-10-13",
+            "mhs_pembimbing_id": 1,
+            "created_at": null,
+            "created_by": null,
+            "updated_at": "2024-03-28T12:37:13.000000Z",
+            "updated_by": null,
+            "deleted_at": "2024-03-28 12:37:13",
+            "deleted_by": null
+        }
+    },
+    "params": {
+        "attributes": {},
+        "request": {},
+        "query": {},
+        "server": {},
+        "files": {},
+        "cookies": {},
+        "headers": {}
+    },
+    "request": {
+        "username": "1462200195",
+        "password": "12345678"
+    }
+}

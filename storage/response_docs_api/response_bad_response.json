@@ -1,0 +1,12 @@
+{
+    "status": {
+        "code": 500,
+        "message": "Request Tidak Valid, Silahkan hubungi Administrator."
+    },
+    "data": {},
+    "error": "string",
+    "request": {
+        "param_1": 100,
+        "param_2": "example_value"
+    }
+}

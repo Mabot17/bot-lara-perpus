@@ -1,0 +1,491 @@
+name: Produk
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/produk/list
+    metadata:
+      groupName: Produk
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Produk List'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      start:
+        name: start
+        description: 'start data.'
+        required: true
+        example: 0
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      limit:
+        name: limit
+        description: 'limit data.'
+        required: true
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      filter:
+        name: filter
+        description: 'Text biasa bisa diisi bisa tidak.'
+        required: true
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      start: 0
+      limit: 10
+      filter: null
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "status": {
+                  "code": 404,
+                  "message": "Data Tidak Ditemukan."
+              },
+              "data": null,
+              "request": {
+                  "param_1": 100,
+                  "param_2": "example_value"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer vga43f68Zabd6c15hDPEkeV'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/produk/detail/{prodi_id}'
+    metadata:
+      groupName: Produk
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Produk Detail'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      prodi_id:
+        name: prodi_id
+        description: 'The ID of the prodi.'
+        required: true
+        example: inventore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      kategori_id:
+        name: kategori_id
+        description: 'kategori_id data dari api/event list.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanUrlParameters:
+      prodi_id: inventore
+      kategori_id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "status": {
+                  "code": 200,
+                  "message": "Request Berhasil."
+              },
+              "data": {},
+              "request": {
+                  "xxx_id": 1
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "status": {
+                  "code": 404,
+                  "message": "Data Tidak Ditemukan."
+              },
+              "data": null,
+              "request": {
+                  "param_1": 100,
+                  "param_2": "example_value"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bZfvaVa61Dde5k6E3g4h8cP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/produk/create
+    metadata:
+      groupName: Produk
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Produk Create'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      produk_sku:
+        name: produk_sku
+        description: produk_sku.
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      produk_nama:
+        name: produk_nama
+        description: produk_nama.
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      produk_sku: null
+      produk_nama: null
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "status": {
+                  "code": 200,
+                  "message": "Request Berhasil."
+              },
+              "data": {},
+              "request": {
+                  "xxx_id": 1
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "status": {
+                  "code": 404,
+                  "message": "Data Tidak Ditemukan."
+              },
+              "data": null,
+              "request": {
+                  "param_1": 100,
+                  "param_2": "example_value"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 616hdvEV534DPfbZkacgea8'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/produk/update
+    metadata:
+      groupName: Produk
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Produk Update'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      kategori_id:
+        name: kategori_id
+        description: kategori_id.
+        required: true
+        example: '1'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      produk_sku:
+        name: produk_sku
+        description: produk_sku.
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      produk_nama:
+        name: produk_nama
+        description: produk_nama.
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      kategori_id: '1'
+      produk_sku: null
+      produk_nama: null
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "status": {
+                  "code": 200,
+                  "message": "Request Berhasil."
+              },
+              "data": {},
+              "request": {
+                  "xxx_id": 1
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "status": {
+                  "code": 404,
+                  "message": "Data Tidak Ditemukan."
+              },
+              "data": null,
+              "request": {
+                  "param_1": 100,
+                  "param_2": "example_value"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 1DaPgbV66d8evZ5E3k4cfah'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/produk/delete/{produk_id}'
+    metadata:
+      groupName: Produk
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      produk_id:
+        name: produk_id
+        description: 'The ID of the produk.'
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      produk_id: et
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3g8fvaZV66dkDc4haeP51Eb'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/produk/cetak-list-pdf
+    metadata:
+      groupName: Produk
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6kDfZcv5Eb46h8aVa3ge1dP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/produk/cetak-list-xls
+    metadata:
+      groupName: Produk
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 4V8chPv31ZgE6ab5D6fdeak'
+    controller: null
+    method: null
+    route: null
+    custom: []

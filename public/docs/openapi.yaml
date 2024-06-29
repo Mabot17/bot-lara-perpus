@@ -1,0 +1,2625 @@
+openapi: 3.0.3
+info:
+  title: 'API DOCS BOT|POS'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/register:
+    post:
+      summary: Register
+      operationId: register
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data:
+                    users:
+                      id: 6
+                      id_mahasiswa: 1
+                      id_dosen: 0
+                      username: '1462200195'
+                      email: 1462200195@gmail.com
+                      email_verified_at: null
+                      created_at: '2024-04-20T04:58:25.000000Z'
+                      updated_at: '2024-04-20T04:58:25.000000Z'
+                    token: 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6
+                    mahasiswa:
+                      mhs_id: 1
+                      mhs_email: '0'
+                      mhs_prodi_id: 1
+                      mhs_nbi: '1462200195'
+                      mhs_foto_path: null
+                      mhs_nama: 'Abdul Rohman Masrifan'
+                      mhs_alamat: Jombang
+                      mhs_no_hp: null
+                      mhs_jenis_kelamin: L
+                      mhs_tgl_lahir: '2021-10-13'
+                      mhs_pembimbing_id: 1
+                      created_at: null
+                      created_by: null
+                      updated_at: '2024-03-28T12:37:13.000000Z'
+                      updated_by: null
+                      deleted_at: '2024-03-28 12:37:13'
+                      deleted_by: null
+                  params:
+                    attributes: {  }
+                    request: {  }
+                    query: {  }
+                    server: {  }
+                    files: {  }
+                    cookies: {  }
+                    headers: {  }
+                  request:
+                    username: '1462200195'
+                    password: '12345678'
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties:
+                      users:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 6
+                          id_mahasiswa:
+                            type: integer
+                            example: 1
+                          id_dosen:
+                            type: integer
+                            example: 0
+                          username:
+                            type: string
+                            example: '1462200195'
+                          email:
+                            type: string
+                            example: 1462200195@gmail.com
+                          email_verified_at:
+                            type: string
+                            example: null
+                          created_at:
+                            type: string
+                            example: '2024-04-20T04:58:25.000000Z'
+                          updated_at:
+                            type: string
+                            example: '2024-04-20T04:58:25.000000Z'
+                      token:
+                        type: string
+                        example: 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6
+                      mahasiswa:
+                        type: object
+                        properties:
+                          mhs_id:
+                            type: integer
+                            example: 1
+                          mhs_email:
+                            type: string
+                            example: '0'
+                          mhs_prodi_id:
+                            type: integer
+                            example: 1
+                          mhs_nbi:
+                            type: string
+                            example: '1462200195'
+                          mhs_foto_path:
+                            type: string
+                            example: null
+                          mhs_nama:
+                            type: string
+                            example: 'Abdul Rohman Masrifan'
+                          mhs_alamat:
+                            type: string
+                            example: Jombang
+                          mhs_no_hp:
+                            type: string
+                            example: null
+                          mhs_jenis_kelamin:
+                            type: string
+                            example: L
+                          mhs_tgl_lahir:
+                            type: string
+                            example: '2021-10-13'
+                          mhs_pembimbing_id:
+                            type: integer
+                            example: 1
+                          created_at:
+                            type: string
+                            example: null
+                          created_by:
+                            type: string
+                            example: null
+                          updated_at:
+                            type: string
+                            example: '2024-03-28T12:37:13.000000Z'
+                          updated_by:
+                            type: string
+                            example: null
+                          deleted_at:
+                            type: string
+                            example: '2024-03-28 12:37:13'
+                          deleted_by:
+                            type: string
+                            example: null
+                  params:
+                    type: object
+                    properties:
+                      attributes:
+                        type: object
+                        properties: {  }
+                      request:
+                        type: object
+                        properties: {  }
+                      query:
+                        type: object
+                        properties: {  }
+                      server:
+                        type: object
+                        properties: {  }
+                      files:
+                        type: object
+                        properties: {  }
+                      cookies:
+                        type: object
+                        properties: {  }
+                      headers:
+                        type: object
+                        properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      username:
+                        type: string
+                        example: '1462200195'
+                      password:
+                        type: string
+                        example: '12345678'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Username atau Password yang anda masukkan salah.'
+                  data: null
+                  request:
+                    username: '1462200195'
+                    password: '112345678'
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Username atau Password yang anda masukkan salah.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      username:
+                        type: string
+                        example: '1462200195'
+                      password:
+                        type: string
+                        example: '112345678'
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 500
+                    message: 'Request Tidak Valid, Silahkan hubungi Administrator.'
+                  data: {  }
+                  error: string
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 500
+                      message:
+                        type: string
+                        example: 'Request Tidak Valid, Silahkan hubungi Administrator.'
+                  data:
+                    type: object
+                    properties: {  }
+                  error:
+                    type: string
+                    example: string
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: username.
+                  example: '1462200195'
+                email:
+                  type: string
+                  description: email.
+                  example: 1462200195@gmail.com
+                password:
+                  type: string
+                  description: password.
+                  example: '12345678'
+              required:
+                - username
+                - email
+                - password
+      security: []
+  /api/login:
+    post:
+      summary: Login
+      operationId: login
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data:
+                    users:
+                      id: 6
+                      id_mahasiswa: 1
+                      id_dosen: 0
+                      username: '1462200195'
+                      email: 1462200195@gmail.com
+                      email_verified_at: null
+                      created_at: '2024-04-20T04:58:25.000000Z'
+                      updated_at: '2024-04-20T04:58:25.000000Z'
+                    token: 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6
+                    mahasiswa:
+                      mhs_id: 1
+                      mhs_email: '0'
+                      mhs_prodi_id: 1
+                      mhs_nbi: '1462200195'
+                      mhs_foto_path: null
+                      mhs_nama: 'Abdul Rohman Masrifan'
+                      mhs_alamat: Jombang
+                      mhs_no_hp: null
+                      mhs_jenis_kelamin: L
+                      mhs_tgl_lahir: '2021-10-13'
+                      mhs_pembimbing_id: 1
+                      created_at: null
+                      created_by: null
+                      updated_at: '2024-03-28T12:37:13.000000Z'
+                      updated_by: null
+                      deleted_at: '2024-03-28 12:37:13'
+                      deleted_by: null
+                  params:
+                    attributes: {  }
+                    request: {  }
+                    query: {  }
+                    server: {  }
+                    files: {  }
+                    cookies: {  }
+                    headers: {  }
+                  request:
+                    username: '1462200195'
+                    password: '12345678'
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties:
+                      users:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 6
+                          id_mahasiswa:
+                            type: integer
+                            example: 1
+                          id_dosen:
+                            type: integer
+                            example: 0
+                          username:
+                            type: string
+                            example: '1462200195'
+                          email:
+                            type: string
+                            example: 1462200195@gmail.com
+                          email_verified_at:
+                            type: string
+                            example: null
+                          created_at:
+                            type: string
+                            example: '2024-04-20T04:58:25.000000Z'
+                          updated_at:
+                            type: string
+                            example: '2024-04-20T04:58:25.000000Z'
+                      token:
+                        type: string
+                        example: 19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6
+                      mahasiswa:
+                        type: object
+                        properties:
+                          mhs_id:
+                            type: integer
+                            example: 1
+                          mhs_email:
+                            type: string
+                            example: '0'
+                          mhs_prodi_id:
+                            type: integer
+                            example: 1
+                          mhs_nbi:
+                            type: string
+                            example: '1462200195'
+                          mhs_foto_path:
+                            type: string
+                            example: null
+                          mhs_nama:
+                            type: string
+                            example: 'Abdul Rohman Masrifan'
+                          mhs_alamat:
+                            type: string
+                            example: Jombang
+                          mhs_no_hp:
+                            type: string
+                            example: null
+                          mhs_jenis_kelamin:
+                            type: string
+                            example: L
+                          mhs_tgl_lahir:
+                            type: string
+                            example: '2021-10-13'
+                          mhs_pembimbing_id:
+                            type: integer
+                            example: 1
+                          created_at:
+                            type: string
+                            example: null
+                          created_by:
+                            type: string
+                            example: null
+                          updated_at:
+                            type: string
+                            example: '2024-03-28T12:37:13.000000Z'
+                          updated_by:
+                            type: string
+                            example: null
+                          deleted_at:
+                            type: string
+                            example: '2024-03-28 12:37:13'
+                          deleted_by:
+                            type: string
+                            example: null
+                  params:
+                    type: object
+                    properties:
+                      attributes:
+                        type: object
+                        properties: {  }
+                      request:
+                        type: object
+                        properties: {  }
+                      query:
+                        type: object
+                        properties: {  }
+                      server:
+                        type: object
+                        properties: {  }
+                      files:
+                        type: object
+                        properties: {  }
+                      cookies:
+                        type: object
+                        properties: {  }
+                      headers:
+                        type: object
+                        properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      username:
+                        type: string
+                        example: '1462200195'
+                      password:
+                        type: string
+                        example: '12345678'
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Username atau Password yang anda masukkan salah.'
+                  data: null
+                  request:
+                    username: '1462200195'
+                    password: '112345678'
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Username atau Password yang anda masukkan salah.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      username:
+                        type: string
+                        example: '1462200195'
+                      password:
+                        type: string
+                        example: '112345678'
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 500
+                    message: 'Request Tidak Valid, Silahkan hubungi Administrator.'
+                  data: {  }
+                  error: string
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 500
+                      message:
+                        type: string
+                        example: 'Request Tidak Valid, Silahkan hubungi Administrator.'
+                  data:
+                    type: object
+                    properties: {  }
+                  error:
+                    type: string
+                    example: string
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: username.
+                  example: '1462200195'
+                password:
+                  type: string
+                  description: password.
+                  example: '12345678'
+              required:
+                - username
+                - password
+      security: []
+  /api/dashboard/grafik-bar-netsales:
+    get:
+      summary: ''
+      operationId: getApiDashboardGrafikBarNetsales
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+  /api/penjualan/list:
+    post:
+      summary: 'Penjualan List'
+      operationId: penjualanList
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Data Berhasil Ditampilkan.'
+                  data:
+                    -
+                      penjualan_id: 1
+                      penjualan_no: PJ/2406-0001
+                      penjualan_pelanggan: 'Pelanggan Umum'
+                      penjualan_tanggal: '2024-06-27'
+                      penjualan_total: 20000
+                      penjualan_total_bayar: 20000
+                      penjualan_total_kembalian: 0
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 09:53:54'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 17:46:12'
+                      updated_by: 1462200195@gmail.com
+                      deleted_at: null
+                      deleted_by: null
+                    -
+                      penjualan_id: 2
+                      penjualan_no: PJ/2406-0002
+                      penjualan_pelanggan: 'Pelanggan Umum'
+                      penjualan_tanggal: '2024-06-24'
+                      penjualan_total: 15000
+                      penjualan_total_bayar: 15000
+                      penjualan_total_kembalian: 0
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 09:54:11'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 17:46:39'
+                      updated_by: 1462200195@gmail.com
+                      deleted_at: null
+                      deleted_by: null
+                    -
+                      penjualan_id: 3
+                      penjualan_no: PJ/2406-0003
+                      penjualan_pelanggan: 'Pelanggan Umum'
+                      penjualan_tanggal: '2024-06-22'
+                      penjualan_total: 35000
+                      penjualan_total_bayar: 40000
+                      penjualan_total_kembalian: 5000
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 12:21:16'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 15:27:03'
+                      updated_by: 1462200195@gmail.com
+                      deleted_at: null
+                      deleted_by: null
+                    -
+                      penjualan_id: 4
+                      penjualan_no: PJ/2406-0004
+                      penjualan_pelanggan: 'Pelanggan Umum'
+                      penjualan_tanggal: '2024-06-25'
+                      penjualan_total: 20000
+                      penjualan_total_bayar: 20000
+                      penjualan_total_kembalian: 0
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 12:45:26'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 15:27:24'
+                      updated_by: 1462200195@gmail.com
+                      deleted_at: null
+                      deleted_by: null
+                    -
+                      penjualan_id: 5
+                      penjualan_no: PJ/2406-0005
+                      penjualan_pelanggan: 'Pelanggan Umum ubah'
+                      penjualan_tanggal: '2024-06-28'
+                      penjualan_total: 820000
+                      penjualan_total_bayar: 1000000
+                      penjualan_total_kembalian: 180000
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 13:01:40'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 16:44:44'
+                      updated_by: 1462200195@gmail.com
+                      deleted_at: null
+                      deleted_by: null
+                    -
+                      penjualan_id: 6
+                      penjualan_no: PJ/2406-0006
+                      penjualan_pelanggan: 'Pelanggan Umum'
+                      penjualan_tanggal: '2024-06-28'
+                      penjualan_total: 15000
+                      penjualan_total_bayar: 20000
+                      penjualan_total_kembalian: 5000
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 13:08:57'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 13:08:57'
+                      updated_by: null
+                      deleted_at: null
+                      deleted_by: null
+                    -
+                      penjualan_id: 7
+                      penjualan_no: PJ/2406-0007
+                      penjualan_pelanggan: 'Pelanggan Umum'
+                      penjualan_tanggal: '2024-06-22'
+                      penjualan_total: 8999
+                      penjualan_total_bayar: 10000
+                      penjualan_total_kembalian: 1001
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 13:58:44'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 13:58:44'
+                      updated_by: null
+                      deleted_at: null
+                      deleted_by: null
+                    -
+                      penjualan_id: 8
+                      penjualan_no: PJ/2406-0008
+                      penjualan_pelanggan: 'Pelanggan Umum'
+                      penjualan_tanggal: '2024-06-25'
+                      penjualan_total: 7000
+                      penjualan_total_bayar: 10000
+                      penjualan_total_kembalian: 3000
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 14:00:25'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 14:00:25'
+                      updated_by: null
+                      deleted_at: null
+                      deleted_by: null
+                    -
+                      penjualan_id: 9
+                      penjualan_no: PJ/2406-0009
+                      penjualan_pelanggan: 'Pelanggan Umum'
+                      penjualan_tanggal: '2024-06-22'
+                      penjualan_total: 7000
+                      penjualan_total_bayar: 10000
+                      penjualan_total_kembalian: 3000
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 14:07:26'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 14:07:26'
+                      updated_by: null
+                      deleted_at: null
+                      deleted_by: null
+                    -
+                      penjualan_id: 10
+                      penjualan_no: PJ/2406-0010
+                      penjualan_pelanggan: 'Pelanggan Umum'
+                      penjualan_tanggal: '2024-06-21'
+                      penjualan_total: 120000
+                      penjualan_total_bayar: 130000
+                      penjualan_total_kembalian: 10000
+                      penjualan_cara_bayar: null
+                      created_at: '2024-06-25 14:10:45'
+                      created_by: 1462200195@gmail.com
+                      updated_at: '2024-06-25 14:10:45'
+                      updated_by: null
+                      deleted_at: null
+                      deleted_by: null
+                  paging:
+                    page: 1
+                    total_pages: 2
+                    records_per_page: 10
+                    total_records: 15
+                  request:
+                    start: 0
+                    limit: 10
+                    filter: null
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Data Berhasil Ditampilkan.'
+                  data:
+                    type: array
+                    example:
+                      -
+                        penjualan_id: 1
+                        penjualan_no: PJ/2406-0001
+                        penjualan_pelanggan: 'Pelanggan Umum'
+                        penjualan_tanggal: '2024-06-27'
+                        penjualan_total: 20000
+                        penjualan_total_bayar: 20000
+                        penjualan_total_kembalian: 0
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 09:53:54'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 17:46:12'
+                        updated_by: 1462200195@gmail.com
+                        deleted_at: null
+                        deleted_by: null
+                      -
+                        penjualan_id: 2
+                        penjualan_no: PJ/2406-0002
+                        penjualan_pelanggan: 'Pelanggan Umum'
+                        penjualan_tanggal: '2024-06-24'
+                        penjualan_total: 15000
+                        penjualan_total_bayar: 15000
+                        penjualan_total_kembalian: 0
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 09:54:11'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 17:46:39'
+                        updated_by: 1462200195@gmail.com
+                        deleted_at: null
+                        deleted_by: null
+                      -
+                        penjualan_id: 3
+                        penjualan_no: PJ/2406-0003
+                        penjualan_pelanggan: 'Pelanggan Umum'
+                        penjualan_tanggal: '2024-06-22'
+                        penjualan_total: 35000
+                        penjualan_total_bayar: 40000
+                        penjualan_total_kembalian: 5000
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 12:21:16'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 15:27:03'
+                        updated_by: 1462200195@gmail.com
+                        deleted_at: null
+                        deleted_by: null
+                      -
+                        penjualan_id: 4
+                        penjualan_no: PJ/2406-0004
+                        penjualan_pelanggan: 'Pelanggan Umum'
+                        penjualan_tanggal: '2024-06-25'
+                        penjualan_total: 20000
+                        penjualan_total_bayar: 20000
+                        penjualan_total_kembalian: 0
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 12:45:26'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 15:27:24'
+                        updated_by: 1462200195@gmail.com
+                        deleted_at: null
+                        deleted_by: null
+                      -
+                        penjualan_id: 5
+                        penjualan_no: PJ/2406-0005
+                        penjualan_pelanggan: 'Pelanggan Umum ubah'
+                        penjualan_tanggal: '2024-06-28'
+                        penjualan_total: 820000
+                        penjualan_total_bayar: 1000000
+                        penjualan_total_kembalian: 180000
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 13:01:40'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 16:44:44'
+                        updated_by: 1462200195@gmail.com
+                        deleted_at: null
+                        deleted_by: null
+                      -
+                        penjualan_id: 6
+                        penjualan_no: PJ/2406-0006
+                        penjualan_pelanggan: 'Pelanggan Umum'
+                        penjualan_tanggal: '2024-06-28'
+                        penjualan_total: 15000
+                        penjualan_total_bayar: 20000
+                        penjualan_total_kembalian: 5000
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 13:08:57'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 13:08:57'
+                        updated_by: null
+                        deleted_at: null
+                        deleted_by: null
+                      -
+                        penjualan_id: 7
+                        penjualan_no: PJ/2406-0007
+                        penjualan_pelanggan: 'Pelanggan Umum'
+                        penjualan_tanggal: '2024-06-22'
+                        penjualan_total: 8999
+                        penjualan_total_bayar: 10000
+                        penjualan_total_kembalian: 1001
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 13:58:44'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 13:58:44'
+                        updated_by: null
+                        deleted_at: null
+                        deleted_by: null
+                      -
+                        penjualan_id: 8
+                        penjualan_no: PJ/2406-0008
+                        penjualan_pelanggan: 'Pelanggan Umum'
+                        penjualan_tanggal: '2024-06-25'
+                        penjualan_total: 7000
+                        penjualan_total_bayar: 10000
+                        penjualan_total_kembalian: 3000
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 14:00:25'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 14:00:25'
+                        updated_by: null
+                        deleted_at: null
+                        deleted_by: null
+                      -
+                        penjualan_id: 9
+                        penjualan_no: PJ/2406-0009
+                        penjualan_pelanggan: 'Pelanggan Umum'
+                        penjualan_tanggal: '2024-06-22'
+                        penjualan_total: 7000
+                        penjualan_total_bayar: 10000
+                        penjualan_total_kembalian: 3000
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 14:07:26'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 14:07:26'
+                        updated_by: null
+                        deleted_at: null
+                        deleted_by: null
+                      -
+                        penjualan_id: 10
+                        penjualan_no: PJ/2406-0010
+                        penjualan_pelanggan: 'Pelanggan Umum'
+                        penjualan_tanggal: '2024-06-21'
+                        penjualan_total: 120000
+                        penjualan_total_bayar: 130000
+                        penjualan_total_kembalian: 10000
+                        penjualan_cara_bayar: null
+                        created_at: '2024-06-25 14:10:45'
+                        created_by: 1462200195@gmail.com
+                        updated_at: '2024-06-25 14:10:45'
+                        updated_by: null
+                        deleted_at: null
+                        deleted_by: null
+                    items:
+                      type: object
+                      properties:
+                        penjualan_id:
+                          type: integer
+                          example: 1
+                        penjualan_no:
+                          type: string
+                          example: PJ/2406-0001
+                        penjualan_pelanggan:
+                          type: string
+                          example: 'Pelanggan Umum'
+                        penjualan_tanggal:
+                          type: string
+                          example: '2024-06-27'
+                        penjualan_total:
+                          type: integer
+                          example: 20000
+                        penjualan_total_bayar:
+                          type: integer
+                          example: 20000
+                        penjualan_total_kembalian:
+                          type: integer
+                          example: 0
+                        penjualan_cara_bayar:
+                          type: string
+                          example: null
+                        created_at:
+                          type: string
+                          example: '2024-06-25 09:53:54'
+                        created_by:
+                          type: string
+                          example: 1462200195@gmail.com
+                        updated_at:
+                          type: string
+                          example: '2024-06-25 17:46:12'
+                        updated_by:
+                          type: string
+                          example: 1462200195@gmail.com
+                        deleted_at:
+                          type: string
+                          example: null
+                        deleted_by:
+                          type: string
+                          example: null
+                  paging:
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                        example: 1
+                      total_pages:
+                        type: integer
+                        example: 2
+                      records_per_page:
+                        type: integer
+                        example: 10
+                      total_records:
+                        type: integer
+                        example: 15
+                  request:
+                    type: object
+                    properties:
+                      start:
+                        type: integer
+                        example: 0
+                      limit:
+                        type: integer
+                        example: 10
+                      filter:
+                        type: string
+                        example: null
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Penjualan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                start:
+                  type: integer
+                  description: 'start data.'
+                  example: 0
+                limit:
+                  type: integer
+                  description: 'limit data.'
+                  example: 10
+                filter:
+                  type: string
+                  description: 'Text biasa bisa diisi bisa tidak.'
+                  example: null
+              required:
+                - start
+                - limit
+                - filter
+  '/api/penjualan/detail/{penjualan_id}':
+    get:
+      summary: 'Penjualan Detail'
+      operationId: penjualanDetail
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Penjualan
+    parameters:
+      -
+        in: path
+        name: penjualan_id
+        description: 'penjualan_id data dari api/penjualan list.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/penjualan/create:
+    post:
+      summary: 'Penjualan Create'
+      operationId: penjualanCreate
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Penjualan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                penjualan_pelanggan:
+                  type: string
+                  description: 'Text biasa.'
+                  example: null
+                penjualan_tanggal:
+                  type: date
+                  description: penjualan_tanggal
+                  example: '2024-06-14'
+                penjualan_total:
+                  type: integer
+                  description: ''
+                  example: 10000
+                penjualan_total_bayar:
+                  type: integer
+                  description: penjualan_total_bayar
+                  example: 10000
+                penjualan_cara_bayar:
+                  type: enum
+                  description: 'Contoh [Tunai, Kartu, Kredit, Transfer, skbdn]'
+                  example: Tunai
+                penjualan_total_kembalian:
+                  type: integer
+                  description: penjualan_total_bayar
+                  example: 10000
+                produk_list:
+                  type: array
+                  description: 'Detail produk'
+                  example:
+                    - []
+                  items:
+                    type: object
+                    properties:
+                      pjual_detail_id:
+                        type: integer
+                        description: '(Selalu null, flag create)'
+                        example: 0
+                      pjual_detail_produk_id:
+                        type: integer
+                        description: 'dari api/produk/list property produk_id'
+                        example: 1
+                      pjual_detail_qty:
+                        type: integer
+                        description: ''
+                        example: 1
+                      pjual_detail_harga:
+                        type: integer
+                        description: ''
+                        example: 1000
+                      pjual_detail_diskon:
+                        type: integer
+                        description: ''
+                        example: 1
+                      pjual_detail_diskon_rp:
+                        type: integer
+                        description: ''
+                        example: 1000
+                      pjual_diskon_subtotal:
+                        type: integer
+                        description: ''
+                        example: 1000
+                    required:
+                      - pjual_detail_produk_id
+                      - pjual_detail_qty
+                      - pjual_detail_harga
+                      - pjual_detail_diskon
+                      - pjual_detail_diskon_rp
+                      - pjual_diskon_subtotal
+              required:
+                - penjualan_pelanggan
+                - penjualan_tanggal
+                - penjualan_total
+                - penjualan_cara_bayar
+  /api/penjualan/update:
+    put:
+      summary: 'Penjualan Update'
+      operationId: penjualanUpdate
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Penjualan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                penjualan_ida:
+                  type: integer
+                  description: 'penjualan_ida data dari api/penjualan list.'
+                  example: 2
+                penjualan_id:
+                  type: integer
+                  description: 'Text biasa.'
+                  example: 1
+                penjualan_pelanggan:
+                  type: string
+                  description: 'Text biasa.'
+                  example: null
+                penjualan_tanggal:
+                  type: date
+                  description: penjualan_tanggal
+                  example: '2024-06-14'
+                penjualan_total:
+                  type: integer
+                  description: ''
+                  example: 10000
+                penjualan_total_bayar:
+                  type: integer
+                  description: penjualan_total_bayar
+                  example: 10000
+                penjualan_cara_bayar:
+                  type: enum
+                  description: 'Contoh [Tunai, Kartu, Kredit, Transfer, skbdn]'
+                  example: Tunai
+                penjualan_total_kembalian:
+                  type: integer
+                  description: penjualan_total_bayar
+                  example: 10000
+                produk_list:
+                  type: array
+                  description: 'Detail produk'
+                  example:
+                    - []
+                  items:
+                    type: object
+                    properties:
+                      pjual_detail_id:
+                        type: integer
+                        description: '(Selalu null, flag create)'
+                        example: 0
+                      pjual_detail_produk_id:
+                        type: integer
+                        description: 'dari api/produk/list property produk_id'
+                        example: 1
+                      pjual_detail_qty:
+                        type: integer
+                        description: ''
+                        example: 1
+                      pjual_detail_harga:
+                        type: integer
+                        description: ''
+                        example: 1000
+                      pjual_detail_diskon:
+                        type: integer
+                        description: ''
+                        example: 1
+                      pjual_detail_diskon_rp:
+                        type: integer
+                        description: ''
+                        example: 1000
+                      pjual_diskon_subtotal:
+                        type: integer
+                        description: ''
+                        example: 1000
+                    required:
+                      - pjual_detail_produk_id
+                      - pjual_detail_qty
+                      - pjual_detail_harga
+                      - pjual_detail_diskon
+                      - pjual_detail_diskon_rp
+                      - pjual_diskon_subtotal
+              required:
+                - penjualan_ida
+                - penjualan_id
+                - penjualan_pelanggan
+                - penjualan_tanggal
+                - penjualan_total
+                - penjualan_cara_bayar
+  '/api/penjualan/delete/{penjualan_id}':
+    delete:
+      summary: 'Penjualan Delete'
+      operationId: penjualanDelete
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Penjualan
+    parameters:
+      -
+        in: path
+        name: penjualan_id
+        description: 'penjualan_id data dari api/penjualan list.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/penjualan/cetak-list-pdf:
+    get:
+      summary: ''
+      operationId: getApiPenjualanCetakListPdf
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Penjualan
+  /api/penjualan/cetak-list-xls:
+    get:
+      summary: ''
+      operationId: getApiPenjualanCetakListXls
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Penjualan
+  '/api/penjualan/cetak-faktur-pdf/{penjualan_id}':
+    get:
+      summary: 'Penjualan Cetak Faktur'
+      operationId: penjualanCetakFaktur
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Penjualan
+    parameters:
+      -
+        in: path
+        name: penjualan_id
+        description: 'penjualan_id data dari api/penjualan list.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/produk/list:
+    post:
+      summary: 'Produk List'
+      operationId: produkList
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Produk
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                start:
+                  type: integer
+                  description: 'start data.'
+                  example: 0
+                limit:
+                  type: integer
+                  description: 'limit data.'
+                  example: 10
+                filter:
+                  type: string
+                  description: 'Text biasa bisa diisi bisa tidak.'
+                  example: null
+              required:
+                - start
+                - limit
+                - filter
+  '/api/produk/detail/{prodi_id}':
+    get:
+      summary: 'Produk Detail'
+      operationId: produkDetail
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Produk
+    parameters:
+      -
+        in: path
+        name: prodi_id
+        description: 'The ID of the prodi.'
+        example: inventore
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: kategori_id
+        description: 'kategori_id data dari api/event list.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/produk/create:
+    post:
+      summary: 'Produk Create'
+      operationId: produkCreate
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Produk
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                produk_sku:
+                  type: string
+                  description: produk_sku.
+                  example: null
+                produk_nama:
+                  type: string
+                  description: produk_nama.
+                  example: null
+  /api/produk/update:
+    put:
+      summary: 'Produk Update'
+      operationId: produkUpdate
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - Produk
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                kategori_id:
+                  type: string
+                  description: kategori_id.
+                  example: '1'
+                produk_sku:
+                  type: string
+                  description: produk_sku.
+                  example: null
+                produk_nama:
+                  type: string
+                  description: produk_nama.
+                  example: null
+              required:
+                - kategori_id
+  '/api/produk/delete/{produk_id}':
+    delete:
+      summary: ''
+      operationId: deleteApiProdukDeleteProduk_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Produk
+    parameters:
+      -
+        in: path
+        name: produk_id
+        description: 'The ID of the produk.'
+        example: et
+        required: true
+        schema:
+          type: string
+  /api/produk/cetak-list-pdf:
+    get:
+      summary: ''
+      operationId: getApiProdukCetakListPdf
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Produk
+  /api/produk/cetak-list-xls:
+    get:
+      summary: ''
+      operationId: getApiProdukCetakListXls
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Produk
+  /api/produkKategori/list:
+    post:
+      summary: 'Produk Kategori List'
+      operationId: produkKategoriList
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - 'Produk Kategori'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                start:
+                  type: integer
+                  description: 'start data.'
+                  example: 0
+                limit:
+                  type: integer
+                  description: 'limit data.'
+                  example: 10
+                filter:
+                  type: string
+                  description: 'Text biasa bisa diisi bisa tidak.'
+                  example: null
+              required:
+                - start
+                - limit
+                - filter
+  '/api/produkKategori/detail/{kategori_id}':
+    get:
+      summary: 'Produk Kategori Detail'
+      operationId: produkKategoriDetail
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - 'Produk Kategori'
+    parameters:
+      -
+        in: path
+        name: kategori_id
+        description: 'kategori_id data dari api/produk_kategori list.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/produkKategori/create:
+    post:
+      summary: 'Produk Kategori Create'
+      operationId: produkKategoriCreate
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - 'Produk Kategori'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ProdukKategori_kode:
+                  type: string
+                  description: ProdukKategori_kode.
+                  example: null
+                ProdukKategori_nama:
+                  type: string
+                  description: ProdukKategori_nama.
+                  example: null
+  /api/produkKategori/update:
+    put:
+      summary: 'Produk Kategori Update'
+      operationId: produkKategoriUpdate
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 200
+                    message: 'Request Berhasil.'
+                  data: {  }
+                  request:
+                    xxx_id: 1
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 200
+                      message:
+                        type: string
+                        example: 'Request Berhasil.'
+                  data:
+                    type: object
+                    properties: {  }
+                  request:
+                    type: object
+                    properties:
+                      xxx_id:
+                        type: integer
+                        example: 1
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - 'Produk Kategori'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                kategori_id:
+                  type: string
+                  description: kategori_id.
+                  example: '1'
+                ProdukKategori_kode:
+                  type: string
+                  description: ProdukKategori_kode.
+                  example: null
+                ProdukKategori_nama:
+                  type: string
+                  description: ProdukKategori_nama.
+                  example: null
+              required:
+                - kategori_id
+  '/api/produkKategori/delete/{kategori_id}':
+    delete:
+      summary: ''
+      operationId: deleteApiProdukKategoriDeleteKategori_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Produk Kategori'
+    parameters:
+      -
+        in: path
+        name: kategori_id
+        description: 'The ID of the kategori.'
+        example: eveniet
+        required: true
+        schema:
+          type: string
+  /api/produkKategori/cetak-list-pdf:
+    get:
+      summary: 'Produk Kategori Cetak PDF List'
+      operationId: produkKategoriCetakPDFList
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  url: storage/xxx/xxxxx/xxx.pdf
+                properties:
+                  url:
+                    type: string
+                    example: storage/xxx/xxxxx/xxx.pdf
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - 'Produk Kategori'
+  /api/produkKategori/cetak-list-xls:
+    get:
+      summary: 'Produk Kategori Cetak Excel List'
+      operationId: produkKategoriCetakExcelList
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  url: storage/xxx/xxxxx/xxx.pdf
+                properties:
+                  url:
+                    type: string
+                    example: storage/xxx/xxxxx/xxx.pdf
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status:
+                    code: 404
+                    message: 'Data Tidak Ditemukan.'
+                  data: null
+                  request:
+                    param_1: 100
+                    param_2: example_value
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                        example: 404
+                      message:
+                        type: string
+                        example: 'Data Tidak Ditemukan.'
+                  data:
+                    type: string
+                    example: null
+                  request:
+                    type: object
+                    properties:
+                      param_1:
+                        type: integer
+                        example: 100
+                      param_2:
+                        type: string
+                        example: example_value
+      tags:
+        - 'Produk Kategori'
+tags:
+  -
+    name: Authentication
+    description: ''
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: Penjualan
+    description: ''
+  -
+    name: Produk
+    description: ''
+  -
+    name: 'Produk Kategori'
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.'
+security:
+  -
+    default: []

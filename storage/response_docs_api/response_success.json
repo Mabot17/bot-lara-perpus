@@ -1,0 +1,10 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Request Berhasil."
+    },
+    "data": {},
+    "request": {
+        "xxx_id": 1
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "status": {
+        "code": 404,
+        "message": "Data Tidak Ditemukan."
+    },
+    "data": null,
+    "request": {
+        "param_1": 100,
+        "param_2": "example_value"
+    }
+}

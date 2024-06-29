@@ -1,0 +1,297 @@
+name: Authentication
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Register
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: username.
+        required: true
+        example: '1462200195'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      email:
+        name: email
+        description: email.
+        required: true
+        example: 1462200195@gmail.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      password:
+        name: password
+        description: password.
+        required: true
+        example: '12345678'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      username: '1462200195'
+      email: 1462200195@gmail.com
+      password: '12345678'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "status": {
+                  "code": 200,
+                  "message": "Request Berhasil."
+              },
+              "data": {
+                  "users": {
+                      "id": 6,
+                      "id_mahasiswa": 1,
+                      "id_dosen": 0,
+                      "username": "1462200195",
+                      "email": "1462200195@gmail.com",
+                      "email_verified_at": null,
+                      "created_at": "2024-04-20T04:58:25.000000Z",
+                      "updated_at": "2024-04-20T04:58:25.000000Z"
+                  },
+                  "token": "19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6",
+                  "mahasiswa": {
+                      "mhs_id": 1,
+                      "mhs_email": "0",
+                      "mhs_prodi_id": 1,
+                      "mhs_nbi": "1462200195",
+                      "mhs_foto_path": null,
+                      "mhs_nama": "Abdul Rohman Masrifan",
+                      "mhs_alamat": "Jombang",
+                      "mhs_no_hp": null,
+                      "mhs_jenis_kelamin": "L",
+                      "mhs_tgl_lahir": "2021-10-13",
+                      "mhs_pembimbing_id": 1,
+                      "created_at": null,
+                      "created_by": null,
+                      "updated_at": "2024-03-28T12:37:13.000000Z",
+                      "updated_by": null,
+                      "deleted_at": "2024-03-28 12:37:13",
+                      "deleted_by": null
+                  }
+              },
+              "params": {
+                  "attributes": {},
+                  "request": {},
+                  "query": {},
+                  "server": {},
+                  "files": {},
+                  "cookies": {},
+                  "headers": {}
+              },
+              "request": {
+                  "username": "1462200195",
+                  "password": "12345678"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "status": {
+                  "code": 404,
+                  "message": "Username atau Password yang anda masukkan salah."
+              },
+              "data": null,
+              "request": {
+                  "username": "1462200195",
+                  "password": "112345678"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "status": {
+                  "code": 500,
+                  "message": "Request Tidak Valid, Silahkan hubungi Administrator."
+              },
+              "data": {},
+              "error": "string",
+              "request": {
+                  "param_1": 100,
+                  "param_2": "example_value"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/login
+    metadata:
+      groupName: Authentication
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Login
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: username.
+        required: true
+        example: '1462200195'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+      password:
+        name: password
+        description: password.
+        required: true
+        example: '12345678'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        custom: []
+    cleanBodyParameters:
+      username: '1462200195'
+      password: '12345678'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "status": {
+                  "code": 200,
+                  "message": "Request Berhasil."
+              },
+              "data": {
+                  "users": {
+                      "id": 6,
+                      "id_mahasiswa": 1,
+                      "id_dosen": 0,
+                      "username": "1462200195",
+                      "email": "1462200195@gmail.com",
+                      "email_verified_at": null,
+                      "created_at": "2024-04-20T04:58:25.000000Z",
+                      "updated_at": "2024-04-20T04:58:25.000000Z"
+                  },
+                  "token": "19|Xgbm28zB8HV1te9hkbqKcBfNoJwqBM5bPRlr31qoc3000ca6",
+                  "mahasiswa": {
+                      "mhs_id": 1,
+                      "mhs_email": "0",
+                      "mhs_prodi_id": 1,
+                      "mhs_nbi": "1462200195",
+                      "mhs_foto_path": null,
+                      "mhs_nama": "Abdul Rohman Masrifan",
+                      "mhs_alamat": "Jombang",
+                      "mhs_no_hp": null,
+                      "mhs_jenis_kelamin": "L",
+                      "mhs_tgl_lahir": "2021-10-13",
+                      "mhs_pembimbing_id": 1,
+                      "created_at": null,
+                      "created_by": null,
+                      "updated_at": "2024-03-28T12:37:13.000000Z",
+                      "updated_by": null,
+                      "deleted_at": "2024-03-28 12:37:13",
+                      "deleted_by": null
+                  }
+              },
+              "params": {
+                  "attributes": {},
+                  "request": {},
+                  "query": {},
+                  "server": {},
+                  "files": {},
+                  "cookies": {},
+                  "headers": {}
+              },
+              "request": {
+                  "username": "1462200195",
+                  "password": "12345678"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "status": {
+                  "code": 404,
+                  "message": "Username atau Password yang anda masukkan salah."
+              },
+              "data": null,
+              "request": {
+                  "username": "1462200195",
+                  "password": "112345678"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 500
+        content: |
+          {
+              "status": {
+                  "code": 500,
+                  "message": "Request Tidak Valid, Silahkan hubungi Administrator."
+              },
+              "data": {},
+              "error": "string",
+              "request": {
+                  "param_1": 100,
+                  "param_2": "example_value"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

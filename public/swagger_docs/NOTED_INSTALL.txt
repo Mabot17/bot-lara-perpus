@@ -1,0 +1,9 @@
+SCRIBE && SWAGGER
+1. install `https://scribe.knuckles.wtf/laravel` >> created file openapi.yaml
+2. buka `https://editor.swagger.io/` atau download template html swagger dahulu
+	- masukkan ke dalam `public/swagger_docs`
+3. masukkan ke dalam `public/swagger_docs`
+4. jalankan `php artisan scribe:generate` >> untuk generate file `public/docs/openapi.yaml`
+5. jalankan `php artisan serve`
+6. kemudian buka `public/swagger_docs/index.html` >> sesuaikan file yaml
+7. jalankan di browser
