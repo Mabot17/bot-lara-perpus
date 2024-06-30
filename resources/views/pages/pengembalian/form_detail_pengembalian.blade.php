@@ -1,4 +1,4 @@
-<div class="modal fade bd-example-modal-lg" role="dialog" aria-modal="true" id="detail-peminjaman-modal">
+<div class="modal fade bd-example-modal-lg" role="dialog" aria-modal="true" id="detail-pengembalian-modal">
     <div class="modal-dialog  modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header d-block text-center pb-3 border-bttom">

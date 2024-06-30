@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nota Peminjaman</title>
+    <title>Nota Pengembalian</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -104,18 +104,41 @@
         </table>
     </div>
     <hr>
-    <table class="header-info">
+    <h4 style="text-align: center">Nota Pengembalian Buku</h4>
+    <table width="100%">
         <tr>
-            <td width="60px"><strong>No Nota</strong></td>
-            <td>: {{ $result->peminjaman_no }}</td>
-        </tr>
-        <tr>
-            <td><strong>Tanggal</strong></td>
-            <td>: {{ date('d-m-Y H:i:s', strtotime($result->peminjaman_tanggal)) }}</td>
-        </tr>
-        <tr>
-            <td><strong>Pelanggan</strong></td>
-            <td>: {{ $result->peminjaman_pelanggan }}</td>
+            <td style="vertical-align: top;">
+                <table class="header-info">
+                    <tr>
+                        <td width="60px"><strong>No Nota</strong></td>
+                        <td>: {{ $result->pengembalian_no }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pelanggan</strong></td>
+                        <td>: {{ $result->peminjaman_pelanggan }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tanggal Peminjaman</strong></td>
+                        <td>: {{ date('d-m-Y', strtotime($result->pengembalian_tanggal_pinjam)) }}</td>
+                    </tr>
+                </table>
+            </td>
+            <td style="vertical-align: top;">
+                <table class="header-info">
+                    <tr>
+                        <td><strong>Tanggal Est Kembali</strong></td>
+                        <td>: {{ date('d-m-Y', strtotime($result->pengembalian_tanggal_est_kembali)) }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tanggal Pengembalian</strong></td>
+                        <td>: {{ date('d-m-Y', strtotime($result->pengembalian_tanggal)) }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Telat Hari</strong></td>
+                        <td>: {{ $result->pengembalian_telat_hari }}</td>
+                    </tr>
+                </table>
+            </td>
         </tr>
     </table>
     <hr>
@@ -123,7 +146,7 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Daftar Buku</th>
+                <th>Nama Buku</th>
                 <th>Denda</th>
                 <th>Diskon (%)</th>
                 <th>Diskon (Rp)</th>
@@ -135,29 +158,28 @@
             @foreach($result->dataBukuList as $index => $buku)
                 <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ $buku->pinjam_detail_buku_nama }}</td>
-                    <td>{{ number_format($buku->pinjam_detail_denda, 0, ',', '.') }}</td>
-                    <td>{{ $buku->pinjam_detail_diskon }}</td>
-                    <td>{{ number_format($buku->pinjam_detail_diskon_rp, 0, ',', '.') }}</td>
-                    <td>{{ $buku->pinjam_detail_qty }}</td>
-                    <td>{{ number_format($buku->pinjam_diskon_subtotal, 0, ',', '.') }}</td>
+                    <td>{{ $buku->pkembali_detail_buku_nama }}</td>
+                    <td>{{ number_format($buku->pkembali_detail_denda, 0, ',', '.') }}</td>
+                    <td>{{ $buku->pkembali_detail_diskon }}</td>
+                    <td>{{ number_format($buku->pkembali_detail_diskon_rp, 0, ',', '.') }}</td>
+                    <td>{{ $buku->pkembali_detail_qty }}</td>
+                    <td>{{ number_format($buku->pkembali_diskon_subtotal, 0, ',', '.') }}</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-    <hr>
     <table class="total-info">
         <tr>
             <td><strong>Total (Rp):</strong></td>
-            <td class="right-align">{{ number_format($result->peminjaman_total, 0, ',', '.') }}</td>
+            <td class="right-align">{{ number_format($result->pengembalian_total_denda, 0, ',', '.') }}</td>
         </tr>
         <tr>
             <td><strong>Bayar (Rp):</strong></td>
-            <td class="right-align">{{ number_format($result->peminjaman_total_bayar, 0, ',', '.') }}</td>
+            <td class="right-align">{{ number_format($result->pengembalian_total_bayar, 0, ',', '.') }}</td>
         </tr>
         <tr>
             <td><strong>Kembali (Rp):</strong></td>
-            <td class="right-align">{{ number_format($result->peminjaman_total_kembalian, 0, ',', '.') }}</td>
+            <td class="right-align">{{ number_format($result->pengembalian_total_kembalian, 0, ',', '.') }}</td>
         </tr>
     </table>
     <hr>

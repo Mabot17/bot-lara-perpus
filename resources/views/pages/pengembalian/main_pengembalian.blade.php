@@ -1,12 +1,12 @@
 @extends('layout.main_layout')
 
 @section('content')
-@include('pages.peminjaman.form_detail_peminjaman')
+@include('pages.pengembalian.form_detail_pengembalian')
 <div class="col-12">
     <div class="col-md-12">
         <div class="card shadow d-flex">
             <div class="card-body d-flex justify-content-between align-items-center">
-                <h2 class="mb-2 page-title">Data Peminjaman</h2>
+                <h2 class="mb-2 page-title">Data Pengembalian</h2>
                 <div class="d-flex align-items-center">
                     <!-- Tombol Export -->
                     <div class="dropdown" style="margin-right: 10px">
@@ -14,13 +14,13 @@
                             Cetak
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#" onclick="peminjamanCetakPDF('xls-list')">Cetak Excel</a>
-                            <a class="dropdown-item" href="#" onclick="peminjamanCetakPDF('pdf-list')">Cetak PDF</a>
+                            <a class="dropdown-item" href="#" onclick="pengembalianCetakPDF('xls-list')">Cetak Excel</a>
+                            <a class="dropdown-item" href="#" onclick="pengembalianCetakPDF('pdf-list')">Cetak PDF</a>
                         </div>
                     </div>
 
                     <!-- Tombol Tambah Data -->
-                    <a class="btn btn-primary ms-2" href="{{ route('peminjaman.tambah') }}">
+                    <a class="btn btn-primary ms-2" href="{{ route('pengembalian.tambah') }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                             <path d="M8 0a1.5 1.5 0 0 1 1.5 1.5V6h4.5a1.5 1.5 0 1 1 0 3H9.5v4.5a1.5 1.5 0 1 1-3 0V9.5H1.5a1.5 1.5 0 1 1 0-3h4.5V1.5A1.5 1.5 0 0 1 8 0z"/>
                         </svg>
@@ -35,10 +35,10 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <!-- table -->
-                        <table class="table datatables" id="dataTable-peminjaman">
+                        <table class="table datatables" id="dataTable-pengembalian">
                             <thead>
                                 <tr>
-                                    <th>No. Peminjaman</th>
+                                    <th>No. Pengembalian</th>
                                     <th>Pelanggan</th>
                                     <th>Tanggal</th>
                                     <th>Subtotal</th>
@@ -62,17 +62,17 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="hapusModalLabel">Hapus Buku Peminjaman</h5>
+                <h5 class="modal-title" id="hapusModalLabel">Hapus Buku Pengembalian</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body" id="modal-body-hapus">
-                Apakah Anda yakin ingin menghapus buku peminjaman ini?
+                Apakah Anda yakin ingin menghapus buku pengembalian ini?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-danger" id="confirmDeletePeminjaman">Hapus</button>
+                <button type="button" class="btn btn-danger" id="confirmDeletePengembalian">Hapus</button>
             </div>
         </div>
     </div>
@@ -96,7 +96,7 @@
 
         // Menggunakan jQuery untuk memuat data dari API
         $.ajax({
-            url: '/api/peminjaman/list', // URL endpoint POST
+            url: '/api/pengembalian/list', // URL endpoint POST
             method: 'POST', // Method POST
             headers: {
                 'Authorization': 'Bearer ' + token,
@@ -110,7 +110,7 @@
             }),
             success: function(response) {
                 // Mengisi data ke dalam tabel DataTables
-                $('#dataTable-peminjaman').DataTable({
+                $('#dataTable-pengembalian').DataTable({
                     data: response.data, // Menggunakan data dari response API
                     lengthMenu: [
                         [5, 10, 15, 20, -1], // Pilihan jumlah item per halaman
@@ -118,20 +118,20 @@
                     ],
                     pageLength: 5,
                     columns: [
-                        { data: 'peminjaman_no' },
+                        { data: 'pengembalian_no' },
                         { data: 'peminjaman_pelanggan' },
-                        { data: 'peminjaman_tanggal' },
-                        { data: 'peminjaman_total',
+                        { data: 'pengembalian_tanggal' },
+                        { data: 'pengembalian_total_denda',
                             render: function(data, type, row) {
                                 return '<div style="text-align: right;">' + formatCurrency(data) + '</div>';
                             }
                         },
-                        { data: 'peminjaman_total_bayar',
+                        { data: 'pengembalian_total_bayar',
                             render: function(data, type, row) {
                                 return '<div style="text-align: right;">' + formatCurrency(data) + '</div>';
                             }
                         },
-                        { data: 'peminjaman_total_kembalian',
+                        { data: 'pengembalian_total_kembalian',
                             render: function(data, type, row) {
                                 return '<div style="text-align: right;">' + formatCurrency(data) + '</div>';
                             }
@@ -139,12 +139,12 @@
                         {
                             // Kolom aksi
                             render: function(data, type, full, meta) {
-                                var printUrl = `/api/peminjaman/cetak-faktur-pdf/` + full.peminjaman_id;
-                                var editUrl = "{{ url('/peminjaman/ubah') }}/" + full.peminjaman_id;
+                                var printUrl = `/api/pengembalian/cetak-faktur-pdf/` + full.pengembalian_id;
+                                var editUrl = "{{ url('/pengembalian/ubah') }}/" + full.pengembalian_id;
                                 return `
-                                    <a href="#" onclick="prinFakturPeminjaman('${token}', '${printUrl}')" class="btn btn-sm btn-success me-2"><i class="fe fe-printer"></i></a>
+                                    <a href="#" onclick="prinFakturPengembalian('${token}', '${printUrl}')" class="btn btn-sm btn-success me-2"><i class="fe fe-printer"></i></a>
                                     <a href="${editUrl}" class="btn btn-sm btn-info me-2"><i class="fe fe-edit"></i></a>
-                                    <button type="button" class="btn btn-sm btn-danger" onclick="konfirmasiHapusPeminjaman('${token}', '${full.peminjaman_id}', '${full.peminjaman_no}', '${full.peminjaman_pelanggan}')"><i class="fe fe-trash-2"></i></button>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="konfirmasiHapusPengembalian('${token}', '${full.pengembalian_id}', '${full.pengembalian_no}', '${full.pengembalian_pelanggan}')"><i class="fe fe-trash-2"></i></button>
                                 `;
                             }
                         }
@@ -157,18 +157,18 @@
         });
     });
 
-    function konfirmasiHapusPeminjaman(token, peminjaman_id, peminjaman_no, peminjaman_pelanggan) {
-        // Memasukkan data buku peminjaman ke dalam modal body
+    function konfirmasiHapusPengembalian(token, pengembalian_id, pengembalian_no, pengembalian_pelanggan) {
+        // Memasukkan data buku pengembalian ke dalam modal body
         var modalBody = `
-            <b>Anda yakin ingin menghapus buku peminjaman dengan:</b>
+            <b>Anda yakin ingin menghapus buku pengembalian dengan:</b>
             <table class="ml-3">
                 <tr>
                     <td><b>Kode</b></td>
-                    <td><b>: ${peminjaman_no}</b></td>
+                    <td><b>: ${pengembalian_no}</b></td>
                 </tr>
                 <tr>
                     <td><b>Nama</b></td>
-                    <td><b>: ${peminjaman_pelanggan}</b></td>
+                    <td><b>: ${pengembalian_pelanggan}</b></td>
                 </tr>
             </table>
             <br>
@@ -179,9 +179,9 @@
         $('#modal-body-hapus').html(modalBody);
         $('#hapusModal').modal('show');
         // Mengatur action untuk tombol hapus
-        $('#confirmDeletePeminjaman').on('click', function() {
+        $('#confirmDeletePengembalian').on('click', function() {
             $.ajax({
-                url: `/api/peminjaman/delete/${peminjaman_id}`, // Sesuaikan dengan endpoint delete
+                url: `/api/pengembalian/delete/${pengembalian_id}`, // Sesuaikan dengan endpoint delete
                 method: 'DELETE',
                 headers: {
                     'Authorization': 'Bearer ' + token
@@ -192,13 +192,13 @@
                 },
                 error: function(xhr, status, error) {
                     console.error('Error deleting data:', error);
-                    alert('Terjadi kesalahan saat menghapus buku peminjaman.');
+                    alert('Terjadi kesalahan saat menghapus buku pengembalian.');
                 }
             });
         });
     }
 
-    function prinFakturPeminjaman(token, printUrl) {
+    function prinFakturPengembalian(token, printUrl) {
         // Mengatur action untuk tombol hapus
         $.ajax({
             url: printUrl, // Sesuaikan dengan endpoint delete
@@ -211,20 +211,20 @@
                 window.open(response.url, '_blank');
             },
             error: function(xhr, status, error) {
-                console.error('Error deleting data:', error);
-                alert('Terjadi kesalahan saat menghapus buku peminjaman.');
+                console.error('Error print data:', error);
+                alert('Terjadi kesalahan saat mencetak buku pengembalian.');
             }
         });
     }
 
-    function peminjamanCetakPDF(type) {
+    function pengembalianCetakPDF(type) {
         const token = localStorage.getItem('token');
 
         let api_url = null;
         if (type == 'xls-list') {
-            api_url = "/api/peminjaman/cetak-list-xls";
+            api_url = "/api/pengembalian/cetak-list-xls";
         }else{
-            api_url = "/api/peminjaman/cetak-list-pdf";
+            api_url = "/api/pengembalian/cetak-list-pdf";
         }
 
         $.ajax({
@@ -243,7 +243,7 @@
             },
             error: function(xhr, status, error) {
                 console.error('Error:', error);
-                alert('Terjadi kesalahan saat mencetak buku peminjaman.');
+                alert('Terjadi kesalahan saat mencetak buku pengembalian.');
             }
         });
     }

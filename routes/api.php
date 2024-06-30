@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PeminjamanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\BukuKategoriController;
+use App\Http\Controllers\PengembalianController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login'])->name('login');
@@ -50,6 +51,22 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/cetak-list-pdf/', [PeminjamanController::class, 'cetakListPeminjamanPDF']);
         Route::get('/cetak-list-xls/', [PeminjamanController::class, 'cetakListPeminjamanExcel']);
         Route::get('/cetak-faktur-pdf/{peminjaman_id}', [PeminjamanController::class, 'cetakFakturPDF']);
+    });
+
+    Route::prefix('/pengembalian')->group(function () {
+        // Fungsi load data
+        Route::post('/pinjaman_list', [PengembalianController::class, 'pinjamanList']);
+        Route::post('/buku_by_pinjaman_list', [PengembalianController::class, 'bukuByPinjamanIdList']);
+
+        // Fungsi core
+        Route::post('/list', [PengembalianController::class, 'pengembalianList']);
+        Route::get('/detail/{pengembalian_id}', [PengembalianController::class, 'pengembalianDataDetail']);
+        Route::post('/create', [PengembalianController::class, 'pengembalianCreate']);
+        Route::put('/update', [PengembalianController::class, 'pengembalianUpdate']);
+        Route::delete('/delete/{pengembalian_id}', [PengembalianController::class, 'pengembalianDelete']);
+        Route::get('/cetak-list-pdf/', [PengembalianController::class, 'cetakListPengembalianPDF']);
+        Route::get('/cetak-list-xls/', [PengembalianController::class, 'cetakListPengembalianExcel']);
+        Route::get('/cetak-faktur-pdf/{pengembalian_id}', [PengembalianController::class, 'cetakFakturPDF']);
     });
 
 });

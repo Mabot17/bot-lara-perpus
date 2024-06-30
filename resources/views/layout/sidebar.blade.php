@@ -47,8 +47,8 @@
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link {{ Request::segment(1) === 'peminjaman' ? 'active' : '' }}" href="/peminjaman">
-                    <i class="fe fe-archive fe-16"></i>
+                <a class="nav-link {{ Request::segment(1) === 'pengembalian' ? 'active' : '' }}" href="/pengembalian">
+                    <i class="fe fe-check-square fe-16"></i>
                     <span class="ml-3 item-text">Pengembalian</span>
                 </a>
             </li>

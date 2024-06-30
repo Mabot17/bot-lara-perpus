@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\PeminjamanController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\BukuKategoriController;
+use App\Http\Controllers\PengembalianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +45,11 @@ Route::prefix('/peminjaman')->group(function () {
     Route::get('/', [PeminjamanController::class, 'index'])->name('peminjaman');
     Route::get('/tambah', [PeminjamanController::class, 'formTambah'])->name('peminjaman.tambah');
     Route::get('/ubah/{kategori_id}', [PeminjamanController::class, 'formUbah'])->name('peminjaman.ubah');
+});
+
+Route::prefix('/pengembalian')->group(function () {
+    // Route API Handle form buku
+    Route::get('/', [PengembalianController::class, 'index'])->name('pengembalian');
+    Route::get('/tambah', [PengembalianController::class, 'formTambah'])->name('pengembalian.tambah');
+    Route::get('/ubah/{kategori_id}', [PengembalianController::class, 'formUbah'])->name('pengembalian.ubah');
 });

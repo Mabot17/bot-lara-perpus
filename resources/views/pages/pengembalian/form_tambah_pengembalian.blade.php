@@ -5,37 +5,63 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <div class="d-flex flex-wrap align-items-center justify-content-between breadcrumb-content">
-                        <h5>Tambah Transaksi Peminjaman</h5>
+                        <h5>Tambah Transaksi Pengembalian</h5>
                         <div class="d-flex flex-wrap align-items-center">
                             @csrf
-                            <a href="{{ route('peminjaman') }}" class="btn btn-warning"><i class="fe fe-skip-back fe-16 mr-1"></i>Kembali</a>
+                            <a href="{{ route('pengembalian') }}" class="btn btn-warning"><i class="fe fe-skip-back fe-16 mr-1"></i>Kembali</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card shadow mb-4">
                 <div class="card-body">
-                    <form id="createForm" action="{{ url('/api/peminjaman/create') }}" method="POST">
+                    <form id="createForm" action="{{ url('/api/pengembalian/create') }}" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
-                                    <label for="peminjamanKode">No. Peminjaman</label>
-                                    <input type="text" id="peminjamanKode" name="peminjaman_no" placeholder="(Otomatis)" class="form-control" readonly>
+                                    <label for="PeminjamanSelect">No. Peminjaman</label>
+                                    <select class="form-control" id="PeminjamanSelect" required></select>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
-                                    <label for="peminjamanTanggal">Tanggal</label>
-                                    <input type="date" id="peminjamanTanggal" name="peminjaman_tanggal" class="form-control">
+                                    <label for="pengembalianKode">No. Pengembalian</label>
+                                    <input type="text" id="pengembalianKode" name="pengembalian_no" placeholder="(Otomatis)" class="form-control" readonly>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
-                                    <label for="peminjamanNama">Pelanggan</label>
-                                    <input type="text" id="peminjamanNama" name="peminjaman_pelanggan" class="form-control" value="Pelanggan Umum">
+                                    <label for="pengembalianPinjamTanggal">Tanggal Pinjam</label>
+                                    <input type="date" id="pengembalianPinjamTanggal" name="pengembalian_tanggal_pinjam" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label for="pengembalianPinjamTanggalEstKembali">Tanggal Est Kembali</label>
+                                    <input type="date" id="pengembalianPinjamTanggalEstKembali" name="pengembalian_tanggal_est_kembali" class="form-control" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group mb-3">
+                                    <label for="pengembalianNama">Pelanggan</label>
+                                    <input type="text" id="pengembalianNama" name="pengembalian_pelanggan" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label for="pengembalianTanggal">Tanggal Kembali</label>
+                                    <input type="date" id="pengembalianTanggal" name="pengembalian_tanggal" class="form-control" onchange="calculateLateDays()">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label for="pengembalianTelatHari" class="me-2 mb-0">Telat Hari</label>
+                                    <input type="text" id="pengembalianTelatHari" name="pengembalian_telat_hari" class="form-control" readonly>
                                 </div>
                             </div>
                         </div>
@@ -45,11 +71,11 @@
             <div class="card mb-3">
                 <div class="card-body">
                     <div class="d-flex flex-wrap align-items-center justify-content-between breadcrumb-content">
-                        <h5>Buku Peminjaman</h5>
+                        <h5>Buku Pengembalian</h5>
                         <div class="d-flex flex-wrap align-items-center">
-                            <label for="peminjamanSKU" class="me-2 mb-0">Scan SKU : </label>
-                            <input type="text" id="peminjamanSKU" name="peminjamanSku" class="form-control mr-3" style="width: auto;">
-                            <button type="button" class="btn mb-2 btn-primary d-flex flex-wrap align-items-left fe fe-plus-circle" data-toggle="modal" data-target="#insertBukuModal"></button>
+                            <label for="pengembalianSKU" class="me-2 mb-0">Scan SKU : </label>
+                            <input type="text" id="pengembalianSKU" name="pengembalianSku" class="form-control mr-3" style="width: auto;">
+                            <button id="insertBukuButton" type="button" class="btn mb-2 btn-primary d-flex flex-wrap align-items-left fe fe-plus-circle" data-toggle="modal" data-target="#insertBukuModal"></button>
                         </div>
                         <div class="col-md-12">
                             <hr>
@@ -78,7 +104,7 @@
                                 <div class="col-sm-3">
                                     <div class="form-group mb-3">
                                         <label for="caraBayar" class="me-2 mb-0">Cara Bayar</label>
-                                        <select id="caraBayar" name="peminjaman_cara_bayar" class="form-control" required>
+                                        <select id="caraBayar" name="pengembalian_cara_bayar" class="form-control" required>
                                             <option value="Tunai">Tunai</option>
                                             <option value="Kartu">Kartu</option>
                                             <option value="Transfer">Transfer</option>
@@ -87,20 +113,20 @@
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="form-group mb-3">
-                                        <label for="peminjamanTotalBayar" class="me-2 mb-0">Jumlah Bayar</label>
-                                        <input type="text" id="peminjamanTotalBayar" name="peminjaman_total_bayar" class="form-control">
+                                        <label for="pengembalianTotalBayar" class="me-2 mb-0">Jumlah Bayar</label>
+                                        <input type="text" id="pengembalianTotalBayar" name="pengembalian_total_bayar" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="form-group mb-3">
-                                        <label for="peminjamanTotal" class="me-2 mb-0">Total</label>
-                                        <input type="text" id="peminjamanTotal" name="peminjaman_total" class="form-control"readonly>
+                                        <label for="pengembalianTotal" class="me-2 mb-0">Total</label>
+                                        <input type="text" id="pengembalianTotal" name="pengembalian_total" class="form-control"readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <div class="form-group mb-3">
-                                        <label for="peminjamanTotalKembalian" class="me-2 mb-0">Kembalian</label>
-                                        <input type="text" id="peminjamanTotalKembalian" name="peminjaman_total_kembalian" class="form-control" readonly>
+                                        <label for="pengembalianTotalKembalian" class="me-2 mb-0">Kembalian</label>
+                                        <input type="text" id="pengembalianTotalKembalian" name="pengembalian_total_kembalian" class="form-control" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +159,7 @@
                 <div class="modal-body">
                     <div class="col-12 mb-4">
                         <div class="alert alert-success" role="alert">
-                            <h4 class="alert-heading">Buku Peminjaman Berhasil disimpan !</h4>
+                            <h4 class="alert-heading">Buku Pengembalian Berhasil disimpan !</h4>
                         </div>
                     </div>
                 </div>
@@ -172,6 +198,10 @@
                             <label for="modalBukuDiskonRp">Diskon (Rp)</label>
                             <input type="number" class="form-control" id="modalBukuDiskonRp">
                         </div>
+                        <div class="form-group">
+                            <label for="modalBukuTelat">Telat Hari</label>
+                            <input type="number" class="form-control" id="modalBukuTelat" readonly>
+                        </div>
                         <input type="hidden" id="modalBukuIndex">
                     </form>
                 </div>
@@ -190,22 +220,95 @@
             var day = ("0" + today.getDate()).slice(-2);
             var month = ("0" + (today.getMonth() + 1)).slice(-2);
             var todayString = today.getFullYear() + "-" + month + "-" + day;
-            document.getElementById('peminjamanTanggal').value = todayString;
+            document.getElementById('pengembalianTanggal').value = todayString;
 
             // Fetch product list and populate dropdown
-            fetchProductList();
+            fetchPeminjamanList();
+            calculateLateDays();
         });
+
+        function calculateLateDays() {
+            const estKembaliInput = document.getElementById('pengembalianPinjamTanggalEstKembali');
+            const kembaliInput = document.getElementById('pengembalianTanggal');
+            const telatHariInput = document.getElementById('pengembalianTelatHari');
+
+            const estKembaliDate = new Date(estKembaliInput.value);
+            const kembaliDate = new Date(kembaliInput.value);
+
+            if (kembaliDate && estKembaliDate) {
+                const diffTime = kembaliDate - estKembaliDate;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                telatHariInput.value = diffDays > 0 ? diffDays : 0;
+            }
+        }
 
         let bukuList = [];
         let editingIndex = -1;
         let productData = {};
+        let peminjamanData = {};
+
+        function fetchPeminjamanList() {
+            var token = localStorage.getItem('token');
+
+            fetch('/api/pengembalian/pinjaman_list', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    start: 0,
+                    limit: 0,
+                    filter: ''
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                populatePeminjamanDropdown(data.data);
+            })
+            .catch(error => console.error('Error fetching products:', error));
+        }
+
+        function populatePeminjamanDropdown(data) {
+            const peminjamanDropdown = document.getElementById('PeminjamanSelect');
+            peminjamanDropdown.innerHTML = ''; // Clear existing options
+            data.forEach(peminjaman => {
+                peminjamanData[peminjaman.peminjaman_id] = peminjaman;
+                const option = document.createElement('option');
+                option.value = peminjaman.peminjaman_id;
+                option.text = '(' + peminjaman.peminjaman_no + ') ' + peminjaman.peminjaman_pelanggan;
+                peminjamanDropdown.appendChild(option);
+            });
+
+            // Add event listener for peminjaman selection
+            peminjamanDropdown.addEventListener('change', function() {
+                // resetForm();
+                const selectedPinjamanId = this.value;
+                const peminjaman = peminjamanData[selectedPinjamanId];
+                if (peminjaman) {
+                    document.getElementById('pengembalianPinjamTanggal').value = peminjaman.peminjaman_tanggal;
+                    document.getElementById('pengembalianPinjamTanggalEstKembali').value = peminjaman.peminjaman_tanggal_est_kembali;
+                    document.getElementById('pengembalianNama').value = peminjaman.peminjaman_pelanggan;
+                    document.getElementById('pengembalianTanggal').value = peminjaman.peminjaman_tanggal_est_kembali;
+                }
+                calculateLateDays();
+            });
+
+            // Trigger change event to set initial values
+            peminjamanDropdown.dispatchEvent(new Event('change'));
+        }
+
+        document.getElementById('insertBukuButton').addEventListener('click', function() {
+            fetchProductList();
+        });
 
         document.getElementById('saveBukuButton').addEventListener('click', function() {
             const selectedProductId = document.getElementById('modalBukuNama').value;
             const product = productData[selectedProductId];
 
             const jumlah = parseInt(document.getElementById('modalBukuJumlah').value);
-            const denda = parseFloat(document.getElementById('modalBukuDenda').value);
+            const telatHariModal = parseFloat(document.getElementById('modalBukuTelat').value) || 0;
+            const denda = parseFloat(document.getElementById('modalBukuDenda').value * telatHariModal);
             const diskonPersen = parseFloat(document.getElementById('modalBukuDiskonPersen').value) || 0;
             const diskonRp = parseFloat(document.getElementById('modalBukuDiskonRp').value) || 0;
 
@@ -217,6 +320,7 @@
                 pinjam_detail_buku_nama : product.buku_nama,
                 pinjam_detail_qty         : jumlah,
                 pinjam_detail_denda       : denda,
+                pinjam_detail_telat_hari  : telatHariModal,
                 pinjam_detail_diskon      : diskonPersen,
                 pinjam_detail_diskon_rp   : diskonRp,
                 pinjam_diskon_subtotal    : subtotal
@@ -238,13 +342,14 @@
         function fetchProductList() {
             var token = localStorage.getItem('token');
 
-            fetch('/api/buku/list', {
+            fetch('/api/pengembalian/buku_by_pinjaman_list', {
                 method: 'POST',
                 headers: {
                     'Authorization': 'Bearer ' + token,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
+                    peminjaman_id: document.getElementById('PeminjamanSelect').value,
                     start: 0,
                     limit: 0,
                     filter: ''
@@ -277,6 +382,7 @@
                     document.getElementById('modalBukuJumlah').value = 1; // Default to 1
                     document.getElementById('modalBukuDiskonPersen').value = 0;
                     document.getElementById('modalBukuDiskonRp').value = 0;
+                    document.getElementById('modalBukuTelat').value = document.getElementById('pengembalianTelatHari').value;
                 }
             });
 
@@ -330,17 +436,17 @@
 
         function updateTotal() {
             const total = bukuList.reduce((acc, buku) => acc + buku.pinjam_diskon_subtotal, 0);
-            document.getElementById('peminjamanTotal').value = total.toFixed(2);
+            document.getElementById('pengembalianTotal').value = total.toFixed(2);
             updateKembalian();
         }
 
-        document.getElementById('peminjamanTotalBayar').addEventListener('input', updateKembalian);
+        document.getElementById('pengembalianTotalBayar').addEventListener('input', updateKembalian);
 
         function updateKembalian() {
-            const total = parseFloat(document.getElementById('peminjamanTotal').value) || 0;
-            const bayar = parseFloat(document.getElementById('peminjamanTotalBayar').value) || 0;
+            const total = parseFloat(document.getElementById('pengembalianTotal').value) || 0;
+            const bayar = parseFloat(document.getElementById('pengembalianTotalBayar').value) || 0;
             const kembalian = bayar - total;
-            document.getElementById('peminjamanTotalKembalian').value = kembalian.toFixed(2);
+            document.getElementById('pengembalianTotalKembalian').value = kembalian.toFixed(2);
         }
 
         function resetForm() {
@@ -354,14 +460,17 @@
             var form = document.getElementById("createForm");
             var token = localStorage.getItem('token'); // Ambil token dari localStorage
             var formData = {
-                peminjaman_no: document.getElementById('peminjamanKode').value,
-                peminjaman_tanggal: document.getElementById('peminjamanTanggal').value,
-                peminjaman_pelanggan: document.getElementById('peminjamanNama').value,
-                peminjaman_total: document.getElementById('peminjamanTotal').value,
-                peminjaman_total_bayar: document.getElementById('peminjamanTotalBayar').value,
-                peminjaman_cara_bayar: document.getElementById('caraBayar').value,
-                peminjaman_total_kembalian: document.getElementById('peminjamanTotalKembalian').value,
-                buku_list: bukuList
+                pengembalian_no                  : document.getElementById('pengembalianKode').value,
+                pengembalian_pinjam_id           : document.getElementById('PeminjamanSelect').value,
+                pengembalian_tanggal_pinjam      : document.getElementById('pengembalianPinjamTanggal').value,
+                pengembalian_tanggal_est_kembali : document.getElementById('pengembalianPinjamTanggalEstKembali').value,
+                pengembalian_tanggal             : document.getElementById('pengembalianTanggal').value,
+                pengembalian_telat_hari          : document.getElementById('pengembalianTelatHari').value,
+                pengembalian_total_denda         : document.getElementById('pengembalianTotal').value,
+                pengembalian_total_bayar         : document.getElementById('pengembalianTotalBayar').value,
+                pengembalian_cara_bayar          : document.getElementById('caraBayar').value,
+                pengembalian_total_kembalian     : document.getElementById('pengembalianTotalKembalian').value,
+                buku_list                        : bukuList
             };
 
             fetch(form.action, {
@@ -375,11 +484,11 @@
             .then(response => response.json()) // Menguraikan JSON dari respons
             .then(data => {
                 $('#successModal').modal('show');
-                var printUrl = `/api/peminjaman/cetak-faktur-pdf/` + data.data.id;
-                prinFakturPeminjaman(printUrl);
+                var printUrl = `/api/pengembalian/cetak-faktur-pdf/` + data.data.id;
+                prinFakturPengembalian(printUrl);
                 setTimeout(function() {
                     $('#successModal').modal('hide');
-                    window.location.href = '/peminjaman';
+                    window.location.href = '/pengembalian';
                 }, 2000); // Menutup modal setelah 2 detik
             })
             .catch(error => {
@@ -388,7 +497,7 @@
             });
         }
 
-        function prinFakturPeminjaman(printUrl) {
+        function prinFakturPengembalian(printUrl) {
             var token = localStorage.getItem('token'); // Ambil token dari localStorage
             $.ajax({
                 url: printUrl, // Sesuaikan dengan endpoint delete
@@ -402,7 +511,7 @@
                 },
                 error: function(xhr, status, error) {
                     console.error('Error deleting data:', error);
-                    alert('Terjadi kesalahan saat menghapus buku peminjaman.');
+                    alert('Terjadi kesalahan saat menghapus buku pengembalian.');
                 }
             });
         }

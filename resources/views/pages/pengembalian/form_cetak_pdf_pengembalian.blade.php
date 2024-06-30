@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Peminjaman</title>
+    <title>Data Pengembalian</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -73,12 +73,12 @@
         </table>
     </div>
     <hr>
-    <h1>Data Peminjaman</h1>
+    <h1>Data Pengembalian</h1>
     <table class="nota-info">
         <thead>
             <tr>
                 <th>No</th>
-                <th>No. Peminjaman</th>
+                <th>No. Pengembalian</th>
                 <th>Nama Pelanggan</th>
                 <th>Tanggal</th>
                 <th>Pembayaran</th>
@@ -88,16 +88,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($data_peminjaman as $buku)
+            @foreach($data_pengembalian as $buku)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $buku->peminjaman_no }}</td>
-                    <td>{{ $buku->peminjaman_pelanggan }}</td>
-                    <td>{{ $buku->peminjaman_tanggal }}</td>
-                    <td>{{ $buku->peminjaman_cara_bayar }}</td>
-                    <td class="right-align">{{ number_format($buku->peminjaman_total, 0, ',', '.') }}</td>
-                    <td class="right-align">{{ number_format($buku->peminjaman_total_bayar, 0, ',', '.') }}</td>
-                    <td class="right-align">{{ number_format($buku->peminjaman_total_kembalian, 0, ',', '.') }}</td>
+                    <td>{{ $buku->pengembalian_no }}</td>
+                    <td>{{ $buku->pengembalian_pelanggan }}</td>
+                    <td>{{ $buku->pengembalian_tanggal }}</td>
+                    <td>{{ $buku->pengembalian_cara_bayar }}</td>
+                    <td class="right-align">{{ number_format($buku->pengembalian_total, 0, ',', '.') }}</td>
+                    <td class="right-align">{{ number_format($buku->pengembalian_total_bayar, 0, ',', '.') }}</td>
+                    <td class="right-align">{{ number_format($buku->pengembalian_total_kembalian, 0, ',', '.') }}</td>
                 </tr>
             @endforeach
         </tbody>
