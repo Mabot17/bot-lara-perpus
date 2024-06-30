@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title>BOT | POS</title>
+    <title>BOT | PERPUS</title>
     <script>
         window.onload = function() {
             const token = localStorage.getItem('token');
