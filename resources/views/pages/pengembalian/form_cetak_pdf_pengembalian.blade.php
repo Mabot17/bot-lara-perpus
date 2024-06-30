@@ -80,9 +80,11 @@
                 <th>No</th>
                 <th>No. Peminjaman</th>
                 <th>Nama Pelanggan</th>
-                <th>Tanggal Pinjam</th>
-                <th>Tanggal Est Kembali</th>
-                <th class="right-align">Estimasi Total Denda (Rp)</th>
+                <th>Tanggal</th>
+                <th>Pembayaran</th>
+                <th class="right-align">Total (Rp)</th>
+                <th class="right-align">Total Bayar (Rp)</th>
+                <th class="right-align">Total Kembalian (Rp)</th>
             </tr>
         </thead>
         <tbody>
@@ -92,8 +94,10 @@
                     <td>{{ $buku->peminjaman_no }}</td>
                     <td>{{ $buku->peminjaman_pelanggan }}</td>
                     <td>{{ $buku->peminjaman_tanggal }}</td>
-                    <td>{{ $buku->peminjaman_tanggal_est_kembali }}</td>
-                    <td class="right-align">{{ number_format($buku->peminjaman_total_est_denda, 0, ',', '.') }}</td>
+                    <td>{{ $buku->peminjaman_cara_bayar }}</td>
+                    <td class="right-align">{{ number_format($buku->peminjaman_total, 0, ',', '.') }}</td>
+                    <td class="right-align">{{ number_format($buku->peminjaman_total_bayar, 0, ',', '.') }}</td>
+                    <td class="right-align">{{ number_format($buku->peminjaman_total_kembalian, 0, ',', '.') }}</td>
                 </tr>
             @endforeach
         </tbody>

@@ -41,8 +41,9 @@
                                     <th>No. Peminjaman</th>
                                     <th>Pelanggan</th>
                                     <th>Tanggal</th>
-                                    <th>Tanggal Est Kembali</th>
-                                    <th>Est Total Denda (Rp)</th>
+                                    <th>Subtotal</th>
+                                    <th>Jumlah Bayar</th>
+                                    <th>Kembalian</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -120,8 +121,17 @@
                         { data: 'peminjaman_no' },
                         { data: 'peminjaman_pelanggan' },
                         { data: 'peminjaman_tanggal' },
-                        { data: 'peminjaman_tanggal_est_kembali' },
-                        { data: 'peminjaman_total_est_denda',
+                        { data: 'peminjaman_total',
+                            render: function(data, type, row) {
+                                return '<div style="text-align: right;">' + formatCurrency(data) + '</div>';
+                            }
+                        },
+                        { data: 'peminjaman_total_bayar',
+                            render: function(data, type, row) {
+                                return '<div style="text-align: right;">' + formatCurrency(data) + '</div>';
+                            }
+                        },
+                        { data: 'peminjaman_total_kembalian',
                             render: function(data, type, row) {
                                 return '<div style="text-align: right;">' + formatCurrency(data) + '</div>';
                             }

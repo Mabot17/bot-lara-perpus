@@ -26,16 +26,22 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
-                                    <label for="peminjamanTanggal">Tanggal</label>
-                                    <input type="date" id="peminjamanTanggal" name="peminjaman_tanggal" class="form-control">
+                                    <label for="peminjamanNama">Pelanggan</label>
+                                    <input type="text" id="peminjamanNama" name="peminjaman_pelanggan" class="form-control" value="Pelanggan Umum">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
-                                    <label for="peminjamanNama">Pelanggan</label>
-                                    <input type="text" id="peminjamanNama" name="peminjaman_pelanggan" class="form-control" value="Pelanggan Umum">
+                                    <label for="peminjamanTanggal">Tanggal</label>
+                                    <input type="date" id="peminjamanTanggal" name="peminjaman_tanggal" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label for="peminjamanKembaliTanggal">Est Tanggal Kembali</label>
+                                    <input type="date" id="peminjamanKembaliTanggal" name="peminjaman_tanggal_est_kembali" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -77,30 +83,8 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div class="form-group mb-3">
-                                        <label for="caraBayar" class="me-2 mb-0">Cara Bayar</label>
-                                        <select id="caraBayar" name="peminjaman_cara_bayar" class="form-control" required>
-                                            <option value="Tunai">Tunai</option>
-                                            <option value="Kartu">Kartu</option>
-                                            <option value="Transfer">Transfer</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-group mb-3">
-                                        <label for="peminjamanTotalBayar" class="me-2 mb-0">Jumlah Bayar</label>
-                                        <input type="text" id="peminjamanTotalBayar" name="peminjaman_total_bayar" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-group mb-3">
-                                        <label for="peminjamanTotal" class="me-2 mb-0">Total</label>
-                                        <input type="text" id="peminjamanTotal" name="peminjaman_total" class="form-control"readonly>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="form-group mb-3">
-                                        <label for="peminjamanTotalKembalian" class="me-2 mb-0">Kembalian</label>
-                                        <input type="text" id="peminjamanTotalKembalian" name="peminjaman_total_kembalian" class="form-control" readonly>
+                                        <label for="peminjamanTotal" class="me-2 mb-0">Estimasi Total Denda</label>
+                                        <input type="text" id="peminjamanTotal" name="peminjaman_total_est_denda" class="form-control"readonly>
                                     </div>
                                 </div>
                             </div>
@@ -191,7 +175,7 @@
             var month = ("0" + (today.getMonth() + 1)).slice(-2);
             var todayString = today.getFullYear() + "-" + month + "-" + day;
             document.getElementById('peminjamanTanggal').value = todayString;
-
+            document.getElementById('peminjamanKembaliTanggal').value = todayString;
             // Fetch product list and populate dropdown
             fetchProductList();
         });
@@ -331,16 +315,6 @@
         function updateTotal() {
             const total = bukuList.reduce((acc, buku) => acc + buku.pinjam_diskon_subtotal, 0);
             document.getElementById('peminjamanTotal').value = total.toFixed(2);
-            updateKembalian();
-        }
-
-        document.getElementById('peminjamanTotalBayar').addEventListener('input', updateKembalian);
-
-        function updateKembalian() {
-            const total = parseFloat(document.getElementById('peminjamanTotal').value) || 0;
-            const bayar = parseFloat(document.getElementById('peminjamanTotalBayar').value) || 0;
-            const kembalian = bayar - total;
-            document.getElementById('peminjamanTotalKembalian').value = kembalian.toFixed(2);
         }
 
         function resetForm() {
@@ -356,11 +330,9 @@
             var formData = {
                 peminjaman_no: document.getElementById('peminjamanKode').value,
                 peminjaman_tanggal: document.getElementById('peminjamanTanggal').value,
+                peminjaman_tanggal_est_kembali: document.getElementById('peminjamanKembaliTanggal').value,
                 peminjaman_pelanggan: document.getElementById('peminjamanNama').value,
-                peminjaman_total: document.getElementById('peminjamanTotal').value,
-                peminjaman_total_bayar: document.getElementById('peminjamanTotalBayar').value,
-                peminjaman_cara_bayar: document.getElementById('caraBayar').value,
-                peminjaman_total_kembalian: document.getElementById('peminjamanTotalKembalian').value,
+                peminjaman_total_est_denda: document.getElementById('peminjamanTotal').value,
                 buku_list: bukuList
             };
 

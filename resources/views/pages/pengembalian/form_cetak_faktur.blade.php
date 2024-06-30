@@ -148,8 +148,16 @@
     <hr>
     <table class="total-info">
         <tr>
-            <td><strong>Estimasi Total Denda (Rp):</strong></td>
-            <td class="right-align">{{ number_format($result->peminjaman_total_est_denda, 0, ',', '.') }}</td>
+            <td><strong>Total (Rp):</strong></td>
+            <td class="right-align">{{ number_format($result->peminjaman_total, 0, ',', '.') }}</td>
+        </tr>
+        <tr>
+            <td><strong>Bayar (Rp):</strong></td>
+            <td class="right-align">{{ number_format($result->peminjaman_total_bayar, 0, ',', '.') }}</td>
+        </tr>
+        <tr>
+            <td><strong>Kembali (Rp):</strong></td>
+            <td class="right-align">{{ number_format($result->peminjaman_total_kembalian, 0, ',', '.') }}</td>
         </tr>
     </table>
     <hr>

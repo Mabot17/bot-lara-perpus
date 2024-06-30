@@ -30,20 +30,26 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
                 <a class="nav-link {{ Request::segment(1) === 'buku' ? 'active' : '' }}" href="/buku">
-                    <i class="fe fe-grid fe-16"></i>
+                    <i class="fe fe-book fe-16"></i>
                     <span class="ml-3 item-text">Buku</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link {{ Request::segment(1) === 'bukuKategori' ? 'active' : '' }}" href="/bukuKategori">
-                    <i class="fe fe-triangle fe-16"></i>
+                    <i class="fe fe-codesandbox fe-16"></i>
                     <span class="ml-3 item-text">Buku Kategori</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link {{ Request::segment(1) === 'peminjaman' ? 'active' : '' }}" href="/peminjaman">
-                    <i class="fe fe-credit-card fe-16"></i>
+                    <i class="fe fe-archive fe-16"></i>
                     <span class="ml-3 item-text">Peminjaman</span>
+                </a>
+            </li>
+            <li class="nav-item w-100">
+                <a class="nav-link {{ Request::segment(1) === 'peminjaman' ? 'active' : '' }}" href="/peminjaman">
+                    <i class="fe fe-archive fe-16"></i>
+                    <span class="ml-3 item-text">Pengembalian</span>
                 </a>
             </li>
             <p class="text-muted nav-heading mt-4 mb-1">
@@ -51,13 +57,13 @@
             </p>
             <li class="nav-item w-100">
                 <a class="nav-link {{ Request::segment(1) === 'peminjaman' ? 'active' : '' }}" href="/peminjaman">
-                    <i class="fe fe-credit-card fe-16"></i>
+                    <i class="fe fe-database fe-16"></i>
                     <span class="ml-3 item-text">Laporan Peminjaman</span>
                 </a>
             </li>
             <li class="nav-item w-100">
                 <a class="nav-link {{ Request::segment(1) === 'peminjaman' ? 'active' : '' }}" href="/peminjaman">
-                    <i class="fe fe-credit-card fe-16"></i>
+                    <i class="fe fe-database fe-16"></i>
                     <span class="ml-3 item-text">Laporan Pengembalian</span>
                 </a>
             </li>

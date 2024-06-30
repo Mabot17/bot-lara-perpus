@@ -105,10 +105,8 @@ class PeminjamanModel extends Model
         $this->peminjaman_no = $this->generatePeminjamanNo();
         $this->peminjaman_pelanggan = $request->input('peminjaman_pelanggan') ?? null;
         $this->peminjaman_tanggal = $request->input('peminjaman_tanggal') ?? null;
-        $this->peminjaman_total = $request->input('peminjaman_total') ?? 0;
-        $this->peminjaman_total_bayar = $request->input('peminjaman_total_bayar') ?? 0;
-        $this->peminjaman_cara_bayar = $request->input('peminjaman_cara_bayar') ?? null;
-        $this->peminjaman_total_kembalian = $request->input('peminjaman_total_kembalian') ?? 0;
+        $this->peminjaman_tanggal_est_kembali = $request->input('peminjaman_tanggal_est_kembali') ?? null;
+        $this->peminjaman_total_est_denda = $request->input('peminjaman_total_est_denda') ?? 0;
         $this->created_by = Auth::user()->email;
         $this->created_at = date("Y-m-d H:i:s");
 
@@ -134,10 +132,8 @@ class PeminjamanModel extends Model
         $updMasterPeminjaman->peminjaman_no = $request->input('peminjaman_no') ?? null;
         $updMasterPeminjaman->peminjaman_pelanggan = $request->input('peminjaman_pelanggan') ?? null;
         $updMasterPeminjaman->peminjaman_tanggal = $request->input('peminjaman_tanggal') ?? null;
-        $updMasterPeminjaman->peminjaman_total = $request->input('peminjaman_total') ?? 0;
-        $updMasterPeminjaman->peminjaman_total_bayar = $request->input('peminjaman_total_bayar') ?? 0;
-        $updMasterPeminjaman->peminjaman_cara_bayar = $request->input('peminjaman_cara_bayar') ?? null;
-        $updMasterPeminjaman->peminjaman_total_kembalian = $request->input('peminjaman_total_kembalian') ?? 0;
+        $updMasterPeminjaman->peminjaman_tanggal_est_kembali = $request->input('peminjaman_tanggal_est_kembali') ?? null;
+        $updMasterPeminjaman->peminjaman_total_est_denda = $request->input('peminjaman_total_est_denda') ?? 0;
 
         $updMasterPeminjaman->updated_by = Auth::user()->email;
         $updMasterPeminjaman->updated_at = date("Y-m-d H:i:s");
@@ -177,7 +173,7 @@ class PeminjamanModel extends Model
                     ->update([
                         'pinjam_detail_buku_id' => $detailBukuList['pinjam_detail_buku_id'],
                         'pinjam_detail_qty'       => $detailBukuList['pinjam_detail_qty'],
-                        'pinjam_detail_harga'     => $detailBukuList['pinjam_detail_harga'] ?? 0,
+                        'pinjam_detail_denda'     => $detailBukuList['pinjam_detail_denda'] ?? 0,
                         'pinjam_detail_diskon'    => $detailBukuList['pinjam_detail_diskon'] ?? 0,
                         'pinjam_detail_diskon_rp' => $detailBukuList['pinjam_detail_diskon_rp'] ?? 0,
                         'pinjam_diskon_subtotal'  => $detailBukuList['pinjam_diskon_subtotal'] ?? 0,
@@ -187,7 +183,7 @@ class PeminjamanModel extends Model
                     'pinjam_detail_buku_id' => $detailBukuList['pinjam_detail_buku_id'],
                     'pinjam_detail_master_id' => $peminjaman_id,
                     'pinjam_detail_qty'       => $detailBukuList['pinjam_detail_qty'],
-                    'pinjam_detail_harga'     => $detailBukuList['pinjam_detail_harga'] ?? 0,
+                    'pinjam_detail_denda'     => $detailBukuList['pinjam_detail_denda'] ?? 0,
                     'pinjam_detail_diskon'    => $detailBukuList['pinjam_detail_diskon'] ?? 0,
                     'pinjam_detail_diskon_rp' => $detailBukuList['pinjam_detail_diskon_rp'] ?? 0,
                     'pinjam_diskon_subtotal'  => $detailBukuList['pinjam_diskon_subtotal'] ?? 0,

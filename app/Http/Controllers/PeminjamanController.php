@@ -97,21 +97,18 @@ class PeminjamanController extends Controller
         // Menulis header
         $sheet->setCellValue('A1', 'No. Peminjaman');
         $sheet->setCellValue('B1', 'Nama Pelanggan');
-        $sheet->setCellValue('C1', 'Tanggal');
-        $sheet->setCellValue('D1', 'Pembayaran');
-        $sheet->setCellValue('E1', 'Total (Rp)');
-        $sheet->setCellValue('F1', 'Total Bayar (Rp)');
-        $sheet->setCellValue('G1', 'Total Kembalian (Rp)');
+        $sheet->setCellValue('C1', 'Tanggal Pinjam');
+        $sheet->setCellValue('D1', 'Tanggal Est Kembali');
+        $sheet->setCellValue('E1', 'Estimasi Total Denda (Rp)');
+
         // Menulis data
         $row = 2;
         foreach ($data_peminjaman as $buku) {
             $sheet->setCellValue('A' . $row, $buku->peminjaman_no);
             $sheet->setCellValue('B' . $row, $buku->peminjaman_pelanggan);
             $sheet->setCellValue('C' . $row, $buku->peminjaman_tanggal);
-            $sheet->setCellValue('D' . $row, $buku->peminjaman_cara_bayar);
-            $sheet->setCellValue('E' . $row, $buku->peminjaman_total);
-            $sheet->setCellValue('F' . $row, $buku->peminjaman_total_bayar);
-            $sheet->setCellValue('G' . $row, $buku->peminjaman_total_kembalian);
+            $sheet->setCellValue('D' . $row, $buku->peminjaman_tanggal_est_kembali);
+            $sheet->setCellValue('E' . $row, $buku->peminjaman_total_est_denda);
             // Menambahkan kolom lain sesuai kebutuhan
             $row++;
         }
@@ -207,11 +204,8 @@ class PeminjamanController extends Controller
      * @authenticated
      * @bodyParam peminjaman_pelanggan string required Text biasa. Example: null
      * @bodyParam peminjaman_tanggal date required peminjaman_tanggal Example: 2024-06-14
-     * @bodyParam peminjaman_total int required Example: 10000
-     * @bodyParam peminjaman_total_bayar int peminjaman_total_bayar Example: 10000
-     * @bodyParam peminjaman_cara_bayar enum required Contoh [Tunai, Kartu, Kredit, Transfer, skbdn] Example: Tunai
-     * @bodyParam peminjaman_total_kembalian int peminjaman_total_bayar Example: 10000
-     * @bodyParam peminjaman_total_kembalian int peminjaman_total_bayar Example: 10000
+     * @bodyParam peminjaman_tanggal_est_kembali date required peminjaman_tanggal_est_kembali Example: 2024-06-14
+     * @bodyParam peminjaman_total_est_denda int required Example: 10000
      * @bodyParam buku_list object[] Detail buku
      * @bodyParam buku_list[].pinjam_detail_id int (Selalu null, flag create) Example: 0
      * @bodyParam buku_list[].pinjam_detail_buku_id int required dari api/buku/list property buku_id Example: 1
@@ -267,11 +261,8 @@ class PeminjamanController extends Controller
      * @bodyParam peminjaman_id int required Text biasa. Example: 1
      * @bodyParam peminjaman_pelanggan string required Text biasa. Example: null
      * @bodyParam peminjaman_tanggal date required peminjaman_tanggal Example: 2024-06-14
-     * @bodyParam peminjaman_total int required Example: 10000
-     * @bodyParam peminjaman_total_bayar int peminjaman_total_bayar Example: 10000
-     * @bodyParam peminjaman_cara_bayar enum required Contoh [Tunai, Kartu, Kredit, Transfer, skbdn] Example: Tunai
-     * @bodyParam peminjaman_total_kembalian int peminjaman_total_bayar Example: 10000
-     * @bodyParam peminjaman_total_kembalian int peminjaman_total_bayar Example: 10000
+     * @bodyParam peminjaman_tanggal_est_kembali date required peminjaman_tanggal_est_kembali Example: 2024-06-14
+     * @bodyParam peminjaman_total_est_denda int required Example: 10000
      * @bodyParam buku_list object[] Detail buku
      * @bodyParam buku_list[].pinjam_detail_id int (Selalu null, flag create) Example: 0
      * @bodyParam buku_list[].pinjam_detail_buku_id int required dari api/buku/list property buku_id Example: 1
