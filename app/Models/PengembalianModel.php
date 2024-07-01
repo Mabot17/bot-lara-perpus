@@ -190,6 +190,7 @@ class PengembalianModel extends Model
         if ($this->exists) { // Use $this->exists instead of $jualPengembalian->exists
             // Return the ID of the inserted record
             $this->insertDetailBuku($this->pengembalian_id, $request->input('buku_list'));
+            $this->update_stat_peminjaman($request->input('pengembalian_pinjam_id'));
             return $this->pengembalian_id;
         } else {
             // Return an error indicator (e.g., -1)
@@ -204,11 +205,15 @@ class PengembalianModel extends Model
 
         // Metode ORM Insert laravel (ambil field di $fillable)
         $updMasterPengembalian->pengembalian_no = $request->input('pengembalian_no') ?? null;
-        $updMasterPengembalian->pengembalian_pelanggan = $request->input('pengembalian_pelanggan') ?? null;
-        $updMasterPengembalian->pengembalian_tanggal = $request->input('pengembalian_tanggal') ?? null;
+        $updMasterPengembalian->pengembalian_pinjam_id = $request->input('pengembalian_pinjam_id') ?? null;
+        $updMasterPengembalian->pengembalian_tanggal_pinjam = $request->input('pengembalian_tanggal_pinjam') ?? null;
         $updMasterPengembalian->pengembalian_tanggal_est_kembali = $request->input('pengembalian_tanggal_est_kembali') ?? null;
-        $updMasterPengembalian->pengembalian_total_est_denda = $request->input('pengembalian_total_est_denda') ?? 0;
-
+        $updMasterPengembalian->pengembalian_tanggal = $request->input('pengembalian_tanggal') ?? null;
+        $updMasterPengembalian->pengembalian_telat_hari = $request->input('pengembalian_telat_hari') ?? 0;
+        $updMasterPengembalian->pengembalian_total_denda = $request->input('pengembalian_total_denda') ?? 0;
+        $updMasterPengembalian->pengembalian_total_bayar = $request->input('pengembalian_total_bayar') ?? 0;
+        $updMasterPengembalian->pengembalian_cara_bayar = $request->input('pengembalian_cara_bayar') ?? null;
+        $updMasterPengembalian->pengembalian_total_kembalian = $request->input('pengembalian_total_kembalian') ?? null;
         $updMasterPengembalian->updated_by = Auth::user()->email;
         $updMasterPengembalian->updated_at = date("Y-m-d H:i:s");
 
@@ -217,7 +222,7 @@ class PengembalianModel extends Model
 
         if ($result) {
             $this->insertDetailBuku($updMasterPengembalian->pengembalian_id, $request->input('buku_list'));
-
+            $this->update_stat_peminjaman($request->input('pengembalian_pinjam_id'));
             return $updMasterPengembalian;
         } else {
             return NULL;
@@ -238,36 +243,43 @@ class PengembalianModel extends Model
 
         foreach ($dataBukuList as $detailBukuList) {
             $existingRecord = DB::table('pengembalian_detail')
-                ->where('pkembali_detail_id', $detailBukuList['pinjam_detail_id'])
+                ->where('pkembali_detail_id', $detailBukuList['pkembali_detail_id'])
                 ->first();
 
             if ($existingRecord) {
                 // If the record with the given pinjam_detail_id exists, update the data
                 DB::table('pengembalian_detail')
-                    ->where('pkembali_detail_id', $detailBukuList['pinjam_detail_id'])
+                    ->where('pkembali_detail_id', $detailBukuList['pkembali_detail_id'])
                     ->update([
-                        'pkembali_detail_buku_id'    => $detailBukuList['pinjam_detail_buku_id'],
-                        'pkembali_detail_qty'        => $detailBukuList['pinjam_detail_qty'],
-                        'pkembali_detail_denda'      => $detailBukuList['pinjam_detail_denda'] ?? 0,
-                        'pkembali_detail_telat_hari' => $detailBukuList['pinjam_detail_telat_hari'] ?? 0,
-                        'pkembali_detail_diskon'     => $detailBukuList['pinjam_detail_diskon'] ?? 0,
-                        'pkembali_detail_diskon_rp'  => $detailBukuList['pinjam_detail_diskon_rp'] ?? 0,
-                        'pkembali_diskon_subtotal'   => $detailBukuList['pinjam_diskon_subtotal'] ?? 0,
+                        'pkembali_detail_buku_id'    => $detailBukuList['pkembali_detail_buku_id'],
+                        'pkembali_detail_qty'        => $detailBukuList['pkembali_detail_qty'],
+                        'pkembali_detail_denda'      => $detailBukuList['pkembali_detail_denda'] ?? 0,
+                        'pkembali_detail_telat_hari' => $detailBukuList['pkembali_detail_telat_hari'] ?? 0,
+                        'pkembali_detail_diskon'     => $detailBukuList['pkembali_detail_diskon'] ?? 0,
+                        'pkembali_detail_diskon_rp'  => $detailBukuList['pkembali_detail_diskon_rp'] ?? 0,
+                        'pkembali_diskon_subtotal'   => $detailBukuList['pkembali_diskon_subtotal'] ?? 0,
                     ]);
             } else {
                 DB::table('pengembalian_detail')->insert([
-                    'pkembali_detail_buku_id' => $detailBukuList['pinjam_detail_buku_id'],
+                    'pkembali_detail_buku_id' => $detailBukuList['pkembali_detail_buku_id'],
                     'pkembali_detail_master_id' => $pengembalian_id,
-                    'pkembali_detail_qty'        => $detailBukuList['pinjam_detail_qty'],
-                    'pkembali_detail_denda'      => $detailBukuList['pinjam_detail_denda'] ?? 0,
-                    'pkembali_detail_telat_hari' => $detailBukuList['pinjam_detail_telat_hari'] ?? 0,
-                    'pkembali_detail_diskon'     => $detailBukuList['pinjam_detail_diskon'] ?? 0,
-                    'pkembali_detail_diskon_rp'  => $detailBukuList['pinjam_detail_diskon_rp'] ?? 0,
-                    'pkembali_diskon_subtotal'   => $detailBukuList['pinjam_diskon_subtotal'] ?? 0,
+                    'pkembali_detail_qty'        => $detailBukuList['pkembali_detail_qty'],
+                    'pkembali_detail_denda'      => $detailBukuList['pkembali_detail_denda'] ?? 0,
+                    'pkembali_detail_telat_hari' => $detailBukuList['pkembali_detail_telat_hari'] ?? 0,
+                    'pkembali_detail_diskon'     => $detailBukuList['pkembali_detail_diskon'] ?? 0,
+                    'pkembali_detail_diskon_rp'  => $detailBukuList['pkembali_detail_diskon_rp'] ?? 0,
+                    'pkembali_diskon_subtotal'   => $detailBukuList['pkembali_diskon_subtotal'] ?? 0,
                 ]);
             }
         }
     }
 
     // End Pengembalian create
+
+    public function update_stat_peminjaman($peminjaman_id)
+    {
+        DB::table('peminjaman')
+            ->where('peminjaman_id', $peminjaman_id)
+            ->update(['peminjaman_stat_kembali' => 1]);
+    }
 }

@@ -42,7 +42,8 @@ class PengembalianController extends Controller
     public function cetakListPengembalianPDF()
     {
         $data_pengembalian = DB::table('pengembalian as p')
-            ->select('p.*')
+            ->select('p.*', 'pj.peminjaman_pelanggan')
+            ->leftJoin('peminjaman as pj', 'pj.peminjaman_id', '=', 'p.pengembalian_pinjam_id')
             ->whereNull('p.deleted_at')
             ->get();
 
@@ -86,7 +87,8 @@ class PengembalianController extends Controller
     public function cetakListPengembalianExcel()
     {
         $data_pengembalian = DB::table('pengembalian as p')
-            ->select('p.*')
+            ->select('p.*', 'pj.peminjaman_pelanggan')
+            ->leftJoin('peminjaman as pj', 'pj.peminjaman_id', '=', 'p.pengembalian_pinjam_id')
             ->whereNull('p.deleted_at')
             ->get();
 
@@ -97,18 +99,20 @@ class PengembalianController extends Controller
         // Menulis header
         $sheet->setCellValue('A1', 'No. Pengembalian');
         $sheet->setCellValue('B1', 'Nama Pelanggan');
-        $sheet->setCellValue('C1', 'Tanggal Pinjam');
-        $sheet->setCellValue('D1', 'Tanggal Est Kembali');
-        $sheet->setCellValue('E1', 'Estimasi Total Denda (Rp)');
+        $sheet->setCellValue('C1', 'Tanggal Est Kembali');
+        $sheet->setCellValue('D1', 'Tanggal Kembali');
+        $sheet->setCellValue('E1', 'Telat Hari');
+        $sheet->setCellValue('F1', 'Total Denda (Rp)');
 
         // Menulis data
         $row = 2;
         foreach ($data_pengembalian as $buku) {
             $sheet->setCellValue('A' . $row, $buku->pengembalian_no);
-            $sheet->setCellValue('B' . $row, $buku->pengembalian_pelanggan);
-            $sheet->setCellValue('C' . $row, $buku->pengembalian_tanggal);
-            $sheet->setCellValue('D' . $row, $buku->pengembalian_tanggal_est_kembali);
-            $sheet->setCellValue('E' . $row, $buku->pengembalian_total_est_denda);
+            $sheet->setCellValue('B' . $row, $buku->peminjaman_pelanggan);
+            $sheet->setCellValue('C' . $row, $buku->pengembalian_tanggal_est_kembali);
+            $sheet->setCellValue('D' . $row, $buku->pengembalian_tanggal);
+            $sheet->setCellValue('E' . $row, $buku->pengembalian_telat_hari);
+            $sheet->setCellValue('F' . $row, $buku->pengembalian_total_denda);
             // Menambahkan kolom lain sesuai kebutuhan
             $row++;
         }

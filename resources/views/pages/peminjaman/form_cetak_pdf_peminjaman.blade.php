@@ -73,7 +73,7 @@
         </table>
     </div>
     <hr>
-    <h1>Data Peminjaman</h1>
+    <h4 style="text-align: center"><u>Data Peminjaman Buku</u></h4>
     <table class="nota-info">
         <thead>
             <tr>

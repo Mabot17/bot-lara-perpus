@@ -114,7 +114,7 @@
                                 <div class="col-sm-3">
                                     <div class="form-group mb-3">
                                         <label for="pengembalianTotalBayar" class="me-2 mb-0">Jumlah Bayar</label>
-                                        <input type="text" id="pengembalianTotalBayar" name="pengembalian_total_bayar" class="form-control">
+                                        <input type="text" id="pengembalianTotalBayar" name="pengembalian_total_bayar" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
@@ -166,6 +166,27 @@
             </div>
         </div>
     </div>
+
+    <div id="requiredModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="requiredModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="requiredModalLabel">Warning!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12 mb-4">
+                        <div class="alert alert-warning" role="alert">
+                            <h4 class="alert-heading">Mohon Isikan Data Buku dan Nominal Pembayaran !</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal insert buku -->
     <div class="modal fade" id="insertBukuModal" tabindex="-1" role="dialog" aria-labelledby="insertBukuModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -282,7 +303,7 @@
 
             // Add event listener for peminjaman selection
             peminjamanDropdown.addEventListener('change', function() {
-                // resetForm();
+                resetTableForm();
                 const selectedPinjamanId = this.value;
                 const peminjaman = peminjamanData[selectedPinjamanId];
                 if (peminjaman) {
@@ -315,15 +336,15 @@
             const subtotal = (denda - diskonRp) * jumlah * ((100 - diskonPersen) / 100);
 
             const buku = {
-                pinjam_detail_id          : 0,
-                pinjam_detail_buku_id   : product.buku_id,
-                pinjam_detail_buku_nama : product.buku_nama,
-                pinjam_detail_qty         : jumlah,
-                pinjam_detail_denda       : denda,
-                pinjam_detail_telat_hari  : telatHariModal,
-                pinjam_detail_diskon      : diskonPersen,
-                pinjam_detail_diskon_rp   : diskonRp,
-                pinjam_diskon_subtotal    : subtotal
+                pkembali_detail_id          : 0,
+                pkembali_detail_buku_id     : product.buku_id,
+                pkembali_detail_buku_nama   : product.buku_nama,
+                pkembali_detail_qty         : jumlah,
+                pkembali_detail_denda       : denda,
+                pkembali_detail_telat_hari  : telatHariModal,
+                pkembali_detail_diskon      : diskonPersen,
+                pkembali_detail_diskon_rp   : diskonRp,
+                pkembali_diskon_subtotal    : subtotal
             };
 
             if (editingIndex === -1) {
@@ -397,13 +418,13 @@
             bukuList.forEach((buku, index) => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${buku.pinjam_detail_buku_id}</td>
-                    <td>${buku.pinjam_detail_buku_nama}</td>
-                    <td>${buku.pinjam_detail_qty}</td>
-                    <td>${buku.pinjam_detail_denda}</td>
-                    <td>${buku.pinjam_detail_diskon}</td>
-                    <td>${buku.pinjam_detail_diskon_rp}</td>
-                    <td>${buku.pinjam_diskon_subtotal.toFixed(2)}</td>
+                    <td>${buku.pkembali_detail_buku_id}</td>
+                    <td>${buku.pkembali_detail_buku_nama}</td>
+                    <td>${buku.pkembali_detail_qty}</td>
+                    <td>${buku.pkembali_detail_denda}</td>
+                    <td>${buku.pkembali_detail_diskon}</td>
+                    <td>${buku.pkembali_detail_diskon_rp}</td>
+                    <td>${buku.pkembali_diskon_subtotal.toFixed(2)}</td>
                     <td>
                         <button class="btn btn-sm btn-info" onclick="editBuku(${index})"><i class="fe fe-edit"></i></button>
                         <button class="btn btn-sm btn-danger" onclick="deleteBuku(${index})"><i class="fe fe-trash-2"></i></button>
@@ -415,13 +436,13 @@
 
         function editBuku(index) {
             const buku = bukuList[index];
-            const productId = Object.keys(productData).find(id => productData[id].buku_nama === buku.pinjam_detail_buku_nama);
+            const productId = Object.keys(productData).find(id => productData[id].buku_nama === buku.pkembali_detail_buku_nama);
 
             document.getElementById('modalBukuNama').value = productId;
-            document.getElementById('modalBukuJumlah').value = buku.pinjam_detail_qty;
-            document.getElementById('modalBukuDenda').value = buku.pinjam_detail_denda;
-            document.getElementById('modalBukuDiskonPersen').value = buku.pinjam_detail_diskon;
-            document.getElementById('modalBukuDiskonRp').value = buku.pinjam_detail_diskon_rp;
+            document.getElementById('modalBukuJumlah').value = buku.pkembali_detail_qty;
+            document.getElementById('modalBukuDenda').value = buku.pkembali_detail_denda;
+            document.getElementById('modalBukuDiskonPersen').value = buku.pkembali_detail_diskon;
+            document.getElementById('modalBukuDiskonRp').value = buku.pkembali_detail_diskon_rp;
             document.getElementById('modalBukuIndex').value = index;
             editingIndex = index;
 
@@ -435,7 +456,7 @@
         }
 
         function updateTotal() {
-            const total = bukuList.reduce((acc, buku) => acc + buku.pinjam_diskon_subtotal, 0);
+            const total = bukuList.reduce((acc, buku) => acc + buku.pkembali_diskon_subtotal, 0);
             document.getElementById('pengembalianTotal').value = total.toFixed(2);
             updateKembalian();
         }
@@ -451,12 +472,22 @@
 
         function resetForm() {
             document.getElementById("createForm").reset();
+            resetTableForm();
+        }
+
+        function resetTableForm(){
             bukuList = [];
             renderBukuTable();
             updateTotal();
         }
 
         function submitForm() {
+            const totalBayar = parseFloat(document.getElementById('pengembalianTotalBayar').value) || 0;
+
+            if (bukuList.length < 1 || totalBayar < 0) {
+                $('#requiredModal').modal('show');
+                return;
+            }
             var form = document.getElementById("createForm");
             var token = localStorage.getItem('token'); // Ambil token dari localStorage
             var formData = {

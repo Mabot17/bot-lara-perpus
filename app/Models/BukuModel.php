@@ -75,7 +75,6 @@ class BukuModel extends Model
         // Metode ORM Insert laravel (ambil field di $fillable)
         $this->buku_sku = $request->input('buku_sku' ?? null);
         $this->buku_nama = $request->input('buku_nama' ?? null);
-        $this->buku_satuan = $request->input('buku_satuan' ?? null);
         $this->buku_stok = $request->input('buku_stok' ?? null);
         $this->buku_aktif = $request->input('buku_aktif' ?? null);
         $this->buku_kategori_id = $request->input('buku_kategori_id' ?? null);

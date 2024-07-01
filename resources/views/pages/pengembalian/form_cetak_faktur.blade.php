@@ -104,7 +104,7 @@
         </table>
     </div>
     <hr>
-    <h4 style="text-align: center">Nota Pengembalian Buku</h4>
+    <h4 style="text-align: center"><u>Nota Pengembalian Buku</u></h4>
     <table width="100%">
         <tr>
             <td style="vertical-align: top;">

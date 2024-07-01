@@ -216,8 +216,6 @@ class BukuController extends Controller
         try {
             $request->validate([
                 'buku_sku' => 'required',
-                'buku_satuan' => 'required',
-                'buku_satuan' => 'required'
             ]);
 
             $kategori_id = $this->bukuModel->bukuCreate($request);

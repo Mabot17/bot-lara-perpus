@@ -36,19 +36,10 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
-                                    <label for="bukuSatuan">Buku Satuan</label>
-                                    <input type="text" id="bukuSatuan" name="buku_satuan" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group mb-3">
                                     <label for="bukuStok">Buku Stok</label>
                                     <input type="number" id="bukuStok" name="buku_stok" class="form-control" required>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Combobox Kategori Buku -->
-                        <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
                                     <label for="bukuKategori">Buku Kategori</label>
@@ -57,6 +48,9 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <!-- Combobox Kategori Buku -->
+                        <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group mb-3">
                                     <label for="bukuAktif">Buku Aktif</label>
@@ -64,6 +58,12 @@
                                         <option value="Aktif">Aktif</option>
                                         <option value="Tidak Aktif">Tidak Aktif</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label for="bukuDenda">Buku Denda</label>
+                                    <input type="number" id="bukuDenda" name="buku_denda" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -76,12 +76,6 @@
                                     <div id="fotoPreview" style="margin-top: 10px;">
                                         <img class="buku-pic" id="outputImage" width="200px" />
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group mb-3">
-                                    <label for="bukuDenda">Buku Denda</label>
-                                    <input type="number" id="bukuDenda" name="buku_denda" class="form-control" required>
                                 </div>
                             </div>
                         </div>

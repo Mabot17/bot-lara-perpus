@@ -73,15 +73,16 @@
         </table>
     </div>
     <hr>
-    <h1>Data Pengembalian</h1>
+    <h4 style="text-align: center"><u>Data Pengembalian Buku</u></h4>
     <table class="nota-info">
         <thead>
             <tr>
                 <th>No</th>
                 <th>No. Pengembalian</th>
-                <th>Nama Pelanggan</th>
-                <th>Tanggal</th>
-                <th>Pembayaran</th>
+                <th>Tanggal Est Kembali</th>
+                <th>Tanggal Kembali</th>
+                <th>Telat<br>Hari</th>
+                <th>Cara<br>Bayar</th>
                 <th class="right-align">Total (Rp)</th>
                 <th class="right-align">Total Bayar (Rp)</th>
                 <th class="right-align">Total Kembalian (Rp)</th>
@@ -91,11 +92,18 @@
             @foreach($data_pengembalian as $buku)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $buku->pengembalian_no }}</td>
-                    <td>{{ $buku->pengembalian_pelanggan }}</td>
+                    <td>
+                        <b><u>
+                        {{ $buku->pengembalian_no }}
+                        </u></b>
+                        <br>
+                        {{ $buku->peminjaman_pelanggan }}
+                    </td>
+                    <td>{{ $buku->pengembalian_tanggal_est_kembali }}</td>
                     <td>{{ $buku->pengembalian_tanggal }}</td>
+                    <td style="text-align: center">{{ $buku->pengembalian_telat_hari }}</td>
                     <td>{{ $buku->pengembalian_cara_bayar }}</td>
-                    <td class="right-align">{{ number_format($buku->pengembalian_total, 0, ',', '.') }}</td>
+                    <td class="right-align">{{ number_format($buku->pengembalian_total_denda, 0, ',', '.') }}</td>
                     <td class="right-align">{{ number_format($buku->pengembalian_total_bayar, 0, ',', '.') }}</td>
                     <td class="right-align">{{ number_format($buku->pengembalian_total_kembalian, 0, ',', '.') }}</td>
                 </tr>

@@ -104,6 +104,7 @@
         </table>
     </div>
     <hr>
+    <h4 style="text-align: center"><u>Nota Peminjaman Buku</u></h4>
     <table class="header-info">
         <tr>
             <td width="60px"><strong>No Nota</strong></td>

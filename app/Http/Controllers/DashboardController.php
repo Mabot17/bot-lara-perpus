@@ -14,36 +14,40 @@ class DashboardController extends Controller
 
     public function getDataGrafikBarNetsales()
     {
-        $data = DB::table('penjualan')
-                ->selectRaw('penjualan_tanggal, COUNT(*) as total_order, SUM(penjualan_detail.pjual_detail_qty) as total_item')
-                ->join('penjualan_detail', 'penjualan.penjualan_id', '=', 'penjualan_detail.pjual_detail_master_id')
-                ->groupBy('penjualan_tanggal')
+        $data = DB::table('peminjaman')
+                ->selectRaw('peminjaman_tanggal, COUNT(*) as total_pinjam, SUM(peminjaman_detail.pinjam_detail_qty) as total_buku')
+                ->join('peminjaman_detail', 'peminjaman.peminjaman_id', '=', 'peminjaman_detail.pinjam_detail_master_id')
+                ->groupBy('peminjaman_tanggal')
                 ->get();
 
-        $dataSalesKategori = DB::table('penjualan_detail')
-            ->selectRaw('kategori_nama, COUNT(*) as total_order, SUM(penjualan_detail.pjual_detail_qty) as total_item')
-            ->join('produk', 'produk.produk_id', '=', 'penjualan_detail.pjual_detail_produk_id')
-            ->join('produk_kategori', 'produk_kategori.kategori_id', '=', 'produk.produk_kategori_id')
-            ->groupBy('produk.produk_kategori_id')
+        $dataPinjamByKategoriBuku = DB::table('peminjaman_detail')
+            ->selectRaw('kategori_nama, COUNT(*) as total_order, SUM(peminjaman_detail.pinjam_detail_qty) as total_buku')
+            ->join('buku', 'buku.buku_id', '=', 'peminjaman_detail.pinjam_detail_buku_id')
+            ->join('buku_kategori', 'buku_kategori.kategori_id', '=', 'buku.buku_kategori_id')
+            ->groupBy('buku.buku_kategori_id')
             ->get();
 
-        $totalSales = DB::table('penjualan')
-                ->sum('penjualan_total');
-
-        $totalOrders = DB::table('penjualan')
+        $totalBuku = DB::table('buku')
                 ->count();
 
-        $conversionRate = 30; // Assuming you have a visitors table to calculate conversion
+        $totalBukuKategori = DB::table('buku_kategori')
+                ->count();
 
-        $avgOrderValue = $totalSales / max(1, $totalOrders);
+        $totalPeminjaman = DB::table('peminjaman')
+                ->where('peminjaman_stat_kembali', '=', 0)
+                ->count();
+
+        $totalPengembalian = DB::table('peminjaman')
+                ->where('peminjaman_stat_kembali', '=', 1)
+                ->count();
 
         return response()->json([
-            'chart_data' => $data,
-            'total_sales' => $totalSales,
-            'total_orders' => $totalOrders,
-            'conversion_rate' => $conversionRate,
-            'avg_order_value' => $avgOrderValue,
-            'dataSalesKategori' => $dataSalesKategori,
+            'chart_bar_data' => $data,
+            'chart_pie_data' => $dataPinjamByKategoriBuku,
+            'total_buku' => $totalBuku,
+            'total_buku_kategori' => $totalBukuKategori,
+            'total_peminjaman' => $totalPeminjaman,
+            'total_pengembalian' => $totalPengembalian,
         ]);
     }
 }

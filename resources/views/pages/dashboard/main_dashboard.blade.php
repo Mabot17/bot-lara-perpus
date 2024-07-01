@@ -13,9 +13,8 @@
                             </span>
                         </div>
                         <div class="col pr-0">
-                            <p class="small text-muted mb-0">Monthly Sales</p>
-                            <span class="h3 mb-0 text-white" id="monthlySales"></span>
-                            <span class="small text-muted">+5.5%</span>
+                            <p class="small text-muted mb-0">Total Buku</p>
+                            <span class="h3 mb-0 text-white" id="totalBuku"></span>
                         </div>
                     </div>
                 </div>
@@ -31,9 +30,8 @@
                             </span>
                         </div>
                         <div class="col pr-0">
-                            <p class="small text-muted mb-0">Orders</p>
-                            <span class="h3 mb-0" id="totalOrders"></span>
-                            <span class="small text-success">+16.5%</span>
+                            <p class="small text-muted mb-0">Total Kategori Buku</p>
+                            <span class="h3 mb-0" id="totalKategoriBuku"></span>
                         </div>
                     </div>
                 </div>
@@ -49,15 +47,10 @@
                             </span>
                         </div>
                         <div class="col">
-                            <p class="small text-muted mb-0">Conversion</p>
+                            <p class="small text-muted mb-0">Total Peminjaman</p>
                             <div class="row align-items-center no-gutters">
                                 <div class="col-auto">
-                                    <span class="h3 mr-2 mb-0" id="conversionRate"></span>
-                                </div>
-                                <div class="col-md-12 col-lg">
-                                    <div class="progress progress-sm mt-2" style="height:3px">
-                                        <div class="progress-bar bg-success" role="progressbar" id="conversionProgressBar" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                                    <span class="h3 mr-2 mb-0" id="totalPeminjaman"></span>
                                 </div>
                             </div>
                         </div>
@@ -75,8 +68,8 @@
                             </span>
                         </div>
                         <div class="col">
-                            <p class="small text-muted mb-0">AVG Orders</p>
-                            <span class="h3 mb-0" id="avgOrderValue"></span>
+                            <p class="small text-muted mb-0">Total Pengembalian</p>
+                            <span class="h3 mb-0" id="totalPeminjamanKembali"></span>
                         </div>
                     </div>
                 </div>
@@ -115,7 +108,7 @@
         <div class="card shadow mb-4">
             <div class="card-body">
                 <div class="card-title">
-                    <strong>Sales by Category</strong>
+                    <strong>Data Grafik Peminjaman</strong>
                 </div>
                 <div id="pieChart"></div>
             </div>
@@ -289,15 +282,14 @@ document.addEventListener('DOMContentLoaded', function () {
         success: function(response) {
             console.log(response);
             // Update the stats
-            $('#monthlySales').text('$' + response.total_sales.toFixed(2));
-            $('#totalOrders').text(response.total_orders);
-            $('#conversionRate').text(response.conversion_rate.toFixed(2) + '%');
-            $('#conversionProgressBar').css('width', response.conversion_rate.toFixed(2) + '%');
-            $('#avgOrderValue').text('$' + response.avg_order_value.toFixed(2));
+            $('#totalBuku').text(response.total_buku.toFixed(2) + ' Data');
+            $('#totalKategoriBuku').text(response.total_buku_kategori.toFixed(2) + ' Data');
+            $('#totalPeminjaman').text(response.total_peminjaman.toFixed(2) + ' Data');
+            $('#totalPeminjamanKembali').text(response.total_pengembalian.toFixed(2) + ' Data');
 
-            var categories = response.chart_data.map(item => item.penjualan_tanggal);
-            var totalOrders = response.chart_data.map(item => item.total_order);
-            var totalItems = response.chart_data.map(item => item.total_item);
+            var categories = response.chart_bar_data.map(item => item.penjualan_tanggal);
+            var totalPeminjaman = response.chart_bar_data.map(item => item.total_pinjam);
+            var totalItems = response.chart_bar_data.map(item => item.total_buku);
 
             Highcharts.chart('columnChart', {
                 chart: {
@@ -323,16 +315,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 },
                 series: [{
-                    name: 'Total Order',
-                    data: totalOrders
+                    name: 'Total Peminjaman',
+                    data: totalPeminjaman
                 }, {
-                    name: 'Total Item',
+                    name: 'Total Buku Dipinjam',
                     data: totalItems
                 }]
             });
 
-            var pieData = response.dataSalesKategori.map(item => {
-                return { name: item.kategori_nama, y: item.total_item };
+            var pieData = response.chart_pie_data.map(item => {
+                return { name: item.kategori_nama, y: item.total_buku };
             });
 
             Highcharts.chart('pieChart', {
@@ -340,10 +332,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     type: 'pie'
                 },
                 title: {
-                    text: 'Sales by Category'
+                    text: 'Peminjaman Buku Berdasarkan Kategori'
                 },
                 series: [{
-                    name: 'Total Item',
+                    name: 'Total Buku',
                     colorByPoint: true,
                     data: pieData
                 }]
