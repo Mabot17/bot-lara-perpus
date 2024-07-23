@@ -1,0 +1,28 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Request Berhasil."
+    },
+    "data": {
+        "kategori_id": 2,
+        "kategori_kode": "K002",
+        "kategori_nama": "Barang Kebutuhan Sehari-hari",
+        "kategori_status": "Aktif",
+        "created_at": "2024-06-21 23:44:09",
+        "created_by": "Admin",
+        "updated_at": "2024-06-21 23:44:09",
+        "updated_by": "Admin",
+        "deleted_at": null,
+        "deleted_by": null
+    },
+    "params": {
+        "attributes": {},
+        "request": {},
+        "query": {},
+        "server": {},
+        "files": {},
+        "cookies": {},
+        "headers": {}
+    },
+    "request": []
+}

@@ -64,7 +64,7 @@
                             <input type="password" class="form-control" id="inputPassword6" required>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-                        <p class="mt-5 mb-3 text-muted text-center">© 2020</p>
+                        <p class="mt-5 mb-3 text-muted text-center">© 2024</p>
                     </form>
                 </div>
             </div>

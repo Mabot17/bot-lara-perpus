@@ -56,13 +56,13 @@
                 <span>Laporan</span>
             </p>
             <li class="nav-item w-100">
-                <a class="nav-link {{ Request::segment(1) === 'peminjaman' ? 'active' : '' }}" href="/peminjaman">
+                <a class="nav-link {{ Request::segment(2) === 'peminjaman' ? 'active' : '' }}" href="/laporan/peminjaman">
                     <i class="fe fe-database fe-16"></i>
                     <span class="ml-3 item-text">Laporan Peminjaman</span>
                 </a>
             </li>
             <li class="nav-item w-100">
-                <a class="nav-link {{ Request::segment(1) === 'peminjaman' ? 'active' : '' }}" href="/peminjaman">
+                <a class="nav-link {{ Request::segment(2) === 'pengembalian' ? 'active' : '' }}" href="/laporan/pengembalian">
                     <i class="fe fe-database fe-16"></i>
                     <span class="ml-3 item-text">Laporan Pengembalian</span>
                 </a>

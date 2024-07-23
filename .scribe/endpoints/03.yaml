@@ -1,16 +1,16 @@
-name: 'Produk Kategori'
+name: 'Buku Kategori'
 description: ''
 endpoints:
   -
     httpMethods:
       - POST
-    uri: api/produkKategori/list
+    uri: api/bukuKategori/list
     metadata:
-      groupName: 'Produk Kategori'
+      groupName: 'Buku Kategori'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Produk Kategori List'
+      title: 'POST - Buku Kategori List'
       description: ''
       authenticated: true
       custom: []
@@ -58,7 +58,133 @@ endpoints:
     responses:
       -
         status: 200
-        content: ''
+        content: |
+          {
+              "status": {
+                  "code": 200,
+                  "message": "Data Berhasil Ditampilkan."
+              },
+              "data": [
+                  {
+                      "kategori_id": 10,
+                      "kategori_kode": "K010",
+                      "kategori_nama": "IT Support",
+                      "kategori_status": "Aktif",
+                      "created_at": "2024-06-24 15:39:16",
+                      "created_by": "1462200195@gmail.com",
+                      "updated_at": "2024-06-30 14:09:11",
+                      "updated_by": "1462200195@gmail.com",
+                      "deleted_at": null,
+                      "deleted_by": null
+                  },
+                  {
+                      "kategori_id": 8,
+                      "kategori_kode": "K008",
+                      "kategori_nama": "Printer",
+                      "kategori_status": "Aktif",
+                      "created_at": "2024-06-22 16:04:04",
+                      "created_by": "1462200195@gmail.com",
+                      "updated_at": "2024-06-27 00:22:26",
+                      "updated_by": null,
+                      "deleted_at": null,
+                      "deleted_by": null
+                  },
+                  {
+                      "kategori_id": 7,
+                      "kategori_kode": "K007",
+                      "kategori_nama": "Laptop",
+                      "kategori_status": "Aktif",
+                      "created_at": "2024-06-22 15:49:37",
+                      "created_by": "1462200195@gmail.com",
+                      "updated_at": "2024-06-27 00:22:20",
+                      "updated_by": null,
+                      "deleted_at": null,
+                      "deleted_by": null
+                  },
+                  {
+                      "kategori_id": 6,
+                      "kategori_kode": "K006",
+                      "kategori_nama": "Pemrograman Web",
+                      "kategori_status": "Aktif",
+                      "created_at": "2024-06-22 15:49:15",
+                      "created_by": "1462200195@gmail.com",
+                      "updated_at": "2024-06-30 14:08:53",
+                      "updated_by": null,
+                      "deleted_at": null,
+                      "deleted_by": null
+                  },
+                  {
+                      "kategori_id": 5,
+                      "kategori_kode": "K005",
+                      "kategori_nama": "Pemrograman Dasar",
+                      "kategori_status": "Aktif",
+                      "created_at": "2024-06-22 15:48:21",
+                      "created_by": "1462200195@gmail.com",
+                      "updated_at": "2024-06-30 14:08:45",
+                      "updated_by": "1462200195@gmail.com",
+                      "deleted_at": null,
+                      "deleted_by": null
+                  },
+                  {
+                      "kategori_id": 4,
+                      "kategori_kode": "K004",
+                      "kategori_nama": "IT",
+                      "kategori_status": "Aktif",
+                      "created_at": "2024-06-22 15:43:04",
+                      "created_by": "1462200195@gmail.com",
+                      "updated_at": "2024-06-30 14:08:41",
+                      "updated_by": null,
+                      "deleted_at": null,
+                      "deleted_by": null
+                  },
+                  {
+                      "kategori_id": 3,
+                      "kategori_kode": "K003",
+                      "kategori_nama": "Produk Kebersihan",
+                      "kategori_status": "Aktif",
+                      "created_at": "2024-06-21 23:44:09",
+                      "created_by": "Admin",
+                      "updated_at": "2024-06-21 23:44:09",
+                      "updated_by": "Admin",
+                      "deleted_at": null,
+                      "deleted_by": null
+                  },
+                  {
+                      "kategori_id": 2,
+                      "kategori_kode": "K002",
+                      "kategori_nama": "Barang Kebutuhan Sehari-hari",
+                      "kategori_status": "Aktif",
+                      "created_at": "2024-06-21 23:44:09",
+                      "created_by": "Admin",
+                      "updated_at": "2024-06-21 23:44:09",
+                      "updated_by": "Admin",
+                      "deleted_at": null,
+                      "deleted_by": null
+                  },
+                  {
+                      "kategori_id": 1,
+                      "kategori_kode": "K001",
+                      "kategori_nama": "Masakan",
+                      "kategori_status": "Aktif",
+                      "created_at": "2024-06-21 23:44:09",
+                      "created_by": "Admin",
+                      "updated_at": "2024-06-30 14:08:33",
+                      "updated_by": "1462200195@gmail.com",
+                      "deleted_at": null,
+                      "deleted_by": null
+                  }
+              ],
+              "paging": {
+                  "page": 1,
+                  "total_pages": 1,
+                  "records_per_page": 10,
+                  "total_records": 9
+              },
+              "request": {
+                  "start": 0,
+                  "limit": 10
+              }
+          }
         headers: []
         description: ''
         custom: []
@@ -83,7 +209,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer Dhv8c4fPkVaadZg361eEb56'
+      - 'Bearer 58k3aaDb61VPvf6h4dZEcge'
     controller: null
     method: null
     route: null
@@ -91,13 +217,13 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/produkKategori/detail/{kategori_id}'
+    uri: 'api/bukuKategori/detail/{kategori_id}'
     metadata:
-      groupName: 'Produk Kategori'
+      groupName: 'Buku Kategori'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Produk Kategori Detail'
+      title: 'GET - Buku Kategori Detail'
       description: ''
       authenticated: true
       custom: []
@@ -108,7 +234,7 @@ endpoints:
     urlParameters:
       kategori_id:
         name: kategori_id
-        description: 'kategori_id data dari api/produk_kategori list.'
+        description: 'kategori_id data dari api/buku_kategori list.'
         required: true
         example: 2
         type: integer
@@ -160,7 +286,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer v56Zdb18ckVafgaP3eh4DE6'
+      - 'Bearer dk3fah6gPV4Z1cEeD6vab58'
     controller: null
     method: null
     route: null
@@ -168,13 +294,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/produkKategori/create
+    uri: api/bukuKategori/create
     metadata:
-      groupName: 'Produk Kategori'
+      groupName: 'Buku Kategori'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Produk Kategori Create'
+      title: 'POST - Buku Kategori Create'
       description: ''
       authenticated: true
       custom: []
@@ -187,18 +313,18 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      ProdukKategori_kode:
-        name: ProdukKategori_kode
-        description: ProdukKategori_kode.
+      kategori_kode:
+        name: kategori_kode
+        description: kategori_kode.
         required: false
         example: null
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      ProdukKategori_nama:
-        name: ProdukKategori_nama
-        description: ProdukKategori_nama.
+      kategori_nama:
+        name: kategori_nama
+        description: kategori_nama.
         required: false
         example: null
         type: string
@@ -206,8 +332,8 @@ endpoints:
         exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      ProdukKategori_kode: null
-      ProdukKategori_nama: null
+      kategori_kode: null
+      kategori_nama: null
     fileParameters: []
     responses:
       -
@@ -247,7 +373,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1ZDe5683kbVf4avPdacgE6h'
+      - 'Bearer 64da5Ev8VeaPDgkhb6Zf3c1'
     controller: null
     method: null
     route: null
@@ -255,13 +381,13 @@ endpoints:
   -
     httpMethods:
       - PUT
-    uri: api/produkKategori/update
+    uri: api/bukuKategori/update
     metadata:
-      groupName: 'Produk Kategori'
+      groupName: 'Buku Kategori'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Produk Kategori Update'
+      title: 'PUT - Buku Kategori Update'
       description: ''
       authenticated: true
       custom: []
@@ -283,18 +409,18 @@ endpoints:
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      ProdukKategori_kode:
-        name: ProdukKategori_kode
-        description: ProdukKategori_kode.
+      kategori_kode:
+        name: kategori_kode
+        description: kategori_kode.
         required: false
         example: null
         type: string
         enumValues: []
         exampleWasSpecified: true
         custom: []
-      ProdukKategori_nama:
-        name: ProdukKategori_nama
-        description: ProdukKategori_nama.
+      kategori_nama:
+        name: kategori_nama
+        description: kategori_nama.
         required: false
         example: null
         type: string
@@ -303,8 +429,8 @@ endpoints:
         custom: []
     cleanBodyParameters:
       kategori_id: '1'
-      ProdukKategori_kode: null
-      ProdukKategori_nama: null
+      kategori_kode: null
+      kategori_nama: null
     fileParameters: []
     responses:
       -
@@ -344,7 +470,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer k6Pcfdb4V5g3vh1a8eEZ6aD'
+      - 'Bearer 1vDa4fcV53abgehEdP6k86Z'
     controller: null
     method: null
     route: null
@@ -352,13 +478,13 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/produkKategori/delete/{kategori_id}'
+    uri: 'api/bukuKategori/delete/{kategori_id}'
     metadata:
-      groupName: 'Produk Kategori'
+      groupName: 'Buku Kategori'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'DELETE - Buku Kategori Delete'
       description: ''
       authenticated: true
       custom: []
@@ -369,26 +495,59 @@ endpoints:
     urlParameters:
       kategori_id:
         name: kategori_id
-        description: 'The ID of the kategori.'
+        description: 'kategori_id data dari api/kategori list.'
         required: true
-        example: eveniet
-        type: string
+        example: 2
+        type: integer
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         custom: []
     cleanUrlParameters:
-      kategori_id: eveniet
+      kategori_id: 2
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: |
+          {
+              "status": {
+                  "code": 200,
+                  "message": "Request Berhasil."
+              },
+              "data": {},
+              "request": {
+                  "xxx_id": 1
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 404
+        content: |
+          {
+              "status": {
+                  "code": 404,
+                  "message": "Data Tidak Ditemukan."
+              },
+              "data": null,
+              "request": {
+                  "param_1": 100,
+                  "param_2": "example_value"
+              }
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 56f4gPZED18ec3Vvdbaha6k'
+      - 'Bearer 81Phvk6b5E4eaDZgc3a6Vdf'
     controller: null
     method: null
     route: null
@@ -396,13 +555,13 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/produkKategori/cetak-list-pdf
+    uri: api/bukuKategori/cetak-list-pdf
     metadata:
-      groupName: 'Produk Kategori'
+      groupName: 'Buku Kategori'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Produk Kategori Cetak PDF List'
+      title: 'Buku Kategori Cetak PDF List'
       description: ''
       authenticated: true
       custom: []
@@ -448,7 +607,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer chVDaEkaZ6v61d34gb8Pef5'
+      - 'Bearer Zc3ePh16EfvD85bV4ka6dga'
     controller: null
     method: null
     route: null
@@ -456,13 +615,13 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/produkKategori/cetak-list-xls
+    uri: api/bukuKategori/cetak-list-xls
     metadata:
-      groupName: 'Produk Kategori'
+      groupName: 'Buku Kategori'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Produk Kategori Cetak Excel List'
+      title: 'Buku Kategori Cetak Excel List'
       description: ''
       authenticated: true
       custom: []
@@ -508,7 +667,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer g6aeacb1V5kfDEvd4386hZP'
+      - 'Bearer gk58PEva6VefZchab43D6d1'
     controller: null
     method: null
     route: null

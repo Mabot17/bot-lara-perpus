@@ -1,0 +1,32 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Request Berhasil."
+    },
+    "data": {
+        "buku_id": 2,
+        "buku_sku": "SKU002",
+        "buku_nama": "Belajar Masak jilid 2",
+        "buku_kategori_id": 1,
+        "buku_stok": 50,
+        "buku_aktif": "Aktif",
+        "buku_foto_path": "uploads/produk/SKU002/inet.png",
+        "buku_denda": 120000,
+        "created_at": "2024-06-21 23:42:18",
+        "created_by": "Admin",
+        "updated_at": "2024-07-01 11:48:35",
+        "updated_by": "1462200195@gmail.com",
+        "deleted_at": null,
+        "deleted_by": null
+    },
+    "params": {
+        "attributes": {},
+        "request": {},
+        "query": {},
+        "server": {},
+        "files": {},
+        "cookies": {},
+        "headers": {}
+    },
+    "request": []
+}

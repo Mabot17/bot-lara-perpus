@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     type: 'column'
                 },
                 title: {
-                    text: 'Penjualan'
+                    text: 'Peminjaman'
                 },
                 xAxis: {
                     categories: categories,

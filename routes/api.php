@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LaporanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -36,7 +37,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::post('/create', [BukuKategoriController::class, 'bukuKategoriCreate']);
         Route::put('/update', [BukuKategoriController::class, 'bukuKategoriUpdate']);
         Route::delete('/delete/{kategori_id}', [BukuKategoriController::class, 'bukuKategoriDelete']);
-        // Route::get('/view-cetak-keterangan', [MahasiswaController::class, 'formCetakKeteranganKuliah'])->name('mahasiswa.form-cetak-keterangan-kuliah');
         Route::get('/cetak-list-pdf/', [BukuKategoriController::class, 'cetakListBukuKategoriPDF']);
         Route::get('/cetak-list-xls/', [BukuKategoriController::class, 'cetakListBukuKategoriExcel']);
     });
@@ -68,5 +68,20 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/cetak-list-xls/', [PengembalianController::class, 'cetakListPengembalianExcel']);
         Route::get('/cetak-faktur-pdf/{pengembalian_id}', [PengembalianController::class, 'cetakFakturPDF']);
     });
+
+    Route::prefix('/laporan')->group(function () {
+        Route::prefix('/peminjaman')->group(function () {
+            Route::post('/', [LaporanController::class, 'laporanPinjamanList']);
+            Route::post('/cetak-list-pdf/', [LaporanController::class, 'cetakListPeminjamanPDF']);
+            Route::post('/cetak-list-xls/', [LaporanController::class, 'cetakListPeminjamanExcel']);
+        });
+
+        Route::prefix('/pengembalian')->group(function () {
+            Route::post('/', [LaporanController::class, 'laporanPengembalianList']);
+            Route::post('/cetak-list-pdf/', [LaporanController::class, 'cetakListPengembalianPDF']);
+            Route::post('/cetak-list-xls/', [LaporanController::class, 'cetakListPengembalianExcel']);
+        });
+    });
+
 
 });

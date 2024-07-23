@@ -1,0 +1,75 @@
+{
+    "chart_bar_data": [
+        {
+            "peminjaman_tanggal": "2024-06-21",
+            "total_pinjam": 2,
+            "total_buku": 2
+        },
+        {
+            "peminjaman_tanggal": "2024-06-22",
+            "total_pinjam": 2,
+            "total_buku": 2
+        },
+        {
+            "peminjaman_tanggal": "2024-06-24",
+            "total_pinjam": 1,
+            "total_buku": 3
+        },
+        {
+            "peminjaman_tanggal": "2024-06-25",
+            "total_pinjam": 2,
+            "total_buku": 2
+        },
+        {
+            "peminjaman_tanggal": "2024-06-26",
+            "total_pinjam": 4,
+            "total_buku": 11
+        },
+        {
+            "peminjaman_tanggal": "2024-06-27",
+            "total_pinjam": 4,
+            "total_buku": 4
+        },
+        {
+            "peminjaman_tanggal": "2024-06-28",
+            "total_pinjam": 5,
+            "total_buku": 20
+        },
+        {
+            "peminjaman_tanggal": "2024-06-30",
+            "total_pinjam": 4,
+            "total_buku": 7
+        },
+        {
+            "peminjaman_tanggal": "2024-07-01",
+            "total_pinjam": 1,
+            "total_buku": 1
+        }
+    ],
+    "chart_pie_data": [
+        {
+            "kategori_nama": "Masakan",
+            "total_order": 7,
+            "total_buku": 24
+        },
+        {
+            "kategori_nama": "Barang Kebutuhan Sehari-hari",
+            "total_order": 11,
+            "total_buku": 21
+        },
+        {
+            "kategori_nama": "Produk Kebersihan",
+            "total_order": 6,
+            "total_buku": 6
+        },
+        {
+            "kategori_nama": "IT Support",
+            "total_order": 1,
+            "total_buku": 1
+        }
+    ],
+    "total_buku": 24,
+    "total_buku_kategori": 11,
+    "total_peminjaman": 19,
+    "total_pengembalian": 5
+}

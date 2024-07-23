@@ -39,6 +39,12 @@ class BukuController extends Controller
         return view('pages.buku.form_ubah_buku');
     }
 
+    /**
+    * GET - Buku Cetak PDF List
+    * @authenticated
+    * @responseFile 200 response_docs_api/response_success_print.json
+    * @responseFile 404 response_docs_api/response_not_found.json
+    */
     public function cetakListBukuPDF()
     {
         $data_buku = DB::table('buku as p')
@@ -90,6 +96,12 @@ class BukuController extends Controller
         return response()->json(['url' => $url]);
     }
 
+    /**
+    * GET - Buku Cetak Excel List
+    * @authenticated
+    * @responseFile 200 response_docs_api/response_success_print_xls.json
+    * @responseFile 404 response_docs_api/response_not_found.json
+    */
     public function cetakListBukuExcel()
     {
         $data_buku = DB::table('buku as p')
@@ -137,7 +149,7 @@ class BukuController extends Controller
     }
 
     /**
-    * Buku List
+    * POST - Buku List
     * @authenticated
     * @bodyParam start int required start data. Example: 0
     * @bodyParam limit int required limit data. Example: 10
@@ -176,16 +188,16 @@ class BukuController extends Controller
     }
 
     /**
-     * Buku Detail
+     * GET - Buku Detail
      * @authenticated
-     * @urlParam kategori_id int required kategori_id data dari api/event list. Example: 2
+     * @urlParam buku_id int required buku_id data dari api/event list. Example: 2
      * @responseFile 200 response_docs_api/response_success.json
      * @responseFile 404 response_docs_api/response_not_found.json
      */
-    public function bukuDataDetail($kategori_id)
+    public function bukuDataDetail($buku_id)
     {
         try {
-            $result = $this->bukuModel->bukuDataDetail($kategori_id);
+            $result = $this->bukuModel->bukuDataDetail($buku_id);
             if ($result) {
                 return $this->showSuccess(['data' => $result]);
             } else {
@@ -203,10 +215,15 @@ class BukuController extends Controller
     }
 
     /**
-     * Buku Create
+     * POST - Buku Create
      * @authenticated
-     * @bodyParam buku_sku string buku_sku. Example: null
-     * @bodyParam buku_nama string buku_nama. Example: null
+     * @bodyParam buku_sku string buku_sku. Example: 00019230
+     * @bodyParam buku_nama string buku_nama. Example: tes nama buku
+     * @bodyParam buku_stok int buku_stok. Example: 1
+     * @bodyParam buku_aktif string buku_aktif. Example: Aktif
+     * @bodyParam buku_kategori_id int required buku_kategori_id data dari api/bukuKategori list. Example: 2
+     * @bodyParam buku_denda int buku_denda. Example: 1000
+     * @bodyParam buku_foto_path file required The buku_foto_path.
      * @responseFile 200 response_docs_api/response_success.json
      * @responseFile 404 response_docs_api/response_not_found.json
      */
@@ -218,12 +235,12 @@ class BukuController extends Controller
                 'buku_sku' => 'required',
             ]);
 
-            $kategori_id = $this->bukuModel->bukuCreate($request);
+            $buku_id = $this->bukuModel->bukuCreate($request);
 
             // Insert Detail
-            if ($kategori_id) {
+            if ($buku_id) {
 
-                $msgSuccess = ["id" => $kategori_id];
+                $msgSuccess = ["id" => $buku_id];
                 return $this->showSuccess([
                     'data'        => $msgSuccess,
                     'codeMessage' => 'createTrue'
@@ -248,10 +265,16 @@ class BukuController extends Controller
     }
 
     /**
-     * Buku Update
+     * PUT - Buku Update
      * @authenticated
-     * @bodyParam kategori_id string required kategori_id. Example: 1
-     * @bodyParam buku_sku string buku_sku. Example: null
+     * @bodyParam buku_id int buku_id. Example: 2
+     * @bodyParam buku_sku string buku_sku. Example: 00019230
+     * @bodyParam buku_nama string buku_nama. Example: tes nama buku
+     * @bodyParam buku_stok int buku_stok. Example: 1
+     * @bodyParam buku_aktif string buku_aktif. Example: Aktif
+     * @bodyParam buku_kategori_id int required buku_kategori_id data dari api/bukuKategori list. Example: 2
+     * @bodyParam buku_denda int buku_denda. Example: 1000
+     * @bodyParam buku_foto_path file required The buku_foto_path.
      * @bodyParam buku_nama string buku_nama. Example: null
      * @responseFile 200 response_docs_api/response_success.json
      * @responseFile 404 response_docs_api/response_not_found.json
@@ -259,11 +282,11 @@ class BukuController extends Controller
     public function bukuUpdate(Request $request)
     {
         try {
-            // $request->validate([
-            //     'buku_id' => 'required',
-            //     'buku_sku' => 'required',
-            //     'buku_nama' => 'required'
-            // ]);
+            $request->validate([
+                'buku_id' => 'required',
+                'buku_sku' => 'required',
+                'buku_nama' => 'required'
+            ]);
 
             $buku_id    = $request->input('buku_id');
 
@@ -302,6 +325,13 @@ class BukuController extends Controller
         }
     }
 
+    /**
+     * DELETE - Buku Delete
+     * @authenticated
+     * @urlParam buku_id int required buku_id data dari api/event list. Example: 2
+     * @responseFile 200 response_docs_api/response_success.json
+     * @responseFile 404 response_docs_api/response_not_found.json
+     */
     public function bukuDelete($buku_id)
     {
         try {

@@ -1,0 +1,44 @@
+{
+  "status": {
+    "code": 200,
+    "message": "Request Berhasil."
+  },
+  "data": {
+    "peminjaman_id": 2,
+    "peminjaman_no": "PJ/2406-0002",
+    "peminjaman_pelanggan": "Pelanggan Umum",
+    "peminjaman_tanggal": "2024-06-24",
+    "peminjaman_tanggal_est_kembali": "2024-06-27",
+    "peminjaman_total_est_denda": 15000,
+    "peminjaman_stat_kembali": 0,
+    "created_at": "2024-06-25 09:54:11",
+    "created_by": null,
+    "updated_at": "2024-06-25 17:46:39",
+    "updated_by": "1462200195@gmail.com",
+    "deleted_at": null,
+    "deleted_by": null,
+    "dataBukuList": [
+      {
+        "pinjam_detail_id": 10,
+        "pinjam_detail_master_id": 2,
+        "pinjam_detail_buku_id": 10,
+        "pinjam_detail_qty": 3,
+        "pinjam_detail_denda": 5000,
+        "pinjam_detail_diskon": 0,
+        "pinjam_detail_diskon_rp": 0,
+        "pinjam_diskon_subtotal": 15000,
+        "pinjam_detail_buku_nama": "Dasar Dasar Web Jilid 1"
+      }
+    ]
+  },
+  "params": {
+    "attributes": {},
+    "request": {},
+    "query": {},
+    "server": {},
+    "files": {},
+    "cookies": {},
+    "headers": {}
+  },
+  "request": []
+}

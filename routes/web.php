@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\MainController;
@@ -53,3 +54,10 @@ Route::prefix('/pengembalian')->group(function () {
     Route::get('/tambah', [PengembalianController::class, 'formTambah'])->name('pengembalian.tambah');
     Route::get('/ubah/{kategori_id}', [PengembalianController::class, 'formUbah'])->name('pengembalian.ubah');
 });
+
+Route::prefix('/laporan')->group(function () {
+    // Route API Handle form buku
+    Route::get('/peminjaman', [LaporanController::class, 'laporanPeminjaman']);
+    Route::get('/pengembalian', [LaporanController::class, 'laporanPengembalian']);
+});
+

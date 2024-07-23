@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "API DOCS BOT|POS",
-        "_postman_id": "e7b940df-d7ce-42ad-9d86-b359298aed14",
+        "_postman_id": "f17ca134-3fbe-4847-9a9a-b7f369ed3d49",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -122,11 +122,700 @@
             ]
         },
         {
-            "name": "Endpoints",
+            "name": "Buku",
             "description": "",
             "item": [
                 {
-                    "name": "GET api\/dashboard\/grafik-bar-netsales",
+                    "name": "POST - Buku List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/buku\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/buku\/list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"start\":0,\"limit\":10,\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Data Berhasil Ditampilkan.\"\n    },\n    \"data\": [\n        {\n            \"buku_id\": 24,\n            \"buku_sku\": \"0091230\",\n            \"buku_nama\": \"Belajar teknis\",\n            \"buku_kategori_id\": 10,\n            \"buku_stok\": 5,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": \"uploads\/buku\/0091230\/maxresdefault.jpg\",\n            \"buku_denda\": 1000,\n            \"created_at\": \"2024-07-01 06:18:37\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-07-01 06:18:37\",\n            \"updated_by\": null,\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:180px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:54px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:60px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:74px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:92px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:124px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:136px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:144px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:164px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:172px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:180px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:180px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 23,\n            \"buku_sku\": \"90218309\",\n            \"buku_nama\": \"Belajar Resep Daerah\",\n            \"buku_kategori_id\": 1,\n            \"buku_stok\": 2998,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": \"uploads\/produk\/90218309\/WhatsApp Image 2024-06-22 at 00.31.31.jpeg\",\n            \"buku_denda\": 8999,\n            \"created_at\": \"2024-06-24 15:20:13\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-07-01 11:50:01\",\n            \"updated_by\": \"rohman@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:158px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:38px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:50px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:60px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:70px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:82px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:96px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:142px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:150px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 22,\n            \"buku_sku\": \"092830924\",\n            \"buku_nama\": \"Menjadi Robot dengan biner\",\n            \"buku_kategori_id\": 8,\n            \"buku_stok\": 100,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": \"uploads\/produk\/092830924\/WhatsApp Image 2024-06-22 at 00.12.21.jpeg\",\n            \"buku_denda\": null,\n            \"created_at\": \"2024-06-24 13:30:48\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-07-01 11:49:43\",\n            \"updated_by\": \"1462200195@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:30px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:54px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:60px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:78px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:92px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:96px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:114px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:124px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:140px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:166px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 21,\n            \"buku_sku\": \"90218309\",\n            \"buku_nama\": \"Servis printer sendiri\",\n            \"buku_kategori_id\": 8,\n            \"buku_stok\": 2998,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": \"uploads\/produk\/90218309\/bot_backup_db.png\",\n            \"buku_denda\": 8000,\n            \"created_at\": \"2024-06-24 15:20:13\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-07-01 11:49:36\",\n            \"updated_by\": \"1462200195@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:158px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:38px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:50px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:60px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:70px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:82px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:96px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:142px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:150px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 20,\n            \"buku_sku\": \"SKU020\",\n            \"buku_nama\": \"Sunblock SPF 50\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 65,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 7000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-06-27 00:28:59\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:118px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:128px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:138px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:164px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:170px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 19,\n            \"buku_sku\": \"SKU019\",\n            \"buku_nama\": \"Hand Sanitizer ubah\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 40,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 7111,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-06-27 00:28:58\",\n            \"updated_by\": \"1462200195@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:142px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:160px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:164px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 18,\n            \"buku_sku\": \"SKU018\",\n            \"buku_nama\": \"Masker Wajah Terbaik\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 95,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 15000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-07-01 11:49:22\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:140px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:166px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:172px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 17,\n            \"buku_sku\": \"SKU017\",\n            \"buku_nama\": \"Parfum Asia - Pasific\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 85,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 20000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-07-01 11:50:40\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:140px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:166px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 16,\n            \"buku_sku\": \"SKU016\",\n            \"buku_nama\": \"Cara menjadi bersih\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 25,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 20000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-07-01 11:49:14\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:140px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:148px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:164px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 15,\n            \"buku_sku\": \"SKU015\",\n            \"buku_nama\": \"Pembersihan Masker\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 55,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 15000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-07-01 11:49:05\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:138px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:148px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:162px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:168px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        }\n    ],\n    \"paging\": {\n        \"page\": 1,\n        \"total_pages\": 3,\n        \"records_per_page\": 10,\n        \"total_records\": 24\n    },\n    \"request\": {\n        \"start\": 0,\n        \"limit\": 10\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET - Buku Detail",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/buku\/detail\/:buku_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/buku\/detail\/:buku_id",
+                            "variable": [
+                                {
+                                    "id": "buku_id",
+                                    "key": "buku_id",
+                                    "value": "2",
+                                    "description": "buku_id data dari api\/event list."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST - Buku Create",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/buku\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/buku\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "buku_sku",
+                                    "value": "00019230",
+                                    "type": "text",
+                                    "description": "buku_sku."
+                                },
+                                {
+                                    "key": "buku_nama",
+                                    "value": "tes nama buku",
+                                    "type": "text",
+                                    "description": "buku_nama."
+                                },
+                                {
+                                    "key": "buku_stok",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": "buku_stok."
+                                },
+                                {
+                                    "key": "buku_aktif",
+                                    "value": "Aktif",
+                                    "type": "text",
+                                    "description": "buku_aktif."
+                                },
+                                {
+                                    "key": "buku_kategori_id",
+                                    "value": 2,
+                                    "type": "text",
+                                    "description": "buku_kategori_id data dari api\/bukuKategori list."
+                                },
+                                {
+                                    "key": "buku_denda",
+                                    "value": 1000,
+                                    "type": "text",
+                                    "description": "buku_denda."
+                                },
+                                {
+                                    "key": "buku_foto_path",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT - Buku Update",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/buku\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/buku\/update"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "buku_id",
+                                    "value": 2,
+                                    "type": "text",
+                                    "description": "buku_id."
+                                },
+                                {
+                                    "key": "buku_sku",
+                                    "value": "00019230",
+                                    "type": "text",
+                                    "description": "buku_sku."
+                                },
+                                {
+                                    "key": "buku_nama",
+                                    "value": null,
+                                    "type": "text",
+                                    "description": "buku_nama."
+                                },
+                                {
+                                    "key": "buku_stok",
+                                    "value": 1,
+                                    "type": "text",
+                                    "description": "buku_stok."
+                                },
+                                {
+                                    "key": "buku_aktif",
+                                    "value": "Aktif",
+                                    "type": "text",
+                                    "description": "buku_aktif."
+                                },
+                                {
+                                    "key": "buku_kategori_id",
+                                    "value": 2,
+                                    "type": "text",
+                                    "description": "buku_kategori_id data dari api\/bukuKategori list."
+                                },
+                                {
+                                    "key": "buku_denda",
+                                    "value": 1000,
+                                    "type": "text",
+                                    "description": "buku_denda."
+                                },
+                                {
+                                    "key": "buku_foto_path",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "_method",
+                                    "value": "PUT",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE - Buku Delete",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/buku\/delete\/:buku_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/buku\/delete\/:buku_id",
+                            "variable": [
+                                {
+                                    "id": "buku_id",
+                                    "key": "buku_id",
+                                    "value": "2",
+                                    "description": "buku_id data dari api\/event list."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET - Buku Cetak PDF List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/buku\/cetak-list-pdf",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/buku\/cetak-list-pdf"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET - Buku Cetak Excel List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/buku\/cetak-list-xls",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/buku\/cetak-list-xls"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Buku Kategori",
+            "description": "",
+            "item": [
+                {
+                    "name": "POST - Buku Kategori List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bukuKategori\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bukuKategori\/list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"start\":0,\"limit\":10,\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Data Berhasil Ditampilkan.\"\n    },\n    \"data\": [\n        {\n            \"kategori_id\": 10,\n            \"kategori_kode\": \"K010\",\n            \"kategori_nama\": \"IT Support\",\n            \"kategori_status\": \"Aktif\",\n            \"created_at\": \"2024-06-24 15:39:16\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-06-30 14:09:11\",\n            \"updated_by\": \"1462200195@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null\n        },\n        {\n            \"kategori_id\": 8,\n            \"kategori_kode\": \"K008\",\n            \"kategori_nama\": \"Printer\",\n            \"kategori_status\": \"Aktif\",\n            \"created_at\": \"2024-06-22 16:04:04\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-06-27 00:22:26\",\n            \"updated_by\": null,\n            \"deleted_at\": null,\n            \"deleted_by\": null\n        },\n        {\n            \"kategori_id\": 7,\n            \"kategori_kode\": \"K007\",\n            \"kategori_nama\": \"Laptop\",\n            \"kategori_status\": \"Aktif\",\n            \"created_at\": \"2024-06-22 15:49:37\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-06-27 00:22:20\",\n            \"updated_by\": null,\n            \"deleted_at\": null,\n            \"deleted_by\": null\n        },\n        {\n            \"kategori_id\": 6,\n            \"kategori_kode\": \"K006\",\n            \"kategori_nama\": \"Pemrograman Web\",\n            \"kategori_status\": \"Aktif\",\n            \"created_at\": \"2024-06-22 15:49:15\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-06-30 14:08:53\",\n            \"updated_by\": null,\n            \"deleted_at\": null,\n            \"deleted_by\": null\n        },\n        {\n            \"kategori_id\": 5,\n            \"kategori_kode\": \"K005\",\n            \"kategori_nama\": \"Pemrograman Dasar\",\n            \"kategori_status\": \"Aktif\",\n            \"created_at\": \"2024-06-22 15:48:21\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-06-30 14:08:45\",\n            \"updated_by\": \"1462200195@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null\n        },\n        {\n            \"kategori_id\": 4,\n            \"kategori_kode\": \"K004\",\n            \"kategori_nama\": \"IT\",\n            \"kategori_status\": \"Aktif\",\n            \"created_at\": \"2024-06-22 15:43:04\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-06-30 14:08:41\",\n            \"updated_by\": null,\n            \"deleted_at\": null,\n            \"deleted_by\": null\n        },\n        {\n            \"kategori_id\": 3,\n            \"kategori_kode\": \"K003\",\n            \"kategori_nama\": \"Produk Kebersihan\",\n            \"kategori_status\": \"Aktif\",\n            \"created_at\": \"2024-06-21 23:44:09\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-06-21 23:44:09\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null\n        },\n        {\n            \"kategori_id\": 2,\n            \"kategori_kode\": \"K002\",\n            \"kategori_nama\": \"Barang Kebutuhan Sehari-hari\",\n            \"kategori_status\": \"Aktif\",\n            \"created_at\": \"2024-06-21 23:44:09\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-06-21 23:44:09\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null\n        },\n        {\n            \"kategori_id\": 1,\n            \"kategori_kode\": \"K001\",\n            \"kategori_nama\": \"Masakan\",\n            \"kategori_status\": \"Aktif\",\n            \"created_at\": \"2024-06-21 23:44:09\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-06-30 14:08:33\",\n            \"updated_by\": \"1462200195@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null\n        }\n    ],\n    \"paging\": {\n        \"page\": 1,\n        \"total_pages\": 1,\n        \"records_per_page\": 10,\n        \"total_records\": 9\n    },\n    \"request\": {\n        \"start\": 0,\n        \"limit\": 10\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET - Buku Kategori Detail",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bukuKategori\/detail\/:kategori_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bukuKategori\/detail\/:kategori_id",
+                            "variable": [
+                                {
+                                    "id": "kategori_id",
+                                    "key": "kategori_id",
+                                    "value": "2",
+                                    "description": "kategori_id data dari api\/buku_kategori list."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST - Buku Kategori Create",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bukuKategori\/create",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bukuKategori\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"kategori_kode\":null,\"kategori_nama\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT - Buku Kategori Update",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bukuKategori\/update",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bukuKategori\/update"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"kategori_id\":\"1\",\"kategori_kode\":null,\"kategori_nama\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE - Buku Kategori Delete",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bukuKategori\/delete\/:kategori_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bukuKategori\/delete\/:kategori_id",
+                            "variable": [
+                                {
+                                    "id": "kategori_id",
+                                    "key": "kategori_id",
+                                    "value": "2",
+                                    "description": "kategori_id data dari api\/kategori list."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Buku Kategori Cetak PDF List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bukuKategori\/cetak-list-pdf",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bukuKategori\/cetak-list-pdf"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Buku Kategori Cetak Excel List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/bukuKategori\/cetak-list-xls",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/bukuKategori\/cetak-list-xls"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Dashboard",
+            "description": "",
+            "item": [
+                {
+                    "name": "Dashboard Data List",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -150,22 +839,15 @@
                     },
                     "response": [
                         {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"chart_bar_data\": [\n        {\n            \"peminjaman_tanggal\": \"2024-06-21\",\n            \"total_pinjam\": 2,\n            \"total_buku\": 2\n        },\n        {\n            \"peminjaman_tanggal\": \"2024-06-22\",\n            \"total_pinjam\": 2,\n            \"total_buku\": 2\n        },\n        {\n            \"peminjaman_tanggal\": \"2024-06-24\",\n            \"total_pinjam\": 1,\n            \"total_buku\": 3\n        },\n        {\n            \"peminjaman_tanggal\": \"2024-06-25\",\n            \"total_pinjam\": 2,\n            \"total_buku\": 2\n        },\n        {\n            \"peminjaman_tanggal\": \"2024-06-26\",\n            \"total_pinjam\": 4,\n            \"total_buku\": 11\n        },\n        {\n            \"peminjaman_tanggal\": \"2024-06-27\",\n            \"total_pinjam\": 4,\n            \"total_buku\": 4\n        },\n        {\n            \"peminjaman_tanggal\": \"2024-06-28\",\n            \"total_pinjam\": 5,\n            \"total_buku\": 20\n        },\n        {\n            \"peminjaman_tanggal\": \"2024-06-30\",\n            \"total_pinjam\": 4,\n            \"total_buku\": 7\n        },\n        {\n            \"peminjaman_tanggal\": \"2024-07-01\",\n            \"total_pinjam\": 1,\n            \"total_buku\": 1\n        }\n    ],\n    \"chart_pie_data\": [\n        {\n            \"kategori_nama\": \"Masakan\",\n            \"total_order\": 7,\n            \"total_buku\": 24\n        },\n        {\n            \"kategori_nama\": \"Barang Kebutuhan Sehari-hari\",\n            \"total_order\": 11,\n            \"total_buku\": 21\n        },\n        {\n            \"kategori_nama\": \"Produk Kebersihan\",\n            \"total_order\": 6,\n            \"total_buku\": 6\n        },\n        {\n            \"kategori_nama\": \"IT Support\",\n            \"total_order\": 1,\n            \"total_buku\": 1\n        }\n    ],\n    \"total_buku\": 24,\n    \"total_buku_kategori\": 11,\n    \"total_peminjaman\": 19,\n    \"total_pengembalian\": 5\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
                             "name": ""
                         }
                     ]
@@ -173,17 +855,140 @@
             ]
         },
         {
-            "name": "Penjualan",
+            "name": "Laporan",
             "description": "",
             "item": [
                 {
-                    "name": "Penjualan List",
+                    "name": "POST - Peminjaman List",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/penjualan\/list",
+                            "path": "api\/laporan\/peminjaman",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/penjualan\/list"
+                            "raw": "{{baseUrl}}\/api\/laporan\/peminjaman"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"tgl_awal\":\"2024\\\/07\\\/01\",\"tgl_akhir\":\"2024\\\/07\\\/01\",\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": {\n    \"code\": 200,\n    \"message\": \"Request Berhasil.\"\n  },\n  \"data\": {\n    \"peminjaman_id\": 2,\n    \"peminjaman_no\": \"PJ\/2406-0002\",\n    \"peminjaman_pelanggan\": \"Pelanggan Umum\",\n    \"peminjaman_tanggal\": \"2024-06-24\",\n    \"peminjaman_tanggal_est_kembali\": \"2024-06-27\",\n    \"peminjaman_total_est_denda\": 15000,\n    \"peminjaman_stat_kembali\": 0,\n    \"created_at\": \"2024-06-25 09:54:11\",\n    \"created_by\": null,\n    \"updated_at\": \"2024-06-25 17:46:39\",\n    \"updated_by\": \"1462200195@gmail.com\",\n    \"deleted_at\": null,\n    \"deleted_by\": null,\n    \"dataBukuList\": [\n      {\n        \"pinjam_detail_id\": 10,\n        \"pinjam_detail_master_id\": 2,\n        \"pinjam_detail_buku_id\": 10,\n        \"pinjam_detail_qty\": 3,\n        \"pinjam_detail_denda\": 5000,\n        \"pinjam_detail_diskon\": 0,\n        \"pinjam_detail_diskon_rp\": 0,\n        \"pinjam_diskon_subtotal\": 15000,\n        \"pinjam_detail_buku_nama\": \"Dasar Dasar Web Jilid 1\"\n      }\n    ]\n  },\n  \"params\": {\n    \"attributes\": {},\n    \"request\": {},\n    \"query\": {},\n    \"server\": {},\n    \"files\": {},\n    \"cookies\": {},\n    \"headers\": {}\n  },\n  \"request\": []\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST - Laporan Peminjaman Cetak PDF",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/laporan\/peminjaman\/cetak-list-pdf",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/laporan\/peminjaman\/cetak-list-pdf"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"tgl_awal\":\"2024\\\/07\\\/01\",\"tgl_akhir\":\"2024\\\/07\\\/01\",\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": {\n    \"code\": 200,\n    \"message\": \"Request Berhasil.\"\n  },\n  \"data\": {\n    \"peminjaman_id\": 2,\n    \"peminjaman_no\": \"PJ\/2406-0002\",\n    \"peminjaman_pelanggan\": \"Pelanggan Umum\",\n    \"peminjaman_tanggal\": \"2024-06-24\",\n    \"peminjaman_tanggal_est_kembali\": \"2024-06-27\",\n    \"peminjaman_total_est_denda\": 15000,\n    \"peminjaman_stat_kembali\": 0,\n    \"created_at\": \"2024-06-25 09:54:11\",\n    \"created_by\": null,\n    \"updated_at\": \"2024-06-25 17:46:39\",\n    \"updated_by\": \"1462200195@gmail.com\",\n    \"deleted_at\": null,\n    \"deleted_by\": null,\n    \"dataBukuList\": [\n      {\n        \"pinjam_detail_id\": 10,\n        \"pinjam_detail_master_id\": 2,\n        \"pinjam_detail_buku_id\": 10,\n        \"pinjam_detail_qty\": 3,\n        \"pinjam_detail_denda\": 5000,\n        \"pinjam_detail_diskon\": 0,\n        \"pinjam_detail_diskon_rp\": 0,\n        \"pinjam_diskon_subtotal\": 15000,\n        \"pinjam_detail_buku_nama\": \"Dasar Dasar Web Jilid 1\"\n      }\n    ]\n  },\n  \"params\": {\n    \"attributes\": {},\n    \"request\": {},\n    \"query\": {},\n    \"server\": {},\n    \"files\": {},\n    \"cookies\": {},\n    \"headers\": {}\n  },\n  \"request\": []\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST - Laporan Peminjaman Cetak Xls",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/laporan\/peminjaman\/cetak-list-xls",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/laporan\/peminjaman\/cetak-list-xls"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"tgl_awal\":\"2024\\\/07\\\/01\",\"tgl_akhir\":\"2024\\\/07\\\/01\",\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": {\n    \"code\": 200,\n    \"message\": \"Request Berhasil.\"\n  },\n  \"data\": {\n    \"peminjaman_id\": 2,\n    \"peminjaman_no\": \"PJ\/2406-0002\",\n    \"peminjaman_pelanggan\": \"Pelanggan Umum\",\n    \"peminjaman_tanggal\": \"2024-06-24\",\n    \"peminjaman_tanggal_est_kembali\": \"2024-06-27\",\n    \"peminjaman_total_est_denda\": 15000,\n    \"peminjaman_stat_kembali\": 0,\n    \"created_at\": \"2024-06-25 09:54:11\",\n    \"created_by\": null,\n    \"updated_at\": \"2024-06-25 17:46:39\",\n    \"updated_by\": \"1462200195@gmail.com\",\n    \"deleted_at\": null,\n    \"deleted_by\": null,\n    \"dataBukuList\": [\n      {\n        \"pinjam_detail_id\": 10,\n        \"pinjam_detail_master_id\": 2,\n        \"pinjam_detail_buku_id\": 10,\n        \"pinjam_detail_qty\": 3,\n        \"pinjam_detail_denda\": 5000,\n        \"pinjam_detail_diskon\": 0,\n        \"pinjam_detail_diskon_rp\": 0,\n        \"pinjam_diskon_subtotal\": 15000,\n        \"pinjam_detail_buku_nama\": \"Dasar Dasar Web Jilid 1\"\n      }\n    ]\n  },\n  \"params\": {\n    \"attributes\": {},\n    \"request\": {},\n    \"query\": {},\n    \"server\": {},\n    \"files\": {},\n    \"cookies\": {},\n    \"headers\": {}\n  },\n  \"request\": []\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST - Pengembalian List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/laporan\/pengembalian",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/laporan\/pengembalian"
                         },
                         "method": "POST",
                         "header": [
@@ -218,19 +1023,148 @@
                     ]
                 },
                 {
-                    "name": "Penjualan Detail",
+                    "name": "POST - Laporan Pengembalian Cetak PDF",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/penjualan\/detail\/:penjualan_id",
+                            "path": "api\/laporan\/pengembalian\/cetak-list-pdf",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/penjualan\/detail\/:penjualan_id",
+                            "raw": "{{baseUrl}}\/api\/laporan\/pengembalian\/cetak-list-pdf"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"tgl_awal\":\"2024\\\/07\\\/01\",\"tgl_akhir\":\"2024\\\/07\\\/01\",\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": {\n    \"code\": 200,\n    \"message\": \"Request Berhasil.\"\n  },\n  \"data\": {\n    \"peminjaman_id\": 2,\n    \"peminjaman_no\": \"PJ\/2406-0002\",\n    \"peminjaman_pelanggan\": \"Pelanggan Umum\",\n    \"peminjaman_tanggal\": \"2024-06-24\",\n    \"peminjaman_tanggal_est_kembali\": \"2024-06-27\",\n    \"peminjaman_total_est_denda\": 15000,\n    \"peminjaman_stat_kembali\": 0,\n    \"created_at\": \"2024-06-25 09:54:11\",\n    \"created_by\": null,\n    \"updated_at\": \"2024-06-25 17:46:39\",\n    \"updated_by\": \"1462200195@gmail.com\",\n    \"deleted_at\": null,\n    \"deleted_by\": null,\n    \"dataBukuList\": [\n      {\n        \"pinjam_detail_id\": 10,\n        \"pinjam_detail_master_id\": 2,\n        \"pinjam_detail_buku_id\": 10,\n        \"pinjam_detail_qty\": 3,\n        \"pinjam_detail_denda\": 5000,\n        \"pinjam_detail_diskon\": 0,\n        \"pinjam_detail_diskon_rp\": 0,\n        \"pinjam_diskon_subtotal\": 15000,\n        \"pinjam_detail_buku_nama\": \"Dasar Dasar Web Jilid 1\"\n      }\n    ]\n  },\n  \"params\": {\n    \"attributes\": {},\n    \"request\": {},\n    \"query\": {},\n    \"server\": {},\n    \"files\": {},\n    \"cookies\": {},\n    \"headers\": {}\n  },\n  \"request\": []\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST - Laporan Pengembalian Cetak Xls",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/laporan\/pengembalian\/cetak-list-xls",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/laporan\/pengembalian\/cetak-list-xls"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"tgl_awal\":\"2024\\\/07\\\/01\",\"tgl_akhir\":\"2024\\\/07\\\/01\",\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": {\n    \"code\": 200,\n    \"message\": \"Request Berhasil.\"\n  },\n  \"data\": {\n    \"peminjaman_id\": 2,\n    \"peminjaman_no\": \"PJ\/2406-0002\",\n    \"peminjaman_pelanggan\": \"Pelanggan Umum\",\n    \"peminjaman_tanggal\": \"2024-06-24\",\n    \"peminjaman_tanggal_est_kembali\": \"2024-06-27\",\n    \"peminjaman_total_est_denda\": 15000,\n    \"peminjaman_stat_kembali\": 0,\n    \"created_at\": \"2024-06-25 09:54:11\",\n    \"created_by\": null,\n    \"updated_at\": \"2024-06-25 17:46:39\",\n    \"updated_by\": \"1462200195@gmail.com\",\n    \"deleted_at\": null,\n    \"deleted_by\": null,\n    \"dataBukuList\": [\n      {\n        \"pinjam_detail_id\": 10,\n        \"pinjam_detail_master_id\": 2,\n        \"pinjam_detail_buku_id\": 10,\n        \"pinjam_detail_qty\": 3,\n        \"pinjam_detail_denda\": 5000,\n        \"pinjam_detail_diskon\": 0,\n        \"pinjam_detail_diskon_rp\": 0,\n        \"pinjam_diskon_subtotal\": 15000,\n        \"pinjam_detail_buku_nama\": \"Dasar Dasar Web Jilid 1\"\n      }\n    ]\n  },\n  \"params\": {\n    \"attributes\": {},\n    \"request\": {},\n    \"query\": {},\n    \"server\": {},\n    \"files\": {},\n    \"cookies\": {},\n    \"headers\": {}\n  },\n  \"request\": []\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Peminjaman",
+            "description": "",
+            "item": [
+                {
+                    "name": "POST - Peminjaman List",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/peminjaman\/list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/peminjaman\/list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"start\":0,\"limit\":10,\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"status\": {\n    \"code\": 200,\n    \"message\": \"Request Berhasil.\"\n  },\n  \"data\": {\n    \"peminjaman_id\": 2,\n    \"peminjaman_no\": \"PJ\/2406-0002\",\n    \"peminjaman_pelanggan\": \"Pelanggan Umum\",\n    \"peminjaman_tanggal\": \"2024-06-24\",\n    \"peminjaman_tanggal_est_kembali\": \"2024-06-27\",\n    \"peminjaman_total_est_denda\": 15000,\n    \"peminjaman_stat_kembali\": 0,\n    \"created_at\": \"2024-06-25 09:54:11\",\n    \"created_by\": null,\n    \"updated_at\": \"2024-06-25 17:46:39\",\n    \"updated_by\": \"1462200195@gmail.com\",\n    \"deleted_at\": null,\n    \"deleted_by\": null,\n    \"dataBukuList\": [\n      {\n        \"pinjam_detail_id\": 10,\n        \"pinjam_detail_master_id\": 2,\n        \"pinjam_detail_buku_id\": 10,\n        \"pinjam_detail_qty\": 3,\n        \"pinjam_detail_denda\": 5000,\n        \"pinjam_detail_diskon\": 0,\n        \"pinjam_detail_diskon_rp\": 0,\n        \"pinjam_diskon_subtotal\": 15000,\n        \"pinjam_detail_buku_nama\": \"Dasar Dasar Web Jilid 1\"\n      }\n    ]\n  },\n  \"params\": {\n    \"attributes\": {},\n    \"request\": {},\n    \"query\": {},\n    \"server\": {},\n    \"files\": {},\n    \"cookies\": {},\n    \"headers\": {}\n  },\n  \"request\": []\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET - Peminjaman Detail",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/peminjaman\/detail\/:peminjaman_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/peminjaman\/detail\/:peminjaman_id",
                             "variable": [
                                 {
-                                    "id": "penjualan_id",
-                                    "key": "penjualan_id",
+                                    "id": "peminjaman_id",
+                                    "key": "peminjaman_id",
                                     "value": "2",
-                                    "description": "penjualan_id data dari api\/penjualan list."
+                                    "description": "peminjaman_id data dari api\/peminjaman list."
                                 }
                             ]
                         },
@@ -264,13 +1198,13 @@
                     ]
                 },
                 {
-                    "name": "Penjualan Create",
+                    "name": "POST - Peminjaman Create",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/penjualan\/create",
+                            "path": "api\/peminjaman\/create",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/penjualan\/create"
+                            "raw": "{{baseUrl}}\/api\/peminjaman\/create"
                         },
                         "method": "POST",
                         "header": [
@@ -285,7 +1219,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"penjualan_pelanggan\":null,\"penjualan_tanggal\":\"2024-06-14\",\"penjualan_total\":10000,\"penjualan_total_bayar\":10000,\"penjualan_cara_bayar\":\"Tunai\",\"penjualan_total_kembalian\":10000,\"produk_list\":[{\"pjual_detail_id\":0,\"pjual_detail_produk_id\":1,\"pjual_detail_qty\":1,\"pjual_detail_harga\":1000,\"pjual_detail_diskon\":1,\"pjual_detail_diskon_rp\":1000,\"pjual_diskon_subtotal\":1000}]}"
+                            "raw": "{\"peminjaman_pelanggan\":null,\"peminjaman_tanggal\":\"2024\\\/07\\\/01\",\"peminjaman_tanggal_est_kembali\":\"2024\\\/07\\\/01\",\"peminjaman_total_est_denda\":10000,\"peminjaman_stat_kembali\":1,\"buku_list\":[{\"pinjam_detail_id\":0,\"pinjam_detail_buku_id\":1,\"pinjam_detail_qty\":1,\"pinjam_detail_harga\":1000,\"pinjam_detail_diskon\":1,\"pinjam_detail_diskon_rp\":1000,\"pinjam_diskon_subtotal\":1000}]}"
                         },
                         "description": ""
                     },
@@ -305,13 +1239,13 @@
                     ]
                 },
                 {
-                    "name": "Penjualan Update",
+                    "name": "PUT - Peminjaman Update",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/penjualan\/update",
+                            "path": "api\/peminjaman\/update",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/penjualan\/update"
+                            "raw": "{{baseUrl}}\/api\/peminjaman\/update"
                         },
                         "method": "PUT",
                         "header": [
@@ -326,7 +1260,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"penjualan_ida\":2,\"penjualan_id\":1,\"penjualan_pelanggan\":null,\"penjualan_tanggal\":\"2024-06-14\",\"penjualan_total\":10000,\"penjualan_total_bayar\":10000,\"penjualan_cara_bayar\":\"Tunai\",\"penjualan_total_kembalian\":10000,\"produk_list\":[{\"pjual_detail_id\":0,\"pjual_detail_produk_id\":1,\"pjual_detail_qty\":1,\"pjual_detail_harga\":1000,\"pjual_detail_diskon\":1,\"pjual_detail_diskon_rp\":1000,\"pjual_diskon_subtotal\":1000}]}"
+                            "raw": "{\"peminjaman_id\":2,\"peminjaman_no\":\"PJ\\\/2406-0002\",\"peminjaman_pelanggan\":\"Rohman\",\"peminjaman_tanggal\":\"2024\\\/07\\\/01\",\"peminjaman_tanggal_est_kembali\":\"2024\\\/07\\\/01\",\"peminjaman_total_est_denda\":10000,\"peminjaman_stat_kembali\":1,\"buku_list\":[{\"pinjam_detail_id\":0,\"pinjam_detail_buku_id\":1,\"pinjam_detail_qty\":1,\"pinjam_detail_harga\":1000,\"pinjam_detail_diskon\":1,\"pinjam_detail_diskon_rp\":1000,\"pinjam_diskon_subtotal\":1000}]}"
                         },
                         "description": ""
                     },
@@ -346,19 +1280,19 @@
                     ]
                 },
                 {
-                    "name": "Penjualan Delete",
+                    "name": "DELETE - Peminjaman Delete",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/penjualan\/delete\/:penjualan_id",
+                            "path": "api\/peminjaman\/delete\/:peminjaman_id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/penjualan\/delete\/:penjualan_id",
+                            "raw": "{{baseUrl}}\/api\/peminjaman\/delete\/:peminjaman_id",
                             "variable": [
                                 {
-                                    "id": "penjualan_id",
-                                    "key": "penjualan_id",
+                                    "id": "peminjaman_id",
+                                    "key": "peminjaman_id",
                                     "value": "2",
-                                    "description": "penjualan_id data dari api\/penjualan list."
+                                    "description": "peminjaman_id data dari api\/peminjaman list."
                                 }
                             ]
                         },
@@ -392,13 +1326,13 @@
                     ]
                 },
                 {
-                    "name": "GET api\/penjualan\/cetak-list-pdf",
+                    "name": "GET - Peminjaman Cetak PDF List",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/penjualan\/cetak-list-pdf",
+                            "path": "api\/peminjaman\/cetak-list-pdf",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/penjualan\/cetak-list-pdf"
+                            "raw": "{{baseUrl}}\/api\/peminjaman\/cetak-list-pdf"
                         },
                         "method": "GET",
                         "header": [
@@ -416,34 +1350,27 @@
                     },
                     "response": [
                         {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "GET api\/penjualan\/cetak-list-xls",
+                    "name": "GET - Peminjaman Cetak Excel List",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/penjualan\/cetak-list-xls",
+                            "path": "api\/peminjaman\/cetak-list-xls",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/penjualan\/cetak-list-xls"
+                            "raw": "{{baseUrl}}\/api\/peminjaman\/cetak-list-xls"
                         },
                         "method": "GET",
                         "header": [
@@ -461,40 +1388,33 @@
                     },
                     "response": [
                         {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "Penjualan Cetak Faktur",
+                    "name": "GET - Peminjaman Cetak Faktur",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/penjualan\/cetak-faktur-pdf\/:penjualan_id",
+                            "path": "api\/peminjaman\/cetak-faktur-pdf\/:peminjaman_id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/penjualan\/cetak-faktur-pdf\/:penjualan_id",
+                            "raw": "{{baseUrl}}\/api\/peminjaman\/cetak-faktur-pdf\/:peminjaman_id",
                             "variable": [
                                 {
-                                    "id": "penjualan_id",
-                                    "key": "penjualan_id",
+                                    "id": "peminjaman_id",
+                                    "key": "peminjaman_id",
                                     "value": "2",
-                                    "description": "penjualan_id data dari api\/penjualan list."
+                                    "description": "peminjaman_id data dari api\/peminjaman list."
                                 }
                             ]
                         },
@@ -530,17 +1450,17 @@
             ]
         },
         {
-            "name": "Produk",
+            "name": "Pengembalian",
             "description": "",
             "item": [
                 {
-                    "name": "Produk List",
+                    "name": "POST - Pinjaman Buku List",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/produk\/list",
+                            "path": "api\/pengembalian\/pinjaman_list",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/produk\/list"
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/pinjaman_list"
                         },
                         "method": "POST",
                         "header": [
@@ -563,7 +1483,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "",
+                            "body": "{\n    \"status\": {\n      \"code\": 200,\n      \"message\": \"Data Berhasil Ditampilkan.\"\n    },\n    \"data\": [\n      {\n        \"penjualan_id\": 1,\n        \"penjualan_no\": \"PJ\/2406-0001\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-27\",\n        \"penjualan_total\": 20000,\n        \"penjualan_total_bayar\": 20000,\n        \"penjualan_total_kembalian\": 0,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 09:53:54\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 17:46:12\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 2,\n        \"penjualan_no\": \"PJ\/2406-0002\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-24\",\n        \"penjualan_total\": 15000,\n        \"penjualan_total_bayar\": 15000,\n        \"penjualan_total_kembalian\": 0,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 09:54:11\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 17:46:39\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 3,\n        \"penjualan_no\": \"PJ\/2406-0003\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-22\",\n        \"penjualan_total\": 35000,\n        \"penjualan_total_bayar\": 40000,\n        \"penjualan_total_kembalian\": 5000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 12:21:16\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 15:27:03\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 4,\n        \"penjualan_no\": \"PJ\/2406-0004\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-25\",\n        \"penjualan_total\": 20000,\n        \"penjualan_total_bayar\": 20000,\n        \"penjualan_total_kembalian\": 0,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 12:45:26\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 15:27:24\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 5,\n        \"penjualan_no\": \"PJ\/2406-0005\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum ubah\",\n        \"penjualan_tanggal\": \"2024-06-28\",\n        \"penjualan_total\": 820000,\n        \"penjualan_total_bayar\": 1000000,\n        \"penjualan_total_kembalian\": 180000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 13:01:40\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 16:44:44\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 6,\n        \"penjualan_no\": \"PJ\/2406-0006\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-28\",\n        \"penjualan_total\": 15000,\n        \"penjualan_total_bayar\": 20000,\n        \"penjualan_total_kembalian\": 5000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 13:08:57\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 13:08:57\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 7,\n        \"penjualan_no\": \"PJ\/2406-0007\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-22\",\n        \"penjualan_total\": 8999,\n        \"penjualan_total_bayar\": 10000,\n        \"penjualan_total_kembalian\": 1001,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 13:58:44\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 13:58:44\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 8,\n        \"penjualan_no\": \"PJ\/2406-0008\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-25\",\n        \"penjualan_total\": 7000,\n        \"penjualan_total_bayar\": 10000,\n        \"penjualan_total_kembalian\": 3000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 14:00:25\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 14:00:25\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 9,\n        \"penjualan_no\": \"PJ\/2406-0009\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-22\",\n        \"penjualan_total\": 7000,\n        \"penjualan_total_bayar\": 10000,\n        \"penjualan_total_kembalian\": 3000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 14:07:26\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 14:07:26\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 10,\n        \"penjualan_no\": \"PJ\/2406-0010\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-21\",\n        \"penjualan_total\": 120000,\n        \"penjualan_total_bayar\": 130000,\n        \"penjualan_total_kembalian\": 10000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 14:10:45\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 14:10:45\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      }\n    ],\n    \"paging\": {\n      \"page\": 1,\n      \"total_pages\": 2,\n      \"records_per_page\": 10,\n      \"total_records\": 15\n    },\n    \"request\": {\n      \"start\": 0,\n      \"limit\": 10,\n      \"filter\": null\n    }\n  }\n",
                             "name": ""
                         },
                         {
@@ -575,276 +1495,13 @@
                     ]
                 },
                 {
-                    "name": "Produk Detail",
+                    "name": "POST - Pengembalian Buku By Pinjaman ID List",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/produk\/detail\/:prodi_id",
+                            "path": "api\/pengembalian\/buku_by_pinjaman_list",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/produk\/detail\/:prodi_id",
-                            "variable": [
-                                {
-                                    "id": "prodi_id",
-                                    "key": "prodi_id",
-                                    "value": "inventore",
-                                    "description": "The ID of the prodi."
-                                },
-                                {
-                                    "id": "kategori_id",
-                                    "key": "kategori_id",
-                                    "value": "2",
-                                    "description": "kategori_id data dari api\/event list."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [],
-                            "code": 200,
-                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
-                            "name": ""
-                        },
-                        {
-                            "header": [],
-                            "code": 404,
-                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Produk Create",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/produk\/create",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/produk\/create"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"produk_sku\":null,\"produk_nama\":null}"
-                        },
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [],
-                            "code": 200,
-                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
-                            "name": ""
-                        },
-                        {
-                            "header": [],
-                            "code": 404,
-                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Produk Update",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/produk\/update",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/produk\/update"
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"kategori_id\":\"1\",\"produk_sku\":null,\"produk_nama\":null}"
-                        },
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [],
-                            "code": 200,
-                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
-                            "name": ""
-                        },
-                        {
-                            "header": [],
-                            "code": 404,
-                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "DELETE api\/produk\/delete\/{produk_id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/produk\/delete\/:produk_id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/produk\/delete\/:produk_id",
-                            "variable": [
-                                {
-                                    "id": "produk_id",
-                                    "key": "produk_id",
-                                    "value": "et",
-                                    "description": "The ID of the produk."
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET api\/produk\/cetak-list-pdf",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/produk\/cetak-list-pdf",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/produk\/cetak-list-pdf"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "GET api\/produk\/cetak-list-xls",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/produk\/cetak-list-xls",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/produk\/cetak-list-xls"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Produk Kategori",
-            "description": "",
-            "item": [
-                {
-                    "name": "Produk Kategori List",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/produkKategori\/list",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/produkKategori\/list"
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/buku_by_pinjaman_list"
                         },
                         "method": "POST",
                         "header": [
@@ -867,7 +1524,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "",
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Data Berhasil Ditampilkan.\"\n    },\n    \"data\": [\n        {\n            \"buku_id\": 24,\n            \"buku_sku\": \"0091230\",\n            \"buku_nama\": \"Belajar teknis\",\n            \"buku_kategori_id\": 10,\n            \"buku_stok\": 5,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": \"uploads\/buku\/0091230\/maxresdefault.jpg\",\n            \"buku_denda\": 1000,\n            \"created_at\": \"2024-07-01 06:18:37\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-07-01 06:18:37\",\n            \"updated_by\": null,\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:180px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:54px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:60px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:74px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:92px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:124px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:136px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:144px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:164px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:172px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:180px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:180px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 23,\n            \"buku_sku\": \"90218309\",\n            \"buku_nama\": \"Belajar Resep Daerah\",\n            \"buku_kategori_id\": 1,\n            \"buku_stok\": 2998,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": \"uploads\/produk\/90218309\/WhatsApp Image 2024-06-22 at 00.31.31.jpeg\",\n            \"buku_denda\": 8999,\n            \"created_at\": \"2024-06-24 15:20:13\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-07-01 11:50:01\",\n            \"updated_by\": \"rohman@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:158px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:38px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:50px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:60px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:70px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:82px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:96px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:142px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:150px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 22,\n            \"buku_sku\": \"092830924\",\n            \"buku_nama\": \"Menjadi Robot dengan biner\",\n            \"buku_kategori_id\": 8,\n            \"buku_stok\": 100,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": \"uploads\/produk\/092830924\/WhatsApp Image 2024-06-22 at 00.12.21.jpeg\",\n            \"buku_denda\": null,\n            \"created_at\": \"2024-06-24 13:30:48\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-07-01 11:49:43\",\n            \"updated_by\": \"1462200195@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:30px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:54px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:60px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:78px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:92px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:96px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:114px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:124px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:140px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:166px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 21,\n            \"buku_sku\": \"90218309\",\n            \"buku_nama\": \"Servis printer sendiri\",\n            \"buku_kategori_id\": 8,\n            \"buku_stok\": 2998,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": \"uploads\/produk\/90218309\/bot_backup_db.png\",\n            \"buku_denda\": 8000,\n            \"created_at\": \"2024-06-24 15:20:13\",\n            \"created_by\": \"1462200195@gmail.com\",\n            \"updated_at\": \"2024-07-01 11:49:36\",\n            \"updated_by\": \"1462200195@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:158px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:38px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:50px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:60px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:70px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:82px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:96px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:142px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:150px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 20,\n            \"buku_sku\": \"SKU020\",\n            \"buku_nama\": \"Sunblock SPF 50\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 65,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 7000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-06-27 00:28:59\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:118px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:128px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:138px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:164px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:170px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 19,\n            \"buku_sku\": \"SKU019\",\n            \"buku_nama\": \"Hand Sanitizer ubah\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 40,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 7111,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-06-27 00:28:58\",\n            \"updated_by\": \"1462200195@gmail.com\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:142px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:160px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:8px;height:30px;position:absolute;left:164px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 18,\n            \"buku_sku\": \"SKU018\",\n            \"buku_nama\": \"Masker Wajah Terbaik\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 95,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 15000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-07-01 11:49:22\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:140px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:166px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:172px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 17,\n            \"buku_sku\": \"SKU017\",\n            \"buku_nama\": \"Parfum Asia - Pasific\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 85,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 20000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-07-01 11:50:40\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:140px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:146px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:166px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 16,\n            \"buku_sku\": \"SKU016\",\n            \"buku_nama\": \"Cara menjadi bersih\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 25,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 20000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-07-01 11:49:14\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:140px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:148px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:158px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:164px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        },\n        {\n            \"buku_id\": 15,\n            \"buku_sku\": \"SKU015\",\n            \"buku_nama\": \"Pembersihan Masker\",\n            \"buku_kategori_id\": 3,\n            \"buku_stok\": 55,\n            \"buku_aktif\": \"Aktif\",\n            \"buku_foto_path\": null,\n            \"buku_denda\": 15000,\n            \"created_at\": \"2024-06-21 23:42:18\",\n            \"created_by\": \"Admin\",\n            \"updated_at\": \"2024-07-01 11:49:05\",\n            \"updated_by\": \"Admin\",\n            \"deleted_at\": null,\n            \"deleted_by\": null,\n            \"barcode\": \"<div style=\\\"font-size:0;position:relative;width:202px;height:30px;\\\">\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:0px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:6px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:12px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:22px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:28px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:36px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:44px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:48px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:58px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:66px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:72px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:80px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:88px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:94px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:102px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:110px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:116px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:126px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:132px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:138px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:148px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:154px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:162px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:168px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:176px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:6px;height:30px;position:absolute;left:186px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:2px;height:30px;position:absolute;left:194px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:4px;height:30px;position:absolute;left:198px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<div style=\\\"background-color:black;width:0px;height:30px;position:absolute;left:202px;top:0px;\\\">&nbsp;<\/div>\\n<\/div>\\n\"\n        }\n    ],\n    \"paging\": {\n        \"page\": 1,\n        \"total_pages\": 3,\n        \"records_per_page\": 10,\n        \"total_records\": 24\n    },\n    \"request\": {\n        \"start\": 0,\n        \"limit\": 10\n    }\n}\n",
                             "name": ""
                         },
                         {
@@ -879,19 +1536,60 @@
                     ]
                 },
                 {
-                    "name": "Produk Kategori Detail",
+                    "name": "POST - Pengembalian List",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/produkKategori\/detail\/:kategori_id",
+                            "path": "api\/pengembalian\/list",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/produkKategori\/detail\/:kategori_id",
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/list"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"start\":0,\"limit\":10,\"filter\":null}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n      \"code\": 200,\n      \"message\": \"Data Berhasil Ditampilkan.\"\n    },\n    \"data\": [\n      {\n        \"penjualan_id\": 1,\n        \"penjualan_no\": \"PJ\/2406-0001\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-27\",\n        \"penjualan_total\": 20000,\n        \"penjualan_total_bayar\": 20000,\n        \"penjualan_total_kembalian\": 0,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 09:53:54\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 17:46:12\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 2,\n        \"penjualan_no\": \"PJ\/2406-0002\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-24\",\n        \"penjualan_total\": 15000,\n        \"penjualan_total_bayar\": 15000,\n        \"penjualan_total_kembalian\": 0,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 09:54:11\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 17:46:39\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 3,\n        \"penjualan_no\": \"PJ\/2406-0003\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-22\",\n        \"penjualan_total\": 35000,\n        \"penjualan_total_bayar\": 40000,\n        \"penjualan_total_kembalian\": 5000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 12:21:16\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 15:27:03\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 4,\n        \"penjualan_no\": \"PJ\/2406-0004\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-25\",\n        \"penjualan_total\": 20000,\n        \"penjualan_total_bayar\": 20000,\n        \"penjualan_total_kembalian\": 0,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 12:45:26\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 15:27:24\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 5,\n        \"penjualan_no\": \"PJ\/2406-0005\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum ubah\",\n        \"penjualan_tanggal\": \"2024-06-28\",\n        \"penjualan_total\": 820000,\n        \"penjualan_total_bayar\": 1000000,\n        \"penjualan_total_kembalian\": 180000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 13:01:40\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 16:44:44\",\n        \"updated_by\": \"1462200195@gmail.com\",\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 6,\n        \"penjualan_no\": \"PJ\/2406-0006\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-28\",\n        \"penjualan_total\": 15000,\n        \"penjualan_total_bayar\": 20000,\n        \"penjualan_total_kembalian\": 5000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 13:08:57\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 13:08:57\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 7,\n        \"penjualan_no\": \"PJ\/2406-0007\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-22\",\n        \"penjualan_total\": 8999,\n        \"penjualan_total_bayar\": 10000,\n        \"penjualan_total_kembalian\": 1001,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 13:58:44\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 13:58:44\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 8,\n        \"penjualan_no\": \"PJ\/2406-0008\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-25\",\n        \"penjualan_total\": 7000,\n        \"penjualan_total_bayar\": 10000,\n        \"penjualan_total_kembalian\": 3000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 14:00:25\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 14:00:25\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 9,\n        \"penjualan_no\": \"PJ\/2406-0009\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-22\",\n        \"penjualan_total\": 7000,\n        \"penjualan_total_bayar\": 10000,\n        \"penjualan_total_kembalian\": 3000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 14:07:26\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 14:07:26\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      },\n      {\n        \"penjualan_id\": 10,\n        \"penjualan_no\": \"PJ\/2406-0010\",\n        \"penjualan_pelanggan\": \"Pelanggan Umum\",\n        \"penjualan_tanggal\": \"2024-06-21\",\n        \"penjualan_total\": 120000,\n        \"penjualan_total_bayar\": 130000,\n        \"penjualan_total_kembalian\": 10000,\n        \"penjualan_cara_bayar\": null,\n        \"created_at\": \"2024-06-25 14:10:45\",\n        \"created_by\": \"1462200195@gmail.com\",\n        \"updated_at\": \"2024-06-25 14:10:45\",\n        \"updated_by\": null,\n        \"deleted_at\": null,\n        \"deleted_by\": null\n      }\n    ],\n    \"paging\": {\n      \"page\": 1,\n      \"total_pages\": 2,\n      \"records_per_page\": 10,\n      \"total_records\": 15\n    },\n    \"request\": {\n      \"start\": 0,\n      \"limit\": 10,\n      \"filter\": null\n    }\n  }\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET - Pengembalian Detail",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pengembalian\/detail\/:pengembalian_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/detail\/:pengembalian_id",
                             "variable": [
                                 {
-                                    "id": "kategori_id",
-                                    "key": "kategori_id",
+                                    "id": "pengembalian_id",
+                                    "key": "pengembalian_id",
                                     "value": "2",
-                                    "description": "kategori_id data dari api\/produk_kategori list."
+                                    "description": "pengembalian_id data dari api\/pengembalian list."
                                 }
                             ]
                         },
@@ -925,13 +1623,13 @@
                     ]
                 },
                 {
-                    "name": "Produk Kategori Create",
+                    "name": "POST - Pengembalian Create",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/produkKategori\/create",
+                            "path": "api\/pengembalian\/create",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/produkKategori\/create"
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/create"
                         },
                         "method": "POST",
                         "header": [
@@ -946,7 +1644,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"ProdukKategori_kode\":null,\"ProdukKategori_nama\":null}"
+                            "raw": "{\"pengembalian_pelanggan\":null,\"pengembalian_tanggal\":\"2024-06-14\",\"pengembalian_tanggal_est_kembali\":\"2024-06-14\",\"pengembalian_total_est_denda\":10000,\"buku_list\":[{\"pinjam_detail_id\":0,\"pinjam_detail_buku_id\":1,\"pinjam_detail_qty\":1,\"pinjam_detail_harga\":1000,\"pinjam_detail_diskon\":1,\"pinjam_detail_diskon_rp\":1000,\"pinjam_diskon_subtotal\":1000}]}"
                         },
                         "description": ""
                     },
@@ -966,13 +1664,13 @@
                     ]
                 },
                 {
-                    "name": "Produk Kategori Update",
+                    "name": "PUT - Pengembalian Update",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/produkKategori\/update",
+                            "path": "api\/pengembalian\/update",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/produkKategori\/update"
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/update"
                         },
                         "method": "PUT",
                         "header": [
@@ -987,7 +1685,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"kategori_id\":\"1\",\"ProdukKategori_kode\":null,\"ProdukKategori_nama\":null}"
+                            "raw": "{\"pengembalian_ida\":2,\"pengembalian_id\":1,\"pengembalian_pelanggan\":null,\"pengembalian_tanggal\":\"2024-06-14\",\"pengembalian_tanggal_est_kembali\":\"2024-06-14\",\"pengembalian_total_est_denda\":10000,\"buku_list\":[{\"pinjam_detail_id\":0,\"pinjam_detail_buku_id\":1,\"pinjam_detail_qty\":1,\"pinjam_detail_harga\":1000,\"pinjam_detail_diskon\":1,\"pinjam_detail_diskon_rp\":1000,\"pinjam_diskon_subtotal\":1000}]}"
                         },
                         "description": ""
                     },
@@ -1007,19 +1705,19 @@
                     ]
                 },
                 {
-                    "name": "DELETE api\/produkKategori\/delete\/{kategori_id}",
+                    "name": "DELETE - Pengembalian Delete",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/produkKategori\/delete\/:kategori_id",
+                            "path": "api\/pengembalian\/delete\/:pengembalian_id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/produkKategori\/delete\/:kategori_id",
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/delete\/:pengembalian_id",
                             "variable": [
                                 {
-                                    "id": "kategori_id",
-                                    "key": "kategori_id",
-                                    "value": "eveniet",
-                                    "description": "The ID of the kategori."
+                                    "id": "pengembalian_id",
+                                    "key": "pengembalian_id",
+                                    "value": "2",
+                                    "description": "pengembalian_id data dari api\/pengembalian list."
                                 }
                             ]
                         },
@@ -1037,36 +1735,11 @@
                         "body": null,
                         "description": ""
                     },
-                    "response": []
-                },
-                {
-                    "name": "Produk Kategori Cetak PDF List",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/produkKategori\/cetak-list-pdf",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/produkKategori\/cetak-list-pdf"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
                     "response": [
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
                             "name": ""
                         },
                         {
@@ -1078,13 +1751,13 @@
                     ]
                 },
                 {
-                    "name": "Produk Kategori Cetak Excel List",
+                    "name": "GET - Pengembalian Cetak Faktur List PDF",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/produkKategori\/cetak-list-xls",
+                            "path": "api\/pengembalian\/cetak-list-pdf",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/produkKategori\/cetak-list-xls"
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/cetak-list-pdf"
                         },
                         "method": "GET",
                         "header": [
@@ -1104,7 +1777,91 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n    \"url\": \"storage\/xxx\/xxxxx\/xxx.pdf\"\n}\n",
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET - Pengembalian Cetak Faktur XLS",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pengembalian\/cetak-list-xls",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/cetak-list-xls"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 404,
+                            "body": "{\n    \"status\": {\n        \"code\": 404,\n        \"message\": \"Data Tidak Ditemukan.\"\n    },\n    \"data\": null,\n    \"request\": {\n        \"param_1\": 100,\n        \"param_2\": \"example_value\"\n    }\n}\n",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET - Pengembalian Cetak Faktur",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pengembalian\/cetak-faktur-pdf\/:pengembalian_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/pengembalian\/cetak-faktur-pdf\/:pengembalian_id",
+                            "variable": [
+                                {
+                                    "id": "pengembalian_id",
+                                    "key": "pengembalian_id",
+                                    "value": "2",
+                                    "description": "pengembalian_id data dari api\/pengembalian list."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n    \"status\": {\n        \"code\": 200,\n        \"message\": \"Request Berhasil.\"\n    },\n    \"data\": {},\n    \"request\": {\n        \"xxx_id\": 1\n    }\n}\n",
                             "name": ""
                         },
                         {

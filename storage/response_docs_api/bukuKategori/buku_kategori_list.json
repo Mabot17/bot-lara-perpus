@@ -1,0 +1,126 @@
+{
+    "status": {
+        "code": 200,
+        "message": "Data Berhasil Ditampilkan."
+    },
+    "data": [
+        {
+            "kategori_id": 10,
+            "kategori_kode": "K010",
+            "kategori_nama": "IT Support",
+            "kategori_status": "Aktif",
+            "created_at": "2024-06-24 15:39:16",
+            "created_by": "1462200195@gmail.com",
+            "updated_at": "2024-06-30 14:09:11",
+            "updated_by": "1462200195@gmail.com",
+            "deleted_at": null,
+            "deleted_by": null
+        },
+        {
+            "kategori_id": 8,
+            "kategori_kode": "K008",
+            "kategori_nama": "Printer",
+            "kategori_status": "Aktif",
+            "created_at": "2024-06-22 16:04:04",
+            "created_by": "1462200195@gmail.com",
+            "updated_at": "2024-06-27 00:22:26",
+            "updated_by": null,
+            "deleted_at": null,
+            "deleted_by": null
+        },
+        {
+            "kategori_id": 7,
+            "kategori_kode": "K007",
+            "kategori_nama": "Laptop",
+            "kategori_status": "Aktif",
+            "created_at": "2024-06-22 15:49:37",
+            "created_by": "1462200195@gmail.com",
+            "updated_at": "2024-06-27 00:22:20",
+            "updated_by": null,
+            "deleted_at": null,
+            "deleted_by": null
+        },
+        {
+            "kategori_id": 6,
+            "kategori_kode": "K006",
+            "kategori_nama": "Pemrograman Web",
+            "kategori_status": "Aktif",
+            "created_at": "2024-06-22 15:49:15",
+            "created_by": "1462200195@gmail.com",
+            "updated_at": "2024-06-30 14:08:53",
+            "updated_by": null,
+            "deleted_at": null,
+            "deleted_by": null
+        },
+        {
+            "kategori_id": 5,
+            "kategori_kode": "K005",
+            "kategori_nama": "Pemrograman Dasar",
+            "kategori_status": "Aktif",
+            "created_at": "2024-06-22 15:48:21",
+            "created_by": "1462200195@gmail.com",
+            "updated_at": "2024-06-30 14:08:45",
+            "updated_by": "1462200195@gmail.com",
+            "deleted_at": null,
+            "deleted_by": null
+        },
+        {
+            "kategori_id": 4,
+            "kategori_kode": "K004",
+            "kategori_nama": "IT",
+            "kategori_status": "Aktif",
+            "created_at": "2024-06-22 15:43:04",
+            "created_by": "1462200195@gmail.com",
+            "updated_at": "2024-06-30 14:08:41",
+            "updated_by": null,
+            "deleted_at": null,
+            "deleted_by": null
+        },
+        {
+            "kategori_id": 3,
+            "kategori_kode": "K003",
+            "kategori_nama": "Produk Kebersihan",
+            "kategori_status": "Aktif",
+            "created_at": "2024-06-21 23:44:09",
+            "created_by": "Admin",
+            "updated_at": "2024-06-21 23:44:09",
+            "updated_by": "Admin",
+            "deleted_at": null,
+            "deleted_by": null
+        },
+        {
+            "kategori_id": 2,
+            "kategori_kode": "K002",
+            "kategori_nama": "Barang Kebutuhan Sehari-hari",
+            "kategori_status": "Aktif",
+            "created_at": "2024-06-21 23:44:09",
+            "created_by": "Admin",
+            "updated_at": "2024-06-21 23:44:09",
+            "updated_by": "Admin",
+            "deleted_at": null,
+            "deleted_by": null
+        },
+        {
+            "kategori_id": 1,
+            "kategori_kode": "K001",
+            "kategori_nama": "Masakan",
+            "kategori_status": "Aktif",
+            "created_at": "2024-06-21 23:44:09",
+            "created_by": "Admin",
+            "updated_at": "2024-06-30 14:08:33",
+            "updated_by": "1462200195@gmail.com",
+            "deleted_at": null,
+            "deleted_by": null
+        }
+    ],
+    "paging": {
+        "page": 1,
+        "total_pages": 1,
+        "records_per_page": 10,
+        "total_records": 9
+    },
+    "request": {
+        "start": 0,
+        "limit": 10
+    }
+}

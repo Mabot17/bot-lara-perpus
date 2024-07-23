@@ -39,6 +39,12 @@ class PengembalianController extends Controller
         return view('pages.pengembalian.form_ubah_pengembalian');
     }
 
+    /**
+     * GET - Pengembalian Cetak Faktur List PDF
+     * @authenticated
+     * @responseFile 200 response_docs_api/response_success.json
+     * @responseFile 404 response_docs_api/response_not_found.json
+     */
     public function cetakListPengembalianPDF()
     {
         $data_pengembalian = DB::table('pengembalian as p')
@@ -84,6 +90,12 @@ class PengembalianController extends Controller
         return response()->json(['url' => $url]);
     }
 
+    /**
+     * GET - Pengembalian Cetak Faktur XLS
+     * @authenticated
+     * @responseFile 200 response_docs_api/response_success.json
+     * @responseFile 404 response_docs_api/response_not_found.json
+     */
     public function cetakListPengembalianExcel()
     {
         $data_pengembalian = DB::table('pengembalian as p')
@@ -139,7 +151,7 @@ class PengembalianController extends Controller
 
 
     /**
-    * Pinjaman Buku List
+    * POST - Pinjaman Buku List
     * @authenticated
     * @bodyParam start int required start data. Example: 0
     * @bodyParam limit int required limit data. Example: 10
@@ -178,7 +190,7 @@ class PengembalianController extends Controller
     }
 
     /**
-    * Pengembalian Buku By Pinjaman ID List
+    * POST - Pengembalian Buku By Pinjaman ID List
     * @authenticated
     * @bodyParam start int required start data. Example: 0
     * @bodyParam limit int required limit data. Example: 10
@@ -217,7 +229,7 @@ class PengembalianController extends Controller
     }
 
     /**
-    * Pengembalian List
+    * POST - Pengembalian List
     * @authenticated
     * @bodyParam start int required start data. Example: 0
     * @bodyParam limit int required limit data. Example: 10
@@ -256,7 +268,7 @@ class PengembalianController extends Controller
     }
 
     /**
-     * Pengembalian Detail
+     * GET - Pengembalian Detail
      * @authenticated
      * @urlParam pengembalian_id int required pengembalian_id data dari api/pengembalian list. Example: 2
      * @responseFile 200 response_docs_api/response_success.json
@@ -283,7 +295,7 @@ class PengembalianController extends Controller
     }
 
     /**
-     * Pengembalian Create
+     * POST - Pengembalian Create
      * @authenticated
      * @bodyParam pengembalian_pelanggan string required Text biasa. Example: null
      * @bodyParam pengembalian_tanggal date required pengembalian_tanggal Example: 2024-06-14
@@ -334,7 +346,7 @@ class PengembalianController extends Controller
     }
 
     /**
-     * Pengembalian Update
+     * PUT - Pengembalian Update
      * @authenticated
      * @bodyParam pengembalian_ida int required pengembalian_ida data dari api/pengembalian list. Example: 2
      * @bodyParam pengembalian_id int required Text biasa. Example: 1
@@ -394,7 +406,7 @@ class PengembalianController extends Controller
     }
 
     /**
-     * Pengembalian Delete
+     * DELETE - Pengembalian Delete
      * @authenticated
      * @urlParam pengembalian_id int required pengembalian_id data dari api/pengembalian list. Example: 2
      * @responseFile 200 response_docs_api/response_success.json
@@ -434,7 +446,7 @@ class PengembalianController extends Controller
     }
 
     /**
-     * Pengembalian Cetak Faktur
+     * GET - Pengembalian Cetak Faktur
      * @authenticated
      * @urlParam pengembalian_id int required pengembalian_id data dari api/pengembalian list. Example: 2
      * @responseFile 200 response_docs_api/response_success.json

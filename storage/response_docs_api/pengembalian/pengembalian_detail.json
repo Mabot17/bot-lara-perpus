@@ -1,0 +1,45 @@
+{
+    "status": {
+      "code": 200,
+      "message": "Request Berhasil."
+    },
+    "data": {
+      "penjualan_id": 1,
+      "penjualan_no": "PJ/2406-0001",
+      "penjualan_pelanggan": "Pelanggan Umum",
+      "penjualan_tanggal": "2024-06-27",
+      "penjualan_total": 20000,
+      "penjualan_total_bayar": 20000,
+      "penjualan_total_kembalian": 0,
+      "penjualan_cara_bayar": null,
+      "created_at": "2024-06-25 09:53:54",
+      "created_by": "1462200195@gmail.com",
+      "updated_at": "2024-06-25 17:46:12",
+      "updated_by": "1462200195@gmail.com",
+      "deleted_at": null,
+      "deleted_by": null,
+      "dataProdukList": [
+        {
+          "pjual_detail_id": 9,
+          "pjual_detail_master_id": 1,
+          "pjual_detail_produk_id": 17,
+          "pjual_detail_qty": 1,
+          "pjual_detail_harga": 20000,
+          "pjual_detail_diskon": 0,
+          "pjual_detail_diskon_rp": 0,
+          "pjual_diskon_subtotal": 20000,
+          "pjual_detail_produk_nama": "Parfum"
+        }
+      ]
+    },
+    "params": {
+      "attributes": {},
+      "request": {},
+      "query": {},
+      "server": {},
+      "files": {},
+      "cookies": {},
+      "headers": {}
+    },
+    "request": []
+  }

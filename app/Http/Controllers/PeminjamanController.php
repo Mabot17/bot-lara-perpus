@@ -39,6 +39,12 @@ class PeminjamanController extends Controller
         return view('pages.peminjaman.form_ubah_peminjaman');
     }
 
+    /**
+    * GET - Peminjaman Cetak PDF List
+    * @authenticated
+    * @responseFile 200 response_docs_api/response_success_print.json
+    * @responseFile 404 response_docs_api/response_not_found.json
+    */
     public function cetakListPeminjamanPDF()
     {
         $data_peminjaman = DB::table('peminjaman as p')
@@ -83,6 +89,12 @@ class PeminjamanController extends Controller
         return response()->json(['url' => $url]);
     }
 
+    /**
+    * GET - Peminjaman Cetak Excel List
+    * @authenticated
+    * @responseFile 200 response_docs_api/response_success_print_xls.json
+    * @responseFile 404 response_docs_api/response_not_found.json
+    */
     public function cetakListPeminjamanExcel()
     {
         $data_peminjaman = DB::table('peminjaman as p')
@@ -134,7 +146,7 @@ class PeminjamanController extends Controller
     }
 
     /**
-    * Peminjaman List
+    * POST - Peminjaman List
     * @authenticated
     * @bodyParam start int required start data. Example: 0
     * @bodyParam limit int required limit data. Example: 10
@@ -173,7 +185,7 @@ class PeminjamanController extends Controller
     }
 
     /**
-     * Peminjaman Detail
+     * GET - Peminjaman Detail
      * @authenticated
      * @urlParam peminjaman_id int required peminjaman_id data dari api/peminjaman list. Example: 2
      * @responseFile 200 response_docs_api/response_success.json
@@ -200,12 +212,13 @@ class PeminjamanController extends Controller
     }
 
     /**
-     * Peminjaman Create
+     * POST - Peminjaman Create
      * @authenticated
      * @bodyParam peminjaman_pelanggan string required Text biasa. Example: null
-     * @bodyParam peminjaman_tanggal date required peminjaman_tanggal Example: 2024-06-14
-     * @bodyParam peminjaman_tanggal_est_kembali date required peminjaman_tanggal_est_kembali Example: 2024-06-14
+     * @bodyParam peminjaman_tanggal date required peminjaman_tanggal Example: 2024/07/01
+     * @bodyParam peminjaman_tanggal_est_kembali date required peminjaman_tanggal_est_kembali Example: 2024/07/01
      * @bodyParam peminjaman_total_est_denda int required Example: 10000
+     * @bodyParam peminjaman_stat_kembali int required Example: 1
      * @bodyParam buku_list object[] Detail buku
      * @bodyParam buku_list[].pinjam_detail_id int (Selalu null, flag create) Example: 0
      * @bodyParam buku_list[].pinjam_detail_buku_id int required dari api/buku/list property buku_id Example: 1
@@ -255,14 +268,15 @@ class PeminjamanController extends Controller
     }
 
     /**
-     * Peminjaman Update
+     * PUT - Peminjaman Update
      * @authenticated
-     * @bodyParam peminjaman_ida int required peminjaman_ida data dari api/peminjaman list. Example: 2
-     * @bodyParam peminjaman_id int required Text biasa. Example: 1
-     * @bodyParam peminjaman_pelanggan string required Text biasa. Example: null
-     * @bodyParam peminjaman_tanggal date required peminjaman_tanggal Example: 2024-06-14
-     * @bodyParam peminjaman_tanggal_est_kembali date required peminjaman_tanggal_est_kembali Example: 2024-06-14
+     * @bodyParam peminjaman_id int required peminjaman_id data dari api/peminjaman list. Example: 2
+     * @bodyParam peminjaman_no string required Text biasa. Example: PJ/2406-0002
+     * @bodyParam peminjaman_pelanggan string required Text biasa. Example: Rohman
+     * @bodyParam peminjaman_tanggal date required peminjaman_tanggal Example: 2024/07/01
+     * @bodyParam peminjaman_tanggal_est_kembali date required peminjaman_tanggal_est_kembali Example: 2024/07/01
      * @bodyParam peminjaman_total_est_denda int required Example: 10000
+     * @bodyParam peminjaman_stat_kembali int required Example: 1
      * @bodyParam buku_list object[] Detail buku
      * @bodyParam buku_list[].pinjam_detail_id int (Selalu null, flag create) Example: 0
      * @bodyParam buku_list[].pinjam_detail_buku_id int required dari api/buku/list property buku_id Example: 1
@@ -315,7 +329,7 @@ class PeminjamanController extends Controller
     }
 
     /**
-     * Peminjaman Delete
+     * DELETE - Peminjaman Delete
      * @authenticated
      * @urlParam peminjaman_id int required peminjaman_id data dari api/peminjaman list. Example: 2
      * @responseFile 200 response_docs_api/response_success.json
@@ -355,7 +369,7 @@ class PeminjamanController extends Controller
     }
 
     /**
-     * Peminjaman Cetak Faktur
+     * GET - Peminjaman Cetak Faktur
      * @authenticated
      * @urlParam peminjaman_id int required peminjaman_id data dari api/peminjaman list. Example: 2
      * @responseFile 200 response_docs_api/response_success.json

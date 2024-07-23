@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+/**
+ * @group Dashboard
+ * @groupDescription API Dashboard - Untuk melihat data masuk dan keluar di perpustakaan
+ */
 class DashboardController extends Controller
 {
     public function index()
@@ -12,6 +16,12 @@ class DashboardController extends Controller
         return view('pages.dashboard.main_dashboard');
     }
 
+    /**
+    * Dashboard Data List
+    * @authenticated
+    * @responseFile 200 response_docs_api/dashboard/dashboard_data_response.json
+    * @responseFile 404 response_docs_api/response_not_found.json
+    */
     public function getDataGrafikBarNetsales()
     {
         $data = DB::table('peminjaman')

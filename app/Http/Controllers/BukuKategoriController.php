@@ -96,7 +96,7 @@ class BukuKategoriController extends Controller
     /**
     * Buku Kategori Cetak Excel List
     * @authenticated
-    * @responseFile 200 response_docs_api/response_success_print.json
+    * @responseFile 200 response_docs_api/response_success_print_xls.json
     * @responseFile 404 response_docs_api/response_not_found.json
     */
     public function cetakListBukuKategoriExcel()
@@ -144,7 +144,7 @@ class BukuKategoriController extends Controller
 
 
     /**
-    * Buku Kategori List
+    * POST - Buku Kategori List
     * @authenticated
     * @bodyParam start int required start data. Example: 0
     * @bodyParam limit int required limit data. Example: 10
@@ -183,7 +183,7 @@ class BukuKategoriController extends Controller
     }
 
     /**
-     * Buku Kategori Detail
+     * GET - Buku Kategori Detail
      * @authenticated
      * @urlParam kategori_id int required kategori_id data dari api/buku_kategori list. Example: 2
      * @responseFile 200 response_docs_api/response_success.json
@@ -210,10 +210,10 @@ class BukuKategoriController extends Controller
     }
 
     /**
-     * Buku Kategori Create
+     * POST - Buku Kategori Create
      * @authenticated
-     * @bodyParam BukuKategori_kode string BukuKategori_kode. Example: null
-     * @bodyParam BukuKategori_nama string BukuKategori_nama. Example: null
+     * @bodyParam kategori_kode string kategori_kode. Example: null
+     * @bodyParam kategori_nama string kategori_nama. Example: null
      * @responseFile 200 response_docs_api/response_success.json
      * @responseFile 404 response_docs_api/response_not_found.json
      */
@@ -256,11 +256,11 @@ class BukuKategoriController extends Controller
     }
 
     /**
-     * Buku Kategori Update
+     * PUT - Buku Kategori Update
      * @authenticated
      * @bodyParam kategori_id string required kategori_id. Example: 1
-     * @bodyParam BukuKategori_kode string BukuKategori_kode. Example: null
-     * @bodyParam BukuKategori_nama string BukuKategori_nama. Example: null
+     * @bodyParam kategori_kode string kategori_kode. Example: null
+     * @bodyParam kategori_nama string kategori_nama. Example: null
      * @responseFile 200 response_docs_api/response_success.json
      * @responseFile 404 response_docs_api/response_not_found.json
      */
@@ -310,6 +310,13 @@ class BukuKategoriController extends Controller
         }
     }
 
+    /**
+     * DELETE - Buku Kategori Delete
+     * @authenticated
+     * @urlParam kategori_id int required kategori_id data dari api/kategori list. Example: 2
+     * @responseFile 200 response_docs_api/response_success.json
+     * @responseFile 404 response_docs_api/response_not_found.json
+     */
     public function BukuKategoriDelete($kategori_id)
     {
         try {
